@@ -1,0 +1,177 @@
+<ion-toolbar *ngIf="showSlide == 'no'">
+  <ion-buttons style="padding-left: 10px;" slot="start">
+    <img src="assets/img/Arrow.svg" (click)="goToHome()">
+  </ion-buttons>
+
+  <ion-title>{{model_name}}</ion-title>
+
+  <ion-buttons style="padding-right: 10px;" slot="end" (click)="share()">
+    <img src="assets/img/share.svg">
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+
+  <div *ngIf="showSlide == 'no'">
+
+    <ion-row>
+      <ion-col class="slider_main">
+        <ion-slides pager="true">
+          <ng-container *ngIf="veh_imgs?.length >0">
+            <ion-slide *ngFor="let p of veh_imgs; let i = index">
+              <div class="slide">
+                <img (click)="previewImage(p)" src="{{base_urls}}{{p}}" class="s_img" />
+                <div (click)="previewImage(p)" class="pentagon">
+                  <img src="assets/img/pentagon.svg" class="" />
+                  <div class="badge">
+                    <span class="badge_dollar">{{currency_symbol}}</span>
+                    <span class="badge_price">{{charge_per_day}}</span>
+                    <span class="badge_per">PER DAY</span>
+                  </div>
+                </div>
+                <div class="heart">
+                  <img src="assets/img/heart.svg" class="" (click)="favourite('add_fav',cars_list_result.vehicles_id)"
+                    *ngIf="favouriteVehicle == false" />
+                  <img src="assets/img/heart_red.svg" class=""
+                    (click)="favourite('remove_fav',cars_list_result.vehicles_id)" *ngIf="favouriteVehicle" />
+                </div>
+              </div>
+            </ion-slide>
+          </ng-container>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="descr">
+        <h3>Description</h3>
+        <p>{{description}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="descr">
+        <h3>Owner’s Details</h3>
+        <small>About</small>
+        <p>{{about_owner}}</p>
+        <small>Lives</small>
+        <p>{{country_name}}</p>
+        <ion-row>
+          <ion-col size="6" style="padding-left: 0px;">
+            <small>Work</small>
+            <p>{{owner_work}}</p>
+          </ion-col>
+          <ion-col size="6">
+            <small>Language</small>
+            <p>{{language_name}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row class="rating">
+      <ion-col size="6">
+        <h3>Ratings</h3>
+      </ion-col>
+      <ion-col size="6">
+        <h3 class="view_all">View All</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="stars">
+        <p class="star_list" *ngIf="ratting_stars === '5'">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/yellow_star.svg">
+        </p>
+        <p class="star_list" *ngIf="ratting_stars === '4'">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/grey_star.svg">
+        </p>
+        <p class="star_list" *ngIf="ratting_stars === '3'">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/grey_star.svg">
+          <img src="assets/img/grey_star.svg">
+        </p>
+        <p class="star_list" *ngIf="ratting_stars === '2'">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/grey_star.svg">
+          <img src="assets/img/grey_star.svg">
+          <img src="assets/img/grey_star.svg">
+        </p>
+        <p class="star_list" *ngIf="ratting_stars === '1'">
+          <img src="assets/img/yellow_star.svg">
+          <img src="assets/img/grey_star.svg">
+          <img src="assets/img/grey_star.svg">
+          <img src="assets/img/grey_star.svg">
+          <img src="assets/img/grey_star.svg">
+        </p>
+        <span class="left_star">269 trips</span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="btn_footer">
+      <ion-col size="6">
+        <ion-button color="primary" (click)="chatRequest()" expand="block" shape="round">Chat</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="secondary" (click)="bookNow()" expand="block" shape="round">Book Now</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="info">
+      <ion-col class="ion-text-center" (click)="info()">
+        <img src="assets/img/info.svg">
+        <p>Further Details</p>
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+
+  <div *ngIf="showSlide == 'yes'" style="background: #000000f5; height: 100%;">
+
+    <ion-row>
+      <ion-col style="padding-left: 20px;
+    padding-top: 20px;">
+        <img src="assets/img/close.png" (click)="closeModel()" style="height: 20px;
+        width: 20px;
+        padding: 3px;
+        border-radius: 10px;">
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row class="center">
+      <ion-col class="slider_main_slide">
+        <ion-slides (ionSlideDidChange)="slideChanged($event)" #slides>
+
+          <ng-container *ngIf="veh_imgs.length >0">
+            <ion-slide *ngFor="let p of veh_imgs; let i = index">
+
+              <img src="{{base_urls}}{{p}}" class="s_img_slide">
+
+            </ion-slide>
+
+          </ng-container>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row style="position: absolute;
+        text-align: center;
+        bottom: 25px; width: 100%;">
+      <ion-col style="text-align: center;">
+        <ion-text style="color: white; ">{{indexOfSLide}} of {{veh_imgs.length}}</ion-text>
+      </ion-col>
+    </ion-row>
+
+
+
+  </div>
+</ion-content>

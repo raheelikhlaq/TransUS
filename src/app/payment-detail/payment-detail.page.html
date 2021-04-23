@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/img/Menu.svg" (click)="toggleMenu()">
+    </ion-buttons>
+    <ion-title>Payment</ion-title>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="bg">
+    <ion-col size="12">
+      <h3>Method - ({{currency_symbol}} {{wallet_amount}})</h3>
+    </ion-col>
+    <ion-col size="4" *ngFor="let p of payment_methods; let i = index" (click)="getStartIndex(i)">
+      <div class="ion-text-center bg_cell" [class.bg_active]="sliderStartBoolean == i">
+         <img src="{{base_url}}{{p.white_icon_url}}" >
+      </div>
+    </ion-col>
+
+  </ion-row>
+  <ion-row class="bys">
+    <ion-col size="12">
+      <h3>Details</h3>
+    </ion-col>
+    <ion-col>
+      <ion-input  [(ngModel)]="desc"  placeholder="Account Number" class="input_list"></ion-input>
+    </ion-col>
+    <span *ngIf="amount_error" class="error ion-padding">
+     Your wallet amount is insufficient.
+    </span>
+    </ion-row>
+    
+    <ion-row >
+      <ion-col size="2"></ion-col>
+      <ion-col size="8">
+        <ion-button color="primary" expand="block" shape="round" (click)="sendPayment()">Done</ion-button>
+      </ion-col>
+    </ion-row>
+</ion-content>

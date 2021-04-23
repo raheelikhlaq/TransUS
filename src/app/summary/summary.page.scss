@@ -1,0 +1,126 @@
+ion-toolbar {
+    padding: 0.8em 0.1em 0 0;
+    --background: #c4932f;
+}
+
+@media only screen and(min-height : 800px) {
+    ion-toolbar {
+        padding: 3em 0.1em 8px 0;
+        --background: #c4932f;
+    }
+}
+
+ion-title {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+}
+ion-content {
+    --background: #f9f9f9;
+}
+.slider_main {
+    padding: 1em 0.6em 0em 0.6em;
+}
+.primary_color {
+    color: #c4932f;
+}
+.trip_cost {
+    padding: 0em 0.4em 5px 0.4em;
+}
+.trip_cost h4 {
+    margin: 0px;
+}
+.s_img {
+    width: 100%;
+}
+.slide {
+    width: 100%;
+    height: 170px;
+
+}
+.pentagon {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+.heart {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+}
+.badge {
+    position: absolute;
+    top: 6px;
+    left: 0px;
+    right: 0px;
+}
+.badge_dollar {
+    color: #c4932f;
+    font-size: 9px;
+}
+.badge_price {
+    font-size: 20px;
+    color: #c4932f;
+}
+.badge_per {
+    color: #fff;
+    font-size: 6px;
+    display: block;
+    margin-left: 1px;
+    margin-top: -2px;
+}
+.descr {
+    padding: 0em 0.6em;
+}
+.bg_white {
+    background: #fff;
+}
+.descr h3 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.descr h4 {
+    margin: 10px 0px;
+}
+.descr p {
+    font-size: 12px;
+}
+.descr small {
+    color: #c4932f;
+}
+.rating {
+    padding: 0em 0.3em;
+}
+.view_all {
+    font-size: 10px;
+    text-align: right;
+    padding-right: 1em;
+    color: #c4932f;
+    padding-top: 1em;
+}
+.stars img {
+    margin-left: 4px;
+}
+.left_star {
+    margin-left: 1em;
+}
+ion-button {
+    --padding-bottom: 1.5em;
+    --padding-top: 1.5em;
+    --box-shadow: none;
+}
+.btn_footer {
+    padding: 0.5em 1em 1.2em 1em;
+}
+.info {
+    background: #6e6d6d;
+    padding: 0.4em 0em;
+}
+.info p {
+    margin: 0px;
+    color: #fff;
+    font-size: 10px;
+}
+img {
+    border-radius: 10px;
+}

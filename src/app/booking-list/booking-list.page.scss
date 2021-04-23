@@ -1,0 +1,126 @@
+ion-toolbar{
+    --background: #C4932F;
+   // padding: 0.3em 0.5em;
+}
+.header_pd{
+    padding: 0.8em 0.1em 0 0;
+}
+
+@media only screen and(min-height : 800px) {
+    .header_pd {
+        padding: 3em 0.1em 8px 0;
+    }
+}
+ion-title{
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+}
+ion-button{
+    --padding-bottom: 1.5em;
+    --padding-top: 1.5em;
+    --box-shadow: none;
+    text-transform: capitalize;
+}
+.cstomHeader{
+    --background: #fff;
+}
+.segment-button-checked{
+    background: #F7F8FA;
+    color: #464646;
+}
+.bg_grey{
+    background:#F9F9F9;
+}
+.pd_bs{
+    padding: 0.7em 1em;
+}
+.lambo h4{
+    margin: 0px;
+    margin-bottom: 3px;
+}
+.trip_dates{
+    font-size: 10px;
+    padding-top: 2.4em;
+    padding-left: 1.3em;
+}
+.trip_dates p{
+   margin: 0px; 
+   margin-top: 6px;
+}
+.blue{
+    color:#1A6BBE;
+}
+.primary{
+    color:#C4932F;
+}
+.trip_end_date{
+    font-size: 10px;
+    padding-top: 4.2em;
+    padding-left: 1.3em;
+}
+.trip_end_date p{
+   margin: 0px; 
+   margin-top: 6px;
+}
+.star img:first-child{
+    margin-left: 0px !important;
+}
+.star img{
+    margin-left: 4px;
+}
+.give_rating{
+    background: #C4932F;
+    color: #fff;
+    padding: 0.7em;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    margin-top: 10px !important;
+}
+.danger{
+    background: #D93A3A;
+    color: #fff;
+    padding: 0.7em;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    margin-top: 10px !important;
+}
+
+.accept{
+    background: #1A6BBE;
+    color: #fff;
+    padding: 0.7em;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    margin-top: 10px !important;
+    position: absolute;
+    bottom: 5%;
+    width: 85%;
+}
+
+.accept-unpaid{
+    background: #82d93a;
+    color: #fff;
+    padding: 0.7em;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    margin-top: 10px !important;
+    position: absolute;
+    bottom: 5%;
+    width: 85%;
+}
+.btn_fixed{
+    position: fixed;
+    bottom: 1em;
+    left: 3em;
+    right: 3em;
+    text-align: center;
+}

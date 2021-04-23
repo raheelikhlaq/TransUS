@@ -1,0 +1,76 @@
+<ion-content  >
+  <!-- style="--background:url(assets/img/Background.png)  0 0/100% 100% no-repeat;" -->
+  <ion-row>
+    <ion-col class="back_arrow">
+      <img src="assets/img/Arrow.svg" (click)="goToHome()">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center logo">
+      <img src="assets/img/logo.png">
+    </ion-col>
+  </ion-row>
+  <div class="bp">
+
+    <ion-row>
+      <ion-col>
+        <ion-input placeholder="Email" class="rm_auto" [(ngModel)]="email" (ionBlur)="validateForm()"></ion-input>
+        <span *ngIf="emailError" class="error ion-padding">
+          Email is required.
+        </span>
+        <span *ngIf="invalidEmailError" class="error ion-padding">
+          Please provide valid email id.
+        </span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input type="password" class="rm_auto" placeholder="password" [(ngModel)]="password"
+          (ionBlur)="validateForm()"></ion-input>
+        <span *ngIf="passwordError" class="error ion-padding">
+          Password is required.
+        </span>
+        <!--span class="error ion-padding" >
+            Password should be min 6 chars long.
+          </span-->
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-right">
+        <p class="white" (click)="forgotPassword()">Forgot your password?</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center parent_btn">
+        <ion-button color="primary" shape="round" expand="block" (click)="submitForm()">Login</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="bb_top">
+      <ion-col size="5">
+        <hr class="bb">
+      </ion-col>
+      <ion-col size="2" class="white ion-text-center">OR</ion-col>
+      <ion-col size="5">
+        <hr class="bb">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" class="ion-text-left">
+        <ion-button class="fb">
+          <img src="assets/img/Facebook.svg" (click)="LoginWithFacebook()">
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" class="ion-text-right">
+        <ion-button class="google">
+          <img src="assets/img/google.svg" (click)="LoginWithGoogle()">
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-row>
+    <ion-col class="ion-text-center" (click)="GotoSignup()">
+      <p class="white signup_text">Don't have an account? Sign up</p>
+    </ion-col>
+  </ion-row>
+</ion-content>

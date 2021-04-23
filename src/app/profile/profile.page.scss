@@ -1,0 +1,78 @@
+ion-toolbar {
+    padding: 0.8em 0.1em 0 0;
+    --background: #c4932f;
+}
+
+@media only screen and(min-height : 800px) {
+    ion-toolbar {
+        padding: 3em 0.1em 8px 0;
+        --background: #c4932f;
+    }
+}
+
+ion-title {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    padding-left: 0px;
+}
+.input_list {
+    border: 1px solid #d4dce1;
+    background: #f7f8fa;
+    border-radius: 28px;
+    font-size: 13px;
+    --placeholder-color: #a6a6a8;
+    color: #000;
+    --padding-bottom: 1.5em;
+    --padding-start: 1.5em;
+    --padding-top: 1.5em;
+    margin-top: 0.5em;
+}
+
+ion-button {
+    --padding-bottom: 1.5em;
+    --padding-top: 1.5em;
+    --box-shadow: none;
+}
+.btn_edit_profile {
+    position: absolute;
+    bottom: 3%;
+    right: 18%;
+}
+.bys {
+    padding: 0em 1em 1.5em 1em;
+    margin-top: 3em;
+}
+.list_3 {
+    background: #f7f8fa;
+    border: 1px solid #d4dce1;
+    border-radius: 10px;
+    color: #000;
+    font-size: 13px;
+    --padding-start: 1.5em;
+    --padding-top: 1.5em;
+    --placeholder-color: #a6a6a8;
+}
+
+ion-select {
+    background: #f7f8fa;
+    border: 1px solid #d4dce1;
+    border-radius: 30px;
+    --placeholder-color: #a6a6a8;
+    color: #000;
+    font-size: 13px;
+    --padding-start: 1.5em;
+    --padding-top: 1.5em;
+    --padding-bottom: 1.5em;
+    --padding-end: 1.5em;
+    margin-top: 0.5em;
+}
+
+.error {
+    color: red;
+}
+.solid_img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}

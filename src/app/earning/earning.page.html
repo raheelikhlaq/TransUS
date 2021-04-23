@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons class="mf"  slot="start">
+      <img src="assets/img/Menu.svg" class="mleft" (click)="toggleMenu()">
+    </ion-buttons>
+    <ion-title>Earnings</ion-title>
+    
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="wallet_main">
+    <ion-row class="wallet_inner">
+      <ion-col size="6">
+        <p class="dark_p_color">Wallet Balance</p>
+        <h3 class="dark_p_color">{{currency_symbol}}{{wallet_amount}}</h3>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="secondary" expand="block" shape="round" (click)="withdrawRequest()">Withdraw</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+ 
+  <ion-row class="graph_main">
+    <ion-col size="12" class="graph_inner">
+      <div style="display: block;">
+        <canvas baseChart 
+          height="350"
+          [colors]="chartColors"
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType">
+        </canvas>
+      </div>
+    </ion-col>
+  </ion-row>
+  <div class="total_main alura">
+    <ion-row>
+      <ion-col size="6">Earnings</ion-col>
+      <ion-col size="6" class="ion-text-right">{{currency_symbol}}{{total_earning}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Trip Earnings</ion-col>
+      <ion-col size="6" class="ion-text-right">{{currency_symbol}}{{total_trip_cost}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Taxes</ion-col>
+      <ion-col size="6" class="ion-text-right">{{currency_symbol}}{{total_tax}}</ion-col>
+    </ion-row>
+  </div>
+  
+</ion-content>

@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar class="header_pd">
+    <ion-buttons slot="start">
+      <img src="assets/img/Menu.svg" (click)="toggleMenu()">
+    </ion-buttons>
+    <ion-searchbar (ionChange)="onInput()" placeholder="ENTER CITY, AIRPORT, OR ADDRESS"></ion-searchbar>
+    <ion-buttons slot="end" (click)="goToFilter()" >
+      <img src="assets/img/filter.svg">
+    </ion-buttons>
+   </ion-toolbar>
+  </ion-header>
+<ion-content>
+ 
+  <ng-container *ngIf="response.cars_list_result.length != 0 ">
+
+ 
+     <ion-grid *ngFor="let p of cars_list_result; let i = index">
+      <ng-container *ngIf="p.veh_imgs">
+    <ion-row >
+      <ion-col class="main_div" (click)="gotoDetail(p)">
+        <!-- <img src="{{base_urls}}{{p.veh_imgs[0]}}" class="s_img" /> -->
+      
+        <ng-container *ngFor="let image of p.veh_imgs;  let j = index">
+          <img *ngIf="j == 0 " style="border-radius: 12px;" src="{{base_urls}}{{image}}"   />
+        </ng-container>
+  
+        <div class="pentagon">
+          <img src="assets/img/pentagon.svg" class="" />
+          <div class="badge">
+            <span class="badge_dollar">{{currency_symbol}}</span>
+            <span class="badge_price">{{p.charge_per_day}}</span>
+            <span class="badge_per">PER DAY</span>
+          </div>
+        </div>
+        <div class="bg_bottom">
+          <ion-row>
+            <ion-col size="8" class="fav_1">
+              <h2>{{p.model_name}}</h2>
+              <h5>San Francisco, CA</h5>
+            </ion-col>
+       
+            <!-- <ion-col size="4" class="fav_2">
+             
+              <p class="star_list" *ngIf="p.ratting_stars === '5'"> 
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+              </p>
+              <p class="star_list" *ngIf="p.ratting_stars === '4'"> 
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/grey_star.svg">
+              </p>
+              <p class="star_list" *ngIf="p.ratting_stars === '3'"> 
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/grey_star.svg">
+                <img src="assets/img/grey_star.svg">
+              </p>
+              <p class="star_list" *ngIf="p.ratting_stars === '2'"> 
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/grey_star.svg">
+                <img src="assets/img/grey_star.svg">
+                <img src="assets/img/grey_star.svg">
+              </p>
+              <p class="star_list" *ngIf="p.ratting_stars === '1'"> 
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/grey_star.svg">
+                <img src="assets/img/grey_star.svg">
+                <img src="assets/img/grey_star.svg">
+                <img src="assets/img/grey_star.svg">
+              </p>
+              <p>269 trips</p>
+            </ion-col> -->
+         
+          </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ng-container>
+  </ion-grid>  
+</ng-container>
+  <ng-container *ngIf="response.cars_list_result.length == 0">
+    <ion-row>
+      <ion-col style="text-align: center;">
+        <img src="assets/img/noresult.PNG">
+      </ion-col>
+    </ion-row>
+
+  </ng-container>
+
+
+    <!-- <ion-grid style="    position: relative;" *ngFor="let p of cars_list_result; let i = index">
+    <ion-row style="margin: 10px;">
+      <ng-conatiner *ngFor="let image of p.veh_imgs;  let j = index">
+        
+        <img *ngIf="j == 0 " style="border-radius: 12px;" src="{{base_urls}}{{image}}"   />
+      </ng-conatiner>
+  
+      <div  style="position: absolute;margin: 10px;">
+        <img src="assets/img/pentagon.svg"   />
+        <div class="badge">
+          <span class="badge_dollar">{{currency_symbol}}</span>
+          <span class="badge_price">{{p.charge_per_day}}</span>
+          <span class="badge_per">PER DAY</span>
+        </div>
+      </div>
+      <div class="new-bottom" >
+        <ion-row>
+          <ion-col size="12" class="fav_1">
+            <h2>{{p.model_name}}</h2>
+            <h5>San Francisco, CA</h5>
+          </ion-col>
+          </ion-row>
+          </div>
+
+    </ion-row>
+  </ion-grid>   -->
+
+</ion-content>

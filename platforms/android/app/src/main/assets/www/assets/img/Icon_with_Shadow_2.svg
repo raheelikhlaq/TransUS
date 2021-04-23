@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="392" height="150" viewBox="0 0 392 150">
+  <defs>
+    <filter id="Rectangle" x="0" y="0" width="392" height="150" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_31" x="272" y="27" width="96" height="96" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-2"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_13814" data-name="Group 13814" transform="translate(8 -152)">
+    <g transform="matrix(1, 0, 0, 1, -8, 152)" filter="url(#Rectangle)">
+      <rect id="Rectangle-2" data-name="Rectangle" width="332" height="90" rx="20" transform="translate(30 30)" fill="#fff"/>
+    </g>
+    <g id="Group_13813" data-name="Group 13813">
+      <g transform="matrix(1, 0, 0, 1, -8, 152)" filter="url(#Ellipse_31)">
+        <g id="Ellipse_31-2" data-name="Ellipse 31" transform="translate(302 57)" fill="#fff" stroke="#e2ac3c" stroke-width="1">
+          <circle cx="18" cy="18" r="18" stroke="none"/>
+          <circle cx="18" cy="18" r="17.5" fill="none"/>
+        </g>
+      </g>
+      <g id="next" transform="translate(302.676 218.64)">
+        <g id="Group_13629" data-name="Group 13629" transform="translate(0 7.218)">
+          <g id="Group_13628" data-name="Group 13628">
+            <path id="Path_347" data-name="Path 347" d="M17.432,235.408H.737a.737.737,0,0,0,0,1.473h16.7a.737.737,0,1,0,0-1.473Z" transform="translate(0 -235.408)" fill="#e2ac3c"/>
+          </g>
+        </g>
+        <g id="Group_13631" data-name="Group 13631" transform="translate(9.624 0)">
+          <g id="Group_13630" data-name="Group 13630">
+            <path id="Path_348" data-name="Path 348" d="M277.515,41.059,270.3,33.841a.737.737,0,0,0-1.041,1.042l6.7,6.7-6.7,6.7a.736.736,0,1,0,1.041,1.041l7.218-7.218A.736.736,0,0,0,277.515,41.059Z" transform="translate(-269.04 -33.625)" fill="#e2ac3c"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/img/Arrow.svg" (click)="goToHome()">
+    </ion-buttons>
+    <ion-title>Edit motor</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="list_1">
+    <ion-row>
+      <ion-col>
+        <h3>Motor Info</h3>
+        <p class="upload_images">Upload Images of Number Plate</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+          <ion-row>
+            <ion-col size="12" class="list_2" (click)="uploadDocument(1)" *ngIf="document_one =='' || document_one ==undefined">
+              <img src="assets/img/Menu_Plus.svg">
+              <p>Vehicle's Number Plate</p>
+            </ion-col>
+            <ion-col size="12" class="img_h" *ngIf="document_one">
+              <img src="{{document_one}}">
+            </ion-col>
+            <span *ngIf="vehicleNumberPlateError" class="error ion-padding">
+              Vehicle's Number Plate is required.
+            </span>
+          </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h3>Documents</h3>
+        <p class="upload_images">Upload Driver’s License and Insurance documents</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+          <ion-row>
+            <ion-col size="12" class="list_2" (click)="uploadDocument(2)"  *ngIf="document_two =='' || document_two ==undefined">
+              <img src="assets/img/Menu_Plus.svg">
+              <p>Driver's License</p>
+            </ion-col>
+            <ion-col size="12" class="img_h" *ngIf="document_two">
+              <img src="{{document_two}}">
+            </ion-col>
+            <span *ngIf="driverLicenseError" class="error ion-padding" >
+              Driver's License  is required.
+            </span>
+          </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+          <ion-row>
+            <ion-col size="12" class="list_2" (click)="uploadDocument(3)" *ngIf="document_three =='' || document_three ==undefined">
+              <img src="assets/img/Menu_Plus.svg">
+              <p>Insurance document</p>
+            </ion-col>
+            <ion-col size="12" class="img_h" *ngIf="document_three">
+              <img src="{{document_three}}">
+            </ion-col>
+            <span *ngIf="insuranceDocumentError" class="error ion-padding">
+              Insurance document  is required.
+            </span>
+          </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h3>Set Availability</h3>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-row class="tog_main">
+    <ion-col size="9" class="tog1">
+        <p >Available</p>
+    </ion-col>
+    <ion-col size="3" class="ion-text-right">
+      <ion-item lines="none">
+        <ion-toggle slot="start" name="blueberry" color="tertiary" [(ngModel)]="availability"></ion-toggle>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row class="btn_footer">
+    <ion-col size="2"></ion-col>
+    <ion-col size="8">
+      <ion-button color="primary" expand="block" shape="round" (click)="submitForm()">Done</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

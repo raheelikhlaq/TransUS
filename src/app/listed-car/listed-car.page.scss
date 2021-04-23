@@ -1,0 +1,111 @@
+ion-toolbar {
+    padding: 0.8em 0.1em 0 0;
+    --background: #c4932f;
+}
+
+@media only screen and(min-height : 800px) {
+    ion-toolbar {
+        padding: 3em 0.1em 8px 0;
+        --background: #c4932f;
+    }
+}
+
+ion-title{
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    padding-left: 0px;
+}
+ion-header{
+    margin-bottom: 10px;
+}
+.bg_grey{
+    background:#F9F9F9;
+}
+.pd_bs{
+    padding: 0.7em 1em;
+}
+.lambo h4{
+    margin: 0px;
+    margin-bottom: 3px;
+    font-size: 16px;
+}
+.trip_dates{
+    font-size: 10px;
+    padding-top: 2.4em;
+    padding-left: 1.3em;
+}
+.trip_dates p{
+   margin: 0px; 
+   margin-top: 6px;
+}
+.blue{
+    color:#1A6BBE;
+}
+.primary{
+    color:#C4932F;
+}
+.trip_end_date{
+    font-size: 10px;
+    padding-top: 4.2em;
+    padding-left: 1.3em;
+}
+.trip_end_date p{
+   margin: 0px; 
+   margin-top: 6px;
+}
+.star img:first-child{
+    margin-left: 0px !important;
+}
+.star img{
+    margin-left: 4px;
+}
+.give_rating{
+    background: #D93A3A;
+    color: #fff;
+    padding: 0.7em;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    margin-top: 10px !important;
+}
+.give_rating-status-aproved{
+    background: #82d93a;
+    color: #fff;
+    padding: 0.7em;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 3.5em;
+    margin: 0px;
+    margin-top: 10px !important;
+}
+.give_rating-status-panding{
+    background: #0d0f0b;
+    color: #fff;
+    padding: 0.7em;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 3.5em;
+    margin: 0px;
+    margin-top: 10px !important;
+}
+.danger{
+    background: #D93A3A;
+    color: #fff;
+    padding: 0.7em;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    margin-top: 10px !important;
+}
+ion-button{
+    --padding-bottom: 1.5em;
+    --padding-top: 1.5em;
+    --box-shadow: none;
+}

@@ -1,0 +1,421 @@
+<ion-header>
+<ion-toolbar class="header_pd">
+  <ion-buttons slot="start">
+    <img src="assets/img/Menu.svg" (click)="toggleMenu()">
+  </ion-buttons>
+  <ion-searchbar (click)="ifFound()" (ionChange)="onInput()" placeholder="ENTER CITY, AIRPORT, OR ADDRESS"></ion-searchbar>
+  <ion-buttons slot="end" (click)="goToFilter()" >
+    <img src="assets/img/filter.svg">
+  </ion-buttons>
+ </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- <ion-toolbar class="cstomHeader" no-border-top>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button class="dark_p_color"  value="cars" (ionSelect)="getAllCars()" (click)="showCar()">
+        Rent A car   
+      </ion-segment-button>
+      <ion-segment-button class="dark_p_color"  value="bikes" (ionSelect)="getAllbikes()">
+        Motor Delivery
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar> -->
+
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'cars'">
+     <div class="horizental_slider">
+       <ng-container *ngIf="notifications?.length > 0">
+        <ion-row>
+          <ion-col size="2"></ion-col>
+          <ion-col size="8" class="ion-text-center">
+            <h4 style="color: black;">Notifications</h4>
+          </ion-col>
+          <ion-col size="2">
+            <p class="view_all" (click)="viewAllNotifications()">View all</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-slides [options]="option1" pager="true" >
+              <ion-slide *ngFor="let p of notifications; let i = index" (click)="accptOffer(p)">
+                <ion-row>
+                    <ion-col size="2" class="notify_image_main">
+                      <img src="{{base_urls}}{{p.sender_img_url}}">
+                    </ion-col>
+                    <ion-col size="10">
+                      <ion-row>
+                        <ion-col size="6" class="ion-text-left">
+                            <p class="notfy_title">{{p.sender_name}}</p>
+                        </ion-col>
+                        <ion-col size="6" class="ion-text-right">
+                            <p  class="notify_time">{{p.time_added}}</p>
+                        </ion-col>
+                        <ion-col size="12" class="ion-text-left notify_desc_main">
+                            <p style="color: black;" class="notify_desc">{{p.content}}</p>
+                        </ion-col>
+                      </ion-row>
+                    </ion-col>
+                </ion-row>
+              </ion-slide>
+            </ion-slides>
+          </ion-col>
+        </ion-row>
+       </ng-container>
+       <ng-container *ngIf="notifications?.length == 0">
+        <ion-row *ngIf="user_name">
+          <ion-col class="ion-text-center">
+            <h3 class="marginZero">Welcome, {{user_name}}</h3>
+          </ion-col>
+        </ion-row>
+       </ng-container>
+    </div>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <h3 class="marginZero">What are you looking for?</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <div class="h_slider">
+          <!-- car_types -->
+          <!-- New_car_types -->
+          <ion-col size="3" class=" bg ion-text-center" *ngFor="let p of New_car_types; let i = index" (click)="getStartIndexClick(p,i)" [class.bg_active]="sliderStartBoolean == i"> 
+            <img src="{{p.type_icon_img}}">
+            <p  style="margin-top: 1.31em;">{{p.name}}</p>
+           
+            <!-- <ng-container *ngIf="i == 3" >
+            <img src="{{p.type_icon_img}}">
+            <p  style="margin-top: 1.31em;">{{p.name}}</p>
+          </ng-container>
+
+          <ng-container *ngIf="i == 1">
+            <img src="{{p.type_icon_img}}">
+            <p  style="margin-top: 1.31em;">{{p.name}}</p>
+          </ng-container>
+
+          <ng-container *ngIf="i == 2">
+            <img src="{{p.type_icon_img}}">
+            <p  style="margin-top: 1.31em;">{{p.name}}</p>
+          </ng-container>
+
+          <ng-container *ngIf="i == 0">
+            <img src="{{p.type_icon_img}}">
+            <p  style="margin-top: 1.31em;">{{p.name}}</p>
+          </ng-container> -->
+
+
+          </ion-col>
+          
+        </div>
+      </ion-row>
+      <div class="main_penta">
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <h3 class="marginZero">Top Rented</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <div class="c_slider">
+          <ng-container *ngFor="let p of top_rated_cars; let i = index">
+            <ion-col size="4" >
+                <div class="ion-text-center" (click)="gotoDetail(p)">
+                  
+                  <div class="pentagon" style="background: url({{base_urls}}{{p.veh_imgs[0]}});"></div>
+                  <img src="assets/img/Polygon_New_2.svg" class="bg_uper">
+                  <div class="penta_main">
+                    <span class="penta_1">{{currency_symbol}}</span>
+                    <span class="penta_2">{{p.charge_per_day}}</span>
+                    <span class="penta_3">per day</span>
+                    <p class="penta_4" *ngIf="p.ratting_stars === '5'"> 
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/yellow_star.svg">
+                    </p>
+                    <p class="penta_4" *ngIf="p.ratting_stars === '4'"> 
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/grey_star.svg">
+                    </p>
+                    <p class="penta_4" *ngIf="p.ratting_stars === '3'"> 
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/grey_star.svg">
+                      <img src="assets/img/grey_star.svg">
+                    </p>
+                    <p class="penta_4" *ngIf="p.ratting_stars === '2'"> 
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/grey_star.svg">
+                      <img src="assets/img/grey_star.svg">
+                      <img src="assets/img/grey_star.svg">
+                    </p>
+                    <p class="penta_4" *ngIf="p.ratting_stars === '1'"> 
+                      <img src="assets/img/yellow_star.svg">
+                      <img src="assets/img/grey_star.svg">
+                      <img src="assets/img/grey_star.svg">
+                      <img src="assets/img/grey_star.svg">
+                      <img src="assets/img/grey_star.svg">
+                    </p>
+                    <p class="penta_5">269 trips</p>
+                  </div>
+                  <p class="penta_6">{{p.model_name}}</p>
+                  <p  class="penta_7">{{p.make_name}}</p>
+                </div>
+            </ion-col>
+            <ion-col size="4" >
+              <div class="ion-text-center" (click)="gotoDetail(p)">
+                
+                <div class="pentagon" style="background: url({{base_urls}}{{p.veh_imgs[0]}});"></div>
+                <img src="assets/img/Polygon_New_2.svg" class="bg_uper">
+                <div class="penta_main">
+                  <span class="penta_1">{{currency_symbol}}</span>
+                  <span class="penta_2">{{p.charge_per_day}}</span>
+                  <span class="penta_3">per day</span>
+                  <p class="penta_4" *ngIf="p.ratting_stars === '5'"> 
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/yellow_star.svg">
+                  </p>
+                  <p class="penta_4" *ngIf="p.ratting_stars === '4'"> 
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/grey_star.svg">
+                  </p>
+                  <p class="penta_4" *ngIf="p.ratting_stars === '3'"> 
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/grey_star.svg">
+                    <img src="assets/img/grey_star.svg">
+                  </p>
+                  <p class="penta_4" *ngIf="p.ratting_stars === '2'"> 
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/grey_star.svg">
+                    <img src="assets/img/grey_star.svg">
+                    <img src="assets/img/grey_star.svg">
+                  </p>
+                  <p class="penta_4" *ngIf="p.ratting_stars === '1'"> 
+                    <img src="assets/img/yellow_star.svg">
+                    <img src="assets/img/grey_star.svg">
+                    <img src="assets/img/grey_star.svg">
+                    <img src="assets/img/grey_star.svg">
+                    <img src="assets/img/grey_star.svg">
+                  </p>
+                  <p class="penta_5">269 trips</p>
+                </div>
+                <p class="penta_6">{{p.model_name}}</p>
+                <p  class="penta_7">{{p.make_name}}</p>
+              </div>
+          </ion-col>
+          <ion-col size="4" >
+            <div class="ion-text-center" (click)="gotoDetail(p)">
+              
+              <div class="pentagon" style="background: url({{base_urls}}{{p.veh_imgs[0]}});"></div>
+              <img src="assets/img/Polygon_New_2.svg" class="bg_uper">
+              <div class="penta_main">
+                <span class="penta_1">{{currency_symbol}}</span>
+                <span class="penta_2">{{p.charge_per_day}}</span>
+                <span class="penta_3">per day</span>
+                <p class="penta_4" *ngIf="p.ratting_stars === '5'"> 
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                </p>
+                <p class="penta_4" *ngIf="p.ratting_stars === '4'"> 
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                </p>
+                <p class="penta_4" *ngIf="p.ratting_stars === '3'"> 
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                </p>
+                <p class="penta_4" *ngIf="p.ratting_stars === '2'"> 
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                </p>
+                <p class="penta_4" *ngIf="p.ratting_stars === '1'"> 
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                </p>
+                <p class="penta_5">269 trips</p>
+              </div>
+              <p class="penta_6">{{p.model_name}}</p>
+              <p  class="penta_7">{{p.make_name}}</p>
+            </div>
+        </ion-col>
+        <ion-col size="4" >
+          <div class="ion-text-center" (click)="gotoDetail(p)">
+            
+            <div class="pentagon" style="background: url({{base_urls}}{{p.veh_imgs[0]}});"></div>
+            <img src="assets/img/Polygon_New_2.svg" class="bg_uper">
+            <div class="penta_main">
+              <span class="penta_1">{{currency_symbol}}</span>
+              <span class="penta_2">{{p.charge_per_day}}</span>
+              <span class="penta_3">per day</span>
+              <p class="penta_4" *ngIf="p.ratting_stars === '5'"> 
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+              </p>
+              <p class="penta_4" *ngIf="p.ratting_stars === '4'"> 
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/grey_star.svg">
+              </p>
+              <p class="penta_4" *ngIf="p.ratting_stars === '3'"> 
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/grey_star.svg">
+                <img src="assets/img/grey_star.svg">
+              </p>
+              <p class="penta_4" *ngIf="p.ratting_stars === '2'"> 
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/grey_star.svg">
+                <img src="assets/img/grey_star.svg">
+                <img src="assets/img/grey_star.svg">
+              </p>
+              <p class="penta_4" *ngIf="p.ratting_stars === '1'"> 
+                <img src="assets/img/yellow_star.svg">
+                <img src="assets/img/grey_star.svg">
+                <img src="assets/img/grey_star.svg">
+                <img src="assets/img/grey_star.svg">
+                <img src="assets/img/grey_star.svg">
+              </p>
+              <p class="penta_5">269 trips</p>
+            </div>
+            <p class="penta_6">{{p.model_name}}</p>
+            <p  class="penta_7">{{p.make_name}}</p>
+          </div>
+      </ion-col>
+          </ng-container>
+        
+      </div>
+      </ion-row>
+      </div>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <h3 class="marginZero">The car that pays<br> for itself</h3>
+          <p class="ft">Lorem Ipsum is simply dummy text of the printing and typesetting industry. typesetting, remaining essentially unchanged.</p>
+          <ion-row>
+            <ion-col size="2"></ion-col>
+            <ion-col size="8">
+              <ion-button color="secondary" expand="block" shape="round" (click)="goToCarList()">List your car</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row class="tup">
+        <ion-col class="ion-text-center">
+          <h3 class="marginZero">Invite Friends</h3>
+          <p class="earn">And earn credits</p>
+          <ion-row>
+            <ion-col size="2"></ion-col>
+            <ion-col size="8">
+              <ion-button color="primary" expand="block" shape="round">Invite</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+    <ion-list *ngSwitchCase="'bikes'">
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <h3 class="marginZero">Available for Motor Delivery </h3>
+        </ion-col>
+      </ion-row>
+      <ng-container *ngFor="let p of top_rated_motors; let i = index"> 
+
+      <ion-row class="pd_8" *ngIf="i % 2 === 0">
+        <ion-col size="2">
+          <div class="pentagon1" style="background: url({{base_urls}}{{p.insurance_img}});"></div>
+          <img src="assets/img/white.svg" class="bg_uper_1">
+        </ion-col>
+        <ion-col size="6" class="b_list4">
+            <p class="b_list1">{{p.user_name}}</p>
+            <span class="view_details" (click)="viewMotorDetail(p)">View Details</span>
+            <!--p class="b_list2"><span class="b_list3">$6</span>/delivery</p-->
+        </ion-col>
+        <ion-col size="4" class="ion-text-right">
+          <p class="b_list5">
+            <img src="assets/img/Star_colored.svg">
+            <span class="b_list6">({{p.ratting_stars}})</span>
+          </p>
+          <p class="b_list7"  *ngIf="availability == 'Yes'"><b class="bullet"></b> Available</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="b_list8  pd_8" *ngIf="i % 2 != 0">
+        <ion-col size="2">
+          <div class="pentagon1" style="background: url({{base_urls}}{{p.insurance_img}});"></div>
+          <img src="assets/img/white.svg" class="bg_uper_1">
+        </ion-col>
+        <ion-col size="6" class="b_list4">
+            <p class="b_list1">{{p.user_name}}</p>
+            <span class="view_details" (click)="viewMotorDetail(p)">View Details</span>
+            <!--p class="b_list2"><span class="b_list3">$6</span>/delivery</p-->
+        </ion-col>
+        <ion-col size="4" class="ion-text-right">
+          <p class="b_list5">
+            <img src="assets/img/Star_colored.svg">
+            <span class="b_list6">({{p.ratting_stars}})</span>
+          </p>
+          <p class="b_list7"  *ngIf="availability == 'Yes'"><b class="bullet"></b> Available</p>
+        </ion-col>
+      </ion-row>
+      
+    </ng-container>
+      <ion-row class="b_list9">
+        <ion-col class="ion-text-center">
+          <h3 class="marginZero">Fast Delivery Service</h3>
+          <p class="ft">Earn Extra cash for deliveries.</p>
+          <ion-row>
+            <ion-col size="2"></ion-col>
+            <ion-col size="8">
+              <ion-button color="secondary" expand="block" shape="round" (click)="GotoList()">List your motor</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row class="tup">
+        <ion-col class="ion-text-center">
+          <h3 class="marginZero">Invite Friends</h3>
+          <p class="earn">And earn credits</p>
+          <ion-row>
+            <ion-col size="2"></ion-col>
+            <ion-col size="8">
+              <ion-button color="primary" expand="block" shape="round">Invite</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </div>
+</ion-content>

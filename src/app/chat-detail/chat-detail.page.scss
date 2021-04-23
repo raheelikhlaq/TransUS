@@ -1,0 +1,466 @@
+ion-header .ios {
+  height: 65px;
+}
+
+ion-toolbar .ios {
+  height: 65px;
+}
+
+.bg_header {
+  --background: #c4932f;
+  color: #fff;
+  --padding-top: 1.2em;
+  --padding-bottom: 2.5em;
+}
+ion-title {
+  text-align: left;
+  font-size: 29px;
+  margin-right: 1em;
+  height: 43px;
+}
+
+.ios ion-title {
+  text-align: center;
+  font-size: 21px;
+  margin-right: 1em;
+  height: 43px;
+}
+
+.img_title {
+  margin-left: 1em;
+  margin-top: 10px;
+}
+.b_both {
+  background-color: #efeeee;
+  height: 20px;
+  position: fixed;
+  width: 100%;
+  margin-top: -2px;
+}
+.b_div {
+  background-color: #000;
+  height: 23px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  margin-top: 0em;
+  position: fixed;
+  width: 100%;
+}
+ion-header {
+  overflow: hidden;
+}
+ion-toolbar {
+  padding: 0.8em 0.1em 0 0;
+  --background: #c4932f;
+}
+
+@media only screen and(min-height : 800px) {
+  ion-toolbar {
+    padding: 3em 0.1em 8px 0;
+    --background: #c4932f;
+  }
+}
+
+ion-item {
+  --background: #f7f8fa;
+}
+ion-list {
+  background: transparent;
+  padding-top: 20px;
+  margin-bottom: 0;
+  margin-top: 33%;
+}
+.imageAvatarRight {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  .imageAvatarBottom {
+    max-width: 214px;
+    align-items: flex-end;
+    display: flex;
+    border-radius: 50%;
+    // background: #5B2573;
+    position: relative;
+    top: 6px;
+    z-index: 11;
+  }
+  .avatar {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .imageAvatarBottomIcon {
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    background: var(--ion-color-tertiary-tint);
+    position: absolute;
+    top: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10.1%;
+    color: white;
+  }
+  .chatDiv {
+    text-align: justify;
+    position: relative;
+    background: #fff;
+    color: #000;
+    border-radius: 6px;
+    border-bottom-left-radius: 0;
+    max-width: 72vw;
+    box-shadow: 0px 1px 5px 2px rgb(0 0 0 / 4%);
+    padding: 15px;
+    border-radius: 20px;
+  }
+  ion-img {
+    width: 35px;
+    height: 35px;
+  }
+  .sharper {
+    &.chatDiv {
+      border-radius: 20px;
+    }
+  }
+  .sharper-bottom {
+    &.chatDiv {
+      // border-bottom-left-radius: 0;
+      //  border-bottom-right-radius: 0;
+    }
+  }
+  .sharper-top {
+    &.chatDiv {
+      //  border-top-left-radius: 0;
+      //  border-top-right-radius: 0;
+    }
+  }
+}
+
+.imageAvatarLeft {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  .imageAvatarBottom {
+    max-width: 214px;
+    align-items: flex-end;
+    display: flex;
+    border-radius: 50%;
+    // background: #5B2573;
+    position: relative;
+    top: 6px;
+    z-index: 11;
+  }
+  .avatar {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .imageAvatarBottomIcon {
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    background: var(--ion-color-tertiary-tint);
+    position: absolute;
+    top: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10.1%;
+    color: white;
+  }
+  .chatDiv {
+    text-align: left;
+    position: relative;
+    background: #efeeee;
+    border-radius: 20px;
+    //border-bottom-right-radius: 0;
+    max-width: 72vw;
+    padding: 15px;
+  }
+  ion-img {
+    width: 35px;
+    height: 35px;
+  }
+  .sharper {
+    &.chatDiv {
+      border-radius: 20px;
+    }
+  }
+  .sharper-bottom {
+    &.chatDiv {
+      //  border-bottom-left-radius: 0;
+      //   border-bottom-right-radius: 0;
+    }
+  }
+  .sharper-top {
+    &.chatDiv {
+      //   border-top-left-radius: 0;
+      //   border-top-right-radius: 0;
+    }
+  }
+}
+ion-fab-button {
+  width: 47px !important;
+  height: 47px !important;
+}
+ion-fab {
+  bottom: 0px !important;
+}
+.footerIcon {
+  color: #000;
+}
+ion-input {
+  --placeholder-color: rgba(244, 245, 248, 0.7);
+}
+.chatDivLoader {
+  position: relative;
+  background: #9164ac7a;
+  border-radius: 16px;
+  min-width: 80px;
+  max-width: 80px;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  .corner-parent-right {
+    background: #9164ac7a;
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    left: -4px;
+    bottom: -2px;
+    border-radius: 0;
+    border-radius: 5px;
+    .corner-child-right {
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      background: #9164ac7a;
+      position: absolute;
+      top: 7px;
+      left: -7px;
+    }
+  }
+}
+ion-text {
+  font-size: 12px;
+  color: #e3e3e3;
+}
+ion-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imageAvatarBottomLoader {
+  max-width: 214px;
+  align-items: flex-end;
+  display: flex;
+  border-radius: 50%;
+  position: relative;
+  top: 8px;
+  z-index: 11;
+}
+.hidden {
+  visibility: hidden;
+}
+.loading-col {
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.right {
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+.left {
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.clubbed {
+  .imageAvatarRight {
+    .chatDiv {
+      .corner-parent-right {
+        height: 30px;
+        width: 30px;
+        background: transparent;
+        position: absolute;
+        left: -30px;
+        bottom: 0;
+        overflow: hidden;
+        border-radius: 0;
+        .corner-child-right {
+          width: 30px;
+          height: 30px;
+          border-radius: 15px;
+          background: transparent;
+          box-shadow: 15px 12px 0 0px #9164ac7a;
+        }
+      }
+    }
+  }
+  .imageAvatarLeft {
+    .chatDiv {
+      .corner-parent-left {
+        height: 30px;
+        width: 30px;
+        background: transparent;
+        position: absolute;
+        right: -30px;
+        bottom: 0;
+        overflow: hidden;
+        border-radius: 0;
+        .corner-child-left {
+          width: 30px;
+          height: 30px;
+          border-radius: 15px;
+          background: transparent;
+          box-shadow: -15px 12px 0 0px #20b1d4;
+        }
+      }
+    }
+  }
+}
+.input-box {
+  color: #000;
+}
+.bg_img {
+  background: #000;
+  //  padding-bottom: 13%;
+  position: fixed;
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.header_text {
+  font-size: 29px;
+  color: #fff;
+  position: absolute;
+  bottom: 25%;
+  text-align: left;
+  width: 100%;
+  left: 3%;
+}
+.num {
+  font-size: 31px;
+  background: #8d8d8d;
+  color: #fff;
+  border-radius: 50%;
+  padding: 4px 0px;
+  width: 51px;
+  height: 50px;
+}
+.both_pad {
+  padding: 0px 1em;
+}
+.num_div {
+  position: relative;
+  top: 0.3em;
+  font-family: "RobotoSlab-Regular";
+}
+.chat {
+  padding: 9px 9px;
+  --border-radius: 12px;
+}
+ion-input {
+  --placeholder-color: #b0b0b0;
+  --placeholder-opacity: 1;
+}
+.card_div {
+  position: relative;
+  top: 15%;
+  border-radius: 15px;
+}
+
+/*ion-content {
+    --overflow: hidden;
+  }
+  .chatDivHeight{
+    overflow-y: scroll;
+    height: 36em;
+  }*/
+.country {
+  font-size: 12px;
+  color: #dedede;
+  margin-top: 0px;
+}
+.p_img {
+  height: 60px;
+  width: 56px;
+  border-radius: 14px;
+  border: 2px solid #e3e3e3;
+}
+.display {
+  display: block;
+}
+.heading {
+  margin: 0px;
+}
+ion-footer {
+  background-color: #f7f8fa;
+}
+.img_avatar {
+  width: 50px;
+  border-radius: 50%;
+  height: 50px;
+  position: relative;
+  top: 10px;
+  border: 1px solid #fff;
+  margin-right: 12px;
+  margin-bottom: 2px;
+}
+
+.ios .img_avatar {
+  width: 40px;
+  border-radius: 50%;
+  height: 40px;
+  position: relative;
+  top: 8px;
+  border: 2px solid #fff;
+  margin-right: 12px;
+}
+
+.imgtitle {
+  position: relative;
+  top: -9px;
+}
+
+.ios .imgtitle {
+  position: relative;
+  top: -7px;
+}
+.righttime {
+  color: #1a6bbe;
+  font-size: 12px;
+  margin-right: 10px;
+  margin-bottom: 1.5em;
+}
+.lefttime {
+  color: #1a6bbe;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-bottom: 1.5em;
+}
+
+.sender {
+  color: #000;
+}
+.send_price {
+  font-size: 10px;
+  --padding-start: 14px;
+  --padding-end: 14px;
+}

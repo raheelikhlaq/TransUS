@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/img/Arrow.svg" (click)="back()">
+    </ion-buttons>
+    <ion-title>{{booking_details.model_name}}</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row>
+    <ion-col class="slider_main">
+      <ion-slides pager="true" >
+
+        <ion-slide *ngFor="let p of vehicle_imgs; let i = index">
+          <div class="slide" >
+            <img src="{{base_url}}{{p}}" class="s_img" (click)="previewImage(p)"/>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+  <ion-row class="trip_cost">
+    <ion-col size="6" >
+      <h4>TRIP COST</h4>
+    </ion-col>
+    <ion-col size="6" class="ion-text-right">
+      <h4 class="primary_color">{{currency_symbol}}{{booking_details.trip_cost}}</h4>
+    </ion-col>
+  </ion-row>
+  <ion-row class="descr bg_white" >
+    <ion-col size="12">
+      <h4>Trip Dates</h4>
+    </ion-col>
+    <ion-col size="6">
+      <small>Start Date</small>
+      <p>{{booking_details.start_date}}</p>
+    </ion-col>
+    <ion-col size="6">
+      <small>End Date</small>
+      <p>{{booking_details.end_date}}</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="descr">
+    <ion-col size="12">
+      <h4>Trip Time</h4>
+    </ion-col>
+    <ion-col size="6">
+      <small>Start Time</small>
+      <p>{{start_time}}</p>
+    </ion-col>
+    <ion-col size="6">
+      <small>End Time</small>
+      <p>{{end_time}}</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="descr bg_white">
+    <ion-col size="12">
+      <h4>Location</h4>
+    </ion-col>
+    <ion-col size="6">
+      <small>Pickup</small>
+      <p>{{booking_details.pickup_location}}</p>
+    </ion-col>
+    <ion-col size="6">
+      <small>Dropoff</small>
+      <p>{{booking_details.dropoff_location}}</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="descr bg_white">
+    <ion-col size="12">
+      <h4>Location</h4>
+    </ion-col>
+    <ion-col size="12">
+      <img src="{{base_url}}{{booking_details.license_img_url}}">
+    </ion-col>
+    
+  </ion-row>
+  <ion-row class="btn_footer"> 
+    <ion-col size="2">
+    </ion-col>
+    <ion-col size="8">
+      <ng-conatiner *ngIf="booking_details.status == 'Pending'">
+        <!-- <ion-button *ngIf="booking_details.status == 'Accepted' " color="secondary" expand="block" shape="round" (click)="flutterWaves()">Make Payment</ion-button> -->
+        <ion-button *ngIf="booking_details.status == 'Pending' " color="secondary" expand="block" shape="round" (click)="bookingpage('pending')">View Booking</ion-button>
+      </ng-conatiner>
+
+      <ng-conatiner *ngIf="booking_details.status == 'Accepted'">
+        <ion-button *ngIf="!paymentDone" color="secondary" expand="block" shape="round" (click)="flutterWaves()">Make Payment</ion-button>
+        <ion-button *ngIf="paymentDone" color="secondary" expand="block" shape="round" (click)="bookingpage('upcoming')">View Booking</ion-button>
+      </ng-conatiner>
+     
+     
+    </ion-col>
+  </ion-row>
+  
+</ion-content>

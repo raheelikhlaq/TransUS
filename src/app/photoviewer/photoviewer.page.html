@@ -1,0 +1,41 @@
+<ion-content>
+
+  <ion-row>
+    <ion-col style="padding-left: 20px;
+    padding-top: 20px;">
+      <img src="assets/img/close.png" (click)="closeModel()" style="    height: 15px;
+      width: 15px;">
+    </ion-col>
+  </ion-row>
+
+
+
+  <ion-row class="center">
+    <ion-col class="slider_main">
+      <ion-slides (ionSlideDidChange)="slideChanged($event)" #slides>
+
+        <ng-container *ngIf="veh_imgs.length >0">
+          <ion-slide *ngFor="let p of veh_imgs; let i = index">
+
+            <img src="{{base_urls}}{{p}}" class="s_img">
+
+          </ion-slide>
+
+        </ng-container>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row style="position: absolute;
+  text-align: center;
+  bottom: 25px; width: 100%;">
+    <ion-col style="text-align: center;">
+      <ion-text>{{indexOfSLide}} of {{veh_imgs.length}}</ion-text>
+    </ion-col>
+  </ion-row>
+
+
+
+
+</ion-content>

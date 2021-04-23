@@ -1,0 +1,227 @@
+<ion-header>
+  <ion-toolbar class="header_pd">
+    <ion-buttons slot="start">
+      <img src="assets/img/Arrow.svg" (click)="back()">
+    </ion-buttons>
+    <ion-title>Bookings</ion-title>
+    
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar class="cstomHeader" no-border-top>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button class="dark_p_color"  value="previous" (ionSelect)="getPrevious()">
+        Previous  
+      </ion-segment-button>
+      <ion-segment-button class="dark_p_color"  value="upcoming" (ionSelect)="getUpcoming()">
+       Upcoming
+      </ion-segment-button>
+      <ion-segment-button  class="dark_p_color" value="request" (ionSelect)="getRequest()">
+        Requests
+       </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'previous'">
+      <ng-container *ngIf="previousBooking?.length == 0">
+        <ion-row>
+          <ion-col class="ion-text-center">
+              <h2>Data Not Found!</h2>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+      <ng-container *ngFor="let p of previousBooking; let i = index">
+        <ng-container *ngIf="p.bookings_id">
+        <ion-row class="pd_bs" *ngIf="i % 2 === 0">
+          <ion-col size="4" class="lambo">
+              <h4>Car Name</h4>
+              <img src="assets/img/Lambo.svg">
+          </ion-col>
+          <ion-col class="trip_dates" size="4">
+              <p class="blue">Trip Dates</p>
+              <p class="primary">Start Date</p>
+              <p>{{p.start_date}}</p>
+              <p class="primary">Total Cost</p>
+              <p>{{currency_symbol}} {{p.trip_cost}}</p>
+              <div class="star" >
+                <p class="star_list" *ngIf="p.ratting_stars === '5'"> 
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                </p>
+                <p class="star_list" *ngIf="p.ratting_stars === 4"> 
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                </p>
+                <p class="star_list" *ngIf="p.ratting_stars === 3"> 
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                </p>
+                <p class="star_list" *ngIf="p.ratting_stars === 2"> 
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                </p>
+                <p class="star_list" *ngIf="p.ratting_stars === 1"> 
+                  <img src="assets/img/yellow_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                  <img src="assets/img/grey_star.svg">
+                </p>
+              </div>
+          </ion-col>
+          <ion-col class="trip_end_date" size="4">
+            <p class="primary"> End Date</p>
+            <p>{{p.end_date}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="pd_bs bg_grey" *ngIf="i % 2 != 0">
+          <ion-col size="4" class="lambo">
+              <h4>Car Name</h4>
+              <img src="assets/img/Lambo.svg">
+          </ion-col>
+          <ion-col class="trip_dates" size="4">
+              <p class="blue">Trip Dates</p>
+              <p class="primary">Start Date</p>
+              <p>{{p.start_date}}</p>
+              <p class="primary">Total Cost</p>
+              <p>{{currency_symbol}} {{p.trip_cost}}</p>
+              <!--p class="give_rating">Give Ratings</p-->
+          </ion-col>
+          <ion-col class="trip_end_date" size="4">
+            <p class="primary"> End Date</p>
+            <p>{{p.end_date}}</p>
+          </ion-col>
+        </ion-row> 
+      </ng-container>
+      </ng-container> 
+    </ion-list>
+    <ion-list *ngSwitchCase="'upcoming'">
+      <ng-container *ngIf="upcomingBooking?.length == 0">
+        <ion-row>
+          <ion-col class="ion-text-center">
+              <h2>Data Not Found!</h2>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+      <ng-container *ngFor="let p of upcomingBooking; let i = index">
+        <ng-container *ngIf="p.bookings_id">
+      <ion-row class="pd_bs" *ngIf="i % 2 === 0">
+        <ion-col size="4" class="lambo">
+            <h4>Car Name</h4>
+            <img src="assets/img/Lambo.svg">
+        </ion-col>
+        <ion-col class="trip_dates" size="4">
+            <p class="blue">Trip Dates</p>
+            <p class="primary">Start Date</p>
+            <p>{{p.start_date}}</p>
+            <p class="primary">Total Cost</p>
+            <p>{{currency_symbol}} {{p.trip_cost}}</p>
+            <p class="danger" (click)="cancel(p)">Cancel</p>
+            <!--p class="star">
+              <img src="assets/img/yellow_star.svg">
+              <img src="assets/img/yellow_star.svg">
+              <img src="assets/img/yellow_star.svg">
+              <img src="assets/img/yellow_star.svg">
+              <img src="assets/img/grey_star.svg">
+            </p-->
+        </ion-col>
+        <ion-col class="trip_end_date" size="4">
+          <p class="primary"> End Date</p>
+          <p>{{p.end_date}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="pd_bs bg_grey" *ngIf="i % 2 != 0">
+        <ion-col size="4" class="lambo">
+            <h4>Car Name</h4>
+            <img src="assets/img/Lambo.svg">
+        </ion-col>
+        <ion-col class="trip_dates" size="4">
+            <p class="blue">Trip Dates</p>
+            <p class="primary">Start Date</p>
+            <p>{{p.start_date}}</p>
+            <p class="primary">Total Cost</p>
+            <p>{{currency_symbol}} {{p.trip_cost}}</p>
+            <p class="danger" (click)="cancel(p)">Cancel</p>
+        </ion-col>
+        <ion-col class="trip_end_date" size="4">
+          <p class="primary"> End Date</p>
+          <p>{{p.end_date}}</p>
+        </ion-col>
+      </ion-row> 
+    </ng-container>
+    </ng-container>
+    </ion-list>
+
+
+    <ion-list *ngSwitchCase="'request'">
+      <ng-container *ngIf="requested_bookings?.length == 0">
+        <ion-row>
+          <ion-col class="ion-text-center">
+              <h2>Data Not Found!</h2>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+      <ng-container *ngFor="let p of requested_bookings; let i = index">
+        <ng-container *ngIf="p.bookings_id">
+        <ion-row class="pd_bs" *ngIf="i % 2 === 0">
+          <ion-col size="4" class="lambo">
+              <h4>Car Name</h4>
+              <img src="assets/img/Lambo.svg">
+          </ion-col>
+          <ion-col class="trip_dates" size="4">
+              <p class="blue">Trip Dates</p>
+              <p class="primary">Start Date</p>
+              <p>{{p.start_date}}</p>
+              <p class="primary">Total Cost</p>
+              <p>{{currency_symbol}} {{p.trip_cost}}</p>
+              <p class="danger" (click)="reject(p)">Reject</p>
+              
+          </ion-col>
+          <ion-col class="trip_end_date" size="4">
+            <p class="primary"> End Date</p>
+            <p>{{p.end_date}}</p>
+            <p class="accept" *ngIf="p.status == 'Pending' " (click)="accept(p)">Accept</p>
+            <p class="accept-unpaid" *ngIf="p.status == 'Accepted' " (click)="acceptUnapid()">Unpaid</p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="pd_bs bg_grey" *ngIf="i % 2 != 0">
+          <ion-col size="4" class="lambo">
+              <h4>Car Name</h4>
+              <img src="assets/img/Lambo.svg">
+          </ion-col>
+          <ion-col class="trip_dates" size="4">
+              <p class="blue">Trip Dates</p>
+              <p class="primary">Start Date</p>
+              <p>{{p.start_date}}</p>
+              <p class="primary">Total Cost</p>
+              <p>{{currency_symbol}} {{p.trip_cost}}</p>
+              <p class="danger" (click)="reject(p)">Reject</p>
+          </ion-col>
+          <ion-col class="trip_end_date" size="4">
+            <p class="primary"> End Date</p>
+            <p>{{p.end_date}}</p>
+            <p class="accept" *ngIf="p.status == 'Pending' " (click)="accept(p)">Accept</p>
+            <p class="accept-unpaid" *ngIf="p.status == 'Accepted' " (click)="acceptUnapid()">Unpaid</p>
+          </ion-col>
+        </ion-row>
+      </ng-container> 
+      </ng-container>
+    </ion-list>
+  </div>
+  <div class="btn_fixed">
+    <ion-button color="secondary" expand="block" shape="round" (click)="BookNow()">Book Now</ion-button>
+  </div>
+</ion-content>

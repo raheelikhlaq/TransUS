@@ -1,0 +1,97 @@
+ion-toolbar {
+    padding: 0.8em 0.1em 0 0;
+    --background: #c4932f;
+}
+
+@media only screen and(min-height : 800px) {
+    ion-toolbar {
+        padding: 3em 0.1em 8px 0;
+        --background: #c4932f;
+    }
+}
+
+ion-title {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    padding-left: 0px;
+}
+ion-header {
+    margin-bottom: 10px;
+}
+.b_list1 {
+    margin: 0px;
+    font-size: 14px;
+}
+
+.s_img {
+    width: 100%;
+    border-radius: 12px;
+}
+.main_div {
+    width: 100%;
+    margin: 0px 8px;
+}
+.pentagon {
+    position: absolute;
+    top: 17px;
+    left: 17px;
+}
+.bg_bottom {
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    right: 1.2%;
+    left: 1.2%;
+    background: #00000063;
+    color: #fff;
+    border-bottom-right-radius: 10px;
+    bottom: 9px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.fav_1 {
+    text-align: left;
+}
+.fav_2 {
+    text-align: right;
+}
+.fav_1 h2,
+h5 {
+    margin: 0px;
+}
+.fav_1 h5 {
+    font-size: 16px;
+}
+.fav_2 p {
+    margin: 0px;
+}
+.star_list img {
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.badge {
+    position: absolute;
+    top: 6px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+}
+.badge_dollar {
+    color: #c4932f;
+    font-size: 9px;
+    display: block;
+}
+.badge_price {
+    font-size: 9px;
+    color: #c4932f;
+    position: relative;
+    top: -6px;
+}
+.badge_per {
+    color: #fff;
+    font-size: 6px;
+    display: block;
+    margin-left: 1px;
+    margin-top: -5px;
+}

@@ -1,0 +1,86 @@
+ion-toolbar {
+    padding: 0.8em 0.1em 0 0;
+    --background: #c4932f;
+}
+
+@media only screen and(min-height : 800px) {
+    ion-toolbar {
+        padding: 3em 0.1em 8px 0;
+        --background: #c4932f;
+    }
+}
+
+ion-title{
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+}
+.b_list1{
+    margin: 0px;
+    font-size: 14px;
+}
+.b_list2{
+    color: #E2AC3C;
+    margin: 0px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.list_1{
+    padding: 0em 1em;
+}
+.list_1 h3{
+    margin: 0px;
+    margin-top: 0.5em;
+}
+.pd_8{
+    padding-left: 8px;
+}
+.pentagon1{
+    width: 100%;
+    height: 63px;
+    margin: 0 auto;
+    background-size: cover  !important;
+    -webkit-clip-path: polygon(50% 0%, 100% 30%, 100% 75%,50% 100%, 0% 75%, 0% 28%);
+    clip-path:polygon(50% 0%, 100% 30%, 100% 75%,50% 100%, 0% 75%, 0% 28%); 
+}
+
+.bg_uper_1{
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+}
+
+.b_list4{
+    padding-top: 1.2em;
+}
+
+.b_list5{
+    margin-top: 13px;
+    margin-bottom: 0px;
+}
+.b_list5 img{
+    width: 13px;
+    margin-right: 2px;
+}
+.b_list6{
+    font-size: 12px;
+    margin-left: 5px;
+}
+.b_list7{
+    margin: 0px;
+    font-size: 12px;
+    text-align: right;
+}
+.b_list7 span{
+    color:#E2AC3C;
+}
+.b_list8{
+    background: #F7F8FA;
+    padding-bottom: 4px;
+    padding-top: 2px;
+}
+.b_list9{
+    margin-top: 0.8em;
+}

@@ -1,0 +1,360 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@font-face {
+    font-family: "VarelaRound-Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("assets/fonts/VarelaRound-Regular.ttf");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+        U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.alura {
+    font-family: "VarelaRound-Regular" !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    font-family: "VarelaRound-Regular" !important;
+}
+@font-face {
+    font-family: "SFUIText-HeavyItalic";
+    font-style: normal;
+    font-weight: normal;
+    src: url("assets/fonts/SFUIText-HeavyItalic.ttf");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+        U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+.SFUIText-HeavyItalic {
+    font-family: "SFUIText-HeavyItalic" !important;
+}
+ion-menu {
+    --width: 100%;
+}
+ion-split-pane {
+    --border: none !important;
+    ion-menu {
+        --background: #000000bf !important;
+        ion-content {
+            --background: transparent !important;
+            ion-list-header {
+                --background: transparent !important;
+                --color: #ffffff !important;
+            }
+            ion-item {
+                --background: transparent !important;
+                --color: #ffffff !important;
+                ion-icon {
+                    padding-right: 10px !important;
+                }
+            }
+        }
+    }
+}
+.text-white {
+    color: #fff;
+}
+.text-white p {
+    font-size: 13px;
+}
+.tp {
+    margin: 4em 0em 0 0;
+}
+.searchbar-search-icon.sc-ion-searchbar-md {
+    color: #c4932f;
+}
+.searchbar-input {
+    font-size: 12px !important;
+    font-family: "VarelaRound-Regular" !important;
+}
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal > .swiper-pagination-bullets {
+    position: absolute;
+    bottom: 1.5em;
+}
+.swiper-pagination-bullet {
+    background: #fff;
+    opacity: 1;
+}
+.swiper-pagination-bullet-active {
+    width: 12px;
+    height: 12px;
+    top: 1px;
+    position: relative;
+}
+.ic_top {
+    margin-top: 1em;
+}
+ion-segment-button {
+    text-transform: capitalize;
+}
+.popover-content.sc-ion-popover-md {
+    top: 30% !important;
+    margin: 0 auto;
+    border-radius: 18px;
+}
+.sc-ion-popover-md-h {
+    --width: 85%;
+}
+.popover-content.sc-ion-popover-ios {
+    top: 30% !important;
+    margin: 0 auto;
+    border-radius: 18px;
+}
+.sc-ion-popover-ios-h {
+    --width: 85%;
+}
+ion-toggle.toggle-checked.toggle-icon {
+    background: rgb(196 147 47) !important;
+}
+ion-toggle.toggle-icon {
+    top: 0px !important;
+}
+
+.rm_auto input:-webkit-autofill,
+.rm_auto input:-webkit-autofill:hover,
+.rm_auto input:-webkit-autofill:focus,
+.rm_auto input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #000 inset !important;
+    -webkit-text-fill-color: #fff !important;
+    border-radius: 30px !important;
+}
+
+.ot_auto input:-webkit-autofill,
+.ot_auto input:-webkit-autofill:hover,
+.ot_auto input:-webkit-autofill:focus,
+.ot_auto input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #f7f8fa inset !important;
+    -webkit-text-fill-color: #000 !important;
+    border-radius: 30px !important;
+}
+.ios ion-title {
+    padding-right: 0px;
+    padding-left: 0px;
+    font-size: 18px !important;
+}
+.ios ion-button {
+    --padding-bottom: 1em !important;
+    --padding-top: 1em !important;
+}
+.ios ion-searchbar {
+    padding-bottom: 0px;
+    color: #fff;
+    height: 35px;
+}
+.sc-ion-searchbar-ios {
+    color: #fff !important;
+}
+.ios ion-range::part(knob) {
+    background: #c4932f !important;
+    height: 16px;
+    width: 16px;
+    top: 16px;
+}
+.ios .fix-ios {
+    padding-left: 1em;
+}
+
+.dark_p_color {
+    color: var(--ion-paragraph-color) !important;
+}
+
+.dark_white_light_black {
+    color: var(--ion-dark-white-light-black) !important;
+}
+
+.map-model {
+    --height: 100%;
+    --border-radius: 0px;
+    padding: 0px;
+    background: black;
+}
+
+@media (orientation: portrait) {
+    .center {
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (orientation: landscape) {
+    .center {
+        margin-top: 110px;
+    }
+}
+
+// ion-header {
+//     padding-right: 8px;
+//     padding-left: 8px;
+//     padding-top: 1em;
+//     background: #c4932f;
+// }
+// @media only screen and(min-height : 800px) {
+//     ion-header {
+//         padding-right: 8px;
+//         padding-left: 8px;
+//         padding-top: 3em;
+//         background: #c4932f;
+//     }
+// }
+
+// ion-header.ios.header-ios.header-collapse-none.hydrated {
+//     padding-right: 8px;
+//     padding-left: 8px;
+//     padding-top: 1em;
+//     padding-bottom: 5px;
+//     background: #c4932f;
+// }
+
+ion-header.md.header-md.header-collapse-none.hydrated {
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-top: 1em;
+    padding-bottom: 5px;
+    background: #c4932f;
+}
+
+.header-ios ion-toolbar:last-of-type {
+    --border-width: 0 0 0px;
+}
+
+/* iphone 3 */
+@media only screen and (min-device-width: 320px) and (max-device-height: 480px) and (-webkit-device-pixel-ratio: 1) {
+    ion-header {
+        padding-right: 8px;
+        padding-left: 8px;
+        padding-top: 1em;
+        padding-bottom: 5px;
+        background: #c4932f;
+    }
+}
+
+/* iphone 4 */
+@media only screen and (min-device-width: 320px) and (max-device-height: 480px) and (-webkit-device-pixel-ratio: 2) {
+    ion-header {
+        padding-right: 8px;
+        padding-left: 8px;
+        padding-top: 1em;
+        padding-bottom: 5px;
+        background: #c4932f;
+    }
+}
+
+/* iphone 5 */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
+    ion-header {
+        padding-right: 8px;
+        padding-left: 8px;
+        padding-top: 0.5em;
+        padding-bottom: 5px;
+        background: #c4932f;
+    }
+}
+
+/* iphone 6, 6s, 7, 8 */
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+    ion-header {
+        padding-right: 8px;
+        padding-left: 8px;
+        padding-top: 0.5em;
+        padding-bottom: 5px;
+        background: #c4932f;
+    }
+}
+
+/* iphone 6+, 6s+, 7+, 8+ */
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+    ion-header {
+        padding-right: 8px;
+        padding-left: 8px;
+        padding-top: 0.5em;
+        padding-bottom: 5px;
+        background: #c4932f;
+    }
+}
+
+/* iphone X , XS, 11 Pro, 12 Mini */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    ion-header {
+        padding-right: 8px;
+        padding-left: 8px;
+        padding-top: 0.5em;
+        padding-bottom: 5px;
+        background: #c4932f;
+    }
+}
+
+/* iphone 12, 12 Pro */
+@media only screen and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+    ion-header {
+        padding-right: 8px;
+        padding-left: 8px;
+        padding-top: 0.5em;
+        padding-bottom: 5px;
+        background: #c4932f;
+    }
+}
+
+/* iphone XR, 11 */
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+    ion-header {
+        padding-right: 8px;
+        padding-left: 8px;
+        padding-top: 0.5em;
+        padding-bottom: 5px;
+        background: #c4932f;
+    }
+}
+
+/* iphone XS Max, 11 Pro Max */
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+    ion-header {
+        padding-right: 8px;
+        padding-left: 8px;
+        padding-top: 0.5em;
+        padding-bottom: 5px;
+        background: #c4932f;
+    }
+}
+
+/* iphone 12 Pro Max */
+@media only screen and (min-device-width: 428px) and (max-device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+    ion-header {
+        padding-right: 8px;
+        padding-left: 8px;
+        padding-top: 0.5em;
+        padding-bottom: 5px;
+        background: #c4932f;
+    }
+}

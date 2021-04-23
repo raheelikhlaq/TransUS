@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/img/Menu.svg" (click)="toggleMenu()">
+    </ion-buttons>
+    <ion-title>Notifications</ion-title>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="notifications?.length >0">
+    <ion-row class="pdtop" *ngFor="let notification of notifications" (click)="accptOffer(notification)">
+    <ion-col size="2" class="notify_image_main">
+      <img src="{{base_url}}{{notification.sender_img_url}}">
+    </ion-col>
+    <ion-col  class="notify_content" size="10">
+      <ion-row>
+        <ion-col size="6" class="ion-text-left">
+            <p class="notfy_title">{{notification.sender_name}}</p>
+        </ion-col>
+        <ion-col size="6" class="ion-text-right">
+            <p  class="notify_time">{{notification.time_added}}</p>
+        </ion-col>
+        <ion-col size="12" class="ion-text-left notify_desc_main">
+            <p class="notify_desc">{{notification.content}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+</ion-row>
+</ng-container>
+<ng-container *ngIf="notifications?.length == 0">
+  <ion-row>
+    <ion-col class="ion-text-center">
+        <h2>Data Not Found!</h2>
+    </ion-col>
+  </ion-row>
+</ng-container>
+</ion-content>

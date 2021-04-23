@@ -1,0 +1,47 @@
+
+<ion-content>
+  <div style="padding:10px 10px 20px 10px!important;">
+  <ion-row>
+    <ion-col class="text-right">
+      <img src="assets/img/minimize.svg" (click)="ok()">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="text-center" size="12">
+      <h1 class="alura">Ratings</h1>
+      <p class="alura m_0">Give your Ratings and Feedback</p>
+    </ion-col>
+  </ion-row>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center my_rating">
+          <img src="assets/img/bg_star_active.svg" (click)="logRatingChange(1)" *ngIf="active_star_1">
+          <img src="assets/img/bg_star_active.svg" (click)="logRatingChange(2)" *ngIf="active_star_2">
+          <img src="assets/img/bg_star_active.svg" (click)="logRatingChange(3)" *ngIf="active_star_3">
+          <img src="assets/img/bg_star_active.svg" (click)="logRatingChange(4)" *ngIf="active_star_4">
+          <img src="assets/img/bg_star_active.svg" (click)="logRatingChange(5)" *ngIf="active_star_5">
+          <img src="assets/img/bg_star_inactive.svg" (click)="logRatingChange(1)" *ngIf="active_star_1 == false" >
+          <img src="assets/img/bg_star_inactive.svg" (click)="logRatingChange(2)" *ngIf="active_star_2 == false" >
+          <img src="assets/img/bg_star_inactive.svg" (click)="logRatingChange(3)" *ngIf="active_star_3 == false" >
+          <img src="assets/img/bg_star_inactive.svg" (click)="logRatingChange(4)" *ngIf="active_star_4 == false" >
+          <img src="assets/img/bg_star_inactive.svg" (click)="logRatingChange(5)" *ngIf="active_star_5 == false" >
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <ion-textarea rows="6" placeholder="Enter your feedback Here!" [(ngModel)]="Description"  class="list_3"></ion-textarea>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-row>
+     <ion-col  size="3">
+
+     </ion-col>
+     <ion-col size="6" class="ion-text-center">
+        <ion-button color="primary" class="alura"  (click)="giveRating()" shape="round" expand="block">Ok</ion-button>  
+     </ion-col>
+  </ion-row>
+  </div>
+</ion-content>

@@ -1,0 +1,194 @@
+ion-toolbar {
+    padding: 0.8em 0.1em 0 0;
+    --background: #c4932f;
+}
+
+@media only screen and(min-height : 800px) {
+    ion-toolbar {
+        padding: 3em 0.1em 8px 0;
+        --background: #c4932f;
+    }
+}
+
+ion-searchbar {
+    --border-radius: 22px;
+    --box-shadow: none;
+    padding: 0em 2em 0em 1.5em;
+}
+.bg_list {
+    background: #fff;
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    z-index: 10;
+}
+.bg_list ion-item {
+    width: 100%;
+}
+.sort {
+    margin: 0.6em 0.4em;
+}
+.sort .text1 {
+    font-size: 18px;
+    margin: 0px;
+}
+.sort .text2 {
+    margin: 0px;
+    font-size: 14px;
+}
+.sort .text2 img {
+    position: relative;
+    top: 3px;
+    margin-left: 10px;
+}
+.month {
+    padding: 1em 0.4em 0.5em 0.4em;
+}
+.bg_grey {
+    background: #f9f9f9;
+    padding: 0em 0.4em;
+}
+.month_slider {
+    margin-top: 0px;
+    margin-bottom: 1em;
+    display: flex;
+    overflow: auto;
+}
+.month_slider span {
+    border: 1px solid #000;
+    border-radius: 22px;
+    padding: 8px 14px;
+    margin-left: 1em;
+}
+.num {
+    padding: 9px 10px !important;
+}
+.month_slider span:first-child {
+    margin-left: 0em;
+}
+ion-range {
+    --bar-height: 6px;
+    --knob-size: 24px;
+    --knob-box-shadow: 0px 0px 0px 3px #fff;
+    padding: 0px 3px;
+    --bar-border-radius: 10px;
+}
+.m_price {
+    margin: 0.6em 0.4em;
+}
+.huly {
+    color: #272727;
+}
+.price {
+    padding: 1em 0.4em 0em 0.4em;
+}
+.tog1 {
+    font-size: 13px;
+    color: #272727;
+}
+.tog1 h4 {
+    margin: 0px;
+}
+.tog1 p {
+    margin: 0px;
+}
+.tog_main {
+    background: #f9f9f9;
+    padding: 1em 0.3em;
+}
+ion-item {
+    --background: transparent;
+    float: right;
+}
+ion-toggle {
+    height: 22px;
+    padding-right: 0px;
+    padding-top: 0px;
+}
+.bg_none {
+    background: none;
+}
+.main_drop {
+    background: #f9f9f9;
+}
+.m_f {
+    padding: 0px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+}
+.m_s {
+    background: #fff;
+}
+.m_t {
+    padding: 1em 0.5em;
+}
+.m_t h5 {
+    margin: 0px;
+    font-size: 13px;
+}
+.m_t p {
+    margin: 0px;
+    font-size: 12px;
+    color: #272727;
+}
+.m_r {
+    padding-left: 4px;
+    padding-bottom: 4px;
+    padding: 0px;
+}
+.view_result {
+    background: #f9f9f9;
+    padding: 0.5em 0em;
+}
+
+ion-toggle.toggle-checked::part(track) {
+    background: rgb(196 147 47) !important;
+}
+ion-range::part(bar) {
+    background: rgba(var(--ion-color-base-rgb), 1);
+}
+.arrow_down {
+    text-align: center;
+    margin-top: 1em;
+}
+.arrow_down img {
+    width: 8px;
+}
+.activeState {
+    background: #c4932f;
+    border: 1px solid #c4932f !important;
+    color: #fff !important;
+}
+ion-slide span {
+    border: 1px solid #000;
+    border-radius: 22px;
+    padding: 8px 14px;
+    margin-left: 1em;
+}
+.num {
+    padding: 9px 10px !important;
+}
+.calender_slider {
+    background: #f9f9f9;
+    padding: 0.6em 0em;
+}
+.calender_slider_text {
+    margin: 0px;
+    position: relative;
+    top: -2px;
+    font-size: 18px;
+}
+ion-slide {
+    margin-left: 0.6em;
+}
+ion-slide:first-child {
+    margin-left: 0em;
+}
+ion-select {
+    position: absolute;
+    color: #fff;
+    z-index: -10;
+}
+ion-select::part(text) {
+    display: none;
+}

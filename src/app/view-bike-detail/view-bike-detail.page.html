@@ -1,0 +1,117 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <img src="assets/img/Arrow.svg" (click)="goToHome()">
+  </ion-buttons>
+  <ion-title>Motor Delivery</ion-title>
+  <ion-buttons slot="end" routerLink="/filters" >
+    <img src="assets/img/share.svg">
+  </ion-buttons>
+ </ion-toolbar>
+
+<ion-content>
+  <ion-row>
+    <ion-col class="slider_main">
+      <ion-slides pager="true" >
+
+        <ion-slide>
+          <div class="slide" >
+            <img src="assets/img/bike_img.svg" class="s_img" />
+            <!--div class="heart">
+              <img src="assets/img/heart.svg" class="" />
+            </div-->
+          </div>
+        </ion-slide>
+    
+        <ion-slide>
+          <div class="slide" >
+            <img src="assets/img/bike_img.svg" class="s_img" />
+            <!--div class="heart">
+              <img src="assets/img/heart.svg" class="" />
+            </div-->
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="motor_detail.availability =='Yes'">
+    <ion-col class="descr">
+      <h3>Availabiliy</h3>
+      <p class="b_list7"><b class="bullet"></b> Available</p>
+    </ion-col>
+  </ion-row>
+  
+  <ion-row class="rating">
+    <ion-col size="6">
+      <h3>Ratings</h3>
+    </ion-col>
+    <!--ion-col size="6">
+      <h3 class="view_all">View All</h3>
+    </ion-col-->
+  </ion-row>
+  <ion-row>
+    <ion-col class="stars">
+      <p class="star_list" *ngIf="motor_detail.ratting_stars === '5'"> 
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/yellow_star.svg">
+      </p>
+      <p class="star_list" *ngIf="motor_detail.ratting_stars === '4'"> 
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/grey_star.svg">
+      </p>
+      <p class="star_list" *ngIf="motor_detail.ratting_stars === '3'"> 
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/grey_star.svg">
+        <img src="assets/img/grey_star.svg">
+      </p>
+      <p class="star_list" *ngIf="motor_detail.ratting_stars === '2'"> 
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/grey_star.svg">
+        <img src="assets/img/grey_star.svg">
+        <img src="assets/img/grey_star.svg">
+      </p>
+      <p class="star_list" *ngIf="motor_detail.ratting_stars === '1'"> 
+        <img src="assets/img/yellow_star.svg">
+        <img src="assets/img/grey_star.svg">
+        <img src="assets/img/grey_star.svg">
+        <img src="assets/img/grey_star.svg">
+        <img src="assets/img/grey_star.svg">
+      </p>
+      <span class="left_star">269 trips</span>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="descr m_top">
+      <h3>Driving License </h3>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center driv_lis">
+        <img src="{{base_urls}}{{motor_detail.license_no_img}}">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="descr m_top">
+      <h3>Insurance Document </h3>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center driv_lis">
+        <img src="{{base_urls}}{{motor_detail.insurance_img}}">
+    </ion-col>
+  </ion-row>
+  <ion-row class="btn_footer"> 
+    <ion-col size="2"></ion-col>
+    <ion-col size="8">
+      <ion-button color="primary" expand="block" shape="round" (click)="enquiryCharges()">Inquire Charges</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

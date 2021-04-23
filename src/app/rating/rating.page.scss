@@ -1,0 +1,213 @@
+ion-toolbar {
+    padding: 0.8em 0.1em 0 0;
+    --background: #c4932f;
+}
+
+@media only screen and(min-height : 800px) {
+    ion-toolbar {
+        padding: 3em 0.1em 8px 0;
+        --background: #c4932f;
+    }
+}
+
+ion-title{
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+}
+ion-button{
+    --padding-bottom: 1.5em;
+    --padding-top: 1.5em;
+    --box-shadow: none;
+    text-transform: capitalize;
+}
+.progres_bar{
+    color: #b0b0b0;
+    font-size: 14px;
+}
+.pb1{
+    margin-top: 6px;
+}
+.pb2{
+    position: absolute;
+    top: 13%;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    color: #fff;
+}
+.pb3{
+    margin: 0px;
+}
+.pb4{
+    margin: 0px;
+    font-size: 13px;
+    color:#1A6BBE;
+}
+.pb5{
+    padding: 0em 1em;
+}
+.pb6{
+    color: #464646;
+    background: #fff;
+    box-shadow: 1px 1px 5px 1px #00000014;
+    border-radius: 10px;
+    padding:4px 16px;
+    font-size: 13px;
+    margin-right: 10px;
+}
+.pb7{
+    padding: 0.5em 1em;
+    background: #fefefe;
+    border-top: 7px solid #F7F8FA;
+}
+.pb8{
+    position: relative;
+    left: 3%;
+    top: -4px;
+}
+.pb9{
+    font-size: 13px;
+    margin-top: 0px;
+}
+.pb10{
+    margin-bottom: 5px
+}
+.pb11{
+    margin: 0px;
+    font-size: 14px;
+    margin-top: 7px;
+}
+.pb12{
+    margin: 0px;
+    color: #B0B0B0;
+    font-size: 10px;
+}
+.pb13{
+    border-bottom: 2px solid #D3D3D3;
+    width: 100%;
+    height: 2px;
+    margin: 0.7em 0em;
+}
+.lce span{
+    font-size: 14px;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 6px;
+    top: -1px;
+}
+
+.mf{
+    margin-left: 0.5em;
+}
+.cstomHeader{
+    --background: #fff;
+}
+.segment-button-checked{
+    background: #F7F8FA;
+    color: #464646;
+}
+.bg_grey{
+    background:#F9F9F9;
+}
+.pd_bs{
+    padding: 0.7em 1em;
+}
+.lambo h4{
+    margin: 0px;
+    margin-bottom: 3px;
+}
+.trip_dates{
+    font-size: 10px;
+    padding-top: 2.4em;
+    padding-left: 1.3em;
+}
+.trip_dates p{
+   margin: 0px; 
+   margin-top: 6px;
+}
+.blue{
+    color:#1A6BBE;
+}
+.primary{
+    color:#C4932F;
+}
+.trip_end_date{
+    font-size: 10px;
+    padding-top: 4.2em;
+    padding-left: 1.3em;
+}
+.trip_end_date p{
+   margin: 0px; 
+   margin-top: 6px;
+}
+.star img:first-child{
+    margin-left: 0px !important;
+}
+.star img{
+    margin-left: 4px;
+}
+.give_rating{
+    background: #C4932F;
+    color: #fff;
+    padding: 0.7em;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    margin-top: 10px !important;
+}
+.danger{
+    background: #D93A3A;
+    color: #fff;
+    padding: 0.7em;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    margin-top: 10px !important;
+}
+.btn_fixed{
+    position: fixed;
+    bottom: 1em;
+    left: 3em;
+    right: 3em;
+    text-align: center;
+}
+
+.notify_image_main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notify_image_main img{
+    border-radius: 50%;
+}
+.notify_content p{
+    margin: 0px;
+}
+.notify_desc{
+    font-size: 10px;
+    color: #0091EA;
+}
+.notify_desc_main{
+     padding-top: 0px;
+}
+.notfy_title{
+    color:#1A6BBE;
+    font-size: 10px;
+}
+.notify_time{
+    color:#C4932F;
+    font-size: 10px;  
+}
+.notify_bg{
+    background: #F9F9F9;
+}
+.pdtop{
+    padding: 5px 0em;
+}
+.star_list img{
+    margin-right: 5px;
+    margin-top: 5px;
+}

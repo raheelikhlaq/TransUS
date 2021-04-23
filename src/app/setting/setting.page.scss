@@ -1,0 +1,52 @@
+ion-toolbar {
+    padding: 0.8em 0.1em 0 0;
+    --background: #c4932f;
+}
+
+@media only screen and(min-height : 800px) {
+    ion-toolbar {
+        padding: 3em 0.1em 8px 0;
+        --background: #c4932f;
+    }
+}
+
+ion-title{
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    padding-left: 0px;
+}
+.notify{
+    padding: 0.5em 0.5em;
+}
+.notify h4{
+    margin: 0px;
+    font-size: 16px;
+}
+.notify p{
+    margin: 0px;
+    font-size: 12px;
+}
+.bg_grey{
+    background:#F9F9F9;
+}
+.arrow_right{
+    display: flex;
+    justify-content: flex-end;
+}
+ion-item{
+    --background: transparent;
+    float: right;
+}
+ion-toggle{
+    height: 22px;
+    padding-right: 0px;
+    padding-top: 0px;
+}
+ion-toggle.toggle-checked::part(track)  {
+    background: rgb(196 147 47) !important;
+}
+ion-item {
+    --padding-end: 0px;
+    --inner-padding-end: 0px;
+}

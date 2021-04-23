@@ -1,0 +1,24 @@
+
+<ion-content>
+  <div style="padding: 10px !important;">
+  <ion-row>
+    <ion-col class="text-right">
+      <img src="assets/img/minimize.svg" (click)="ok()">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="text-center" size="12">
+      <h1 class="alura">{{currency_symbol}}{{price}}</h1>
+      <p class="alura m_0">Do you want to accept this offer from the owner?</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+     <ion-col  size="6" class="ion-text-center">
+      <ion-button color="danger" class="alura"  (click)="ok()" shape="round" expand="block">Reject</ion-button>  
+     </ion-col>
+     <ion-col size="6" class="ion-text-center">
+        <ion-button color="secondary" class="alura"  (click)="sendRequest()" shape="round" expand="block">Accept</ion-button>  
+    </ion-col>
+  </ion-row>
+  </div>
+</ion-content>

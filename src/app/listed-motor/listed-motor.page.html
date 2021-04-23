@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/img/Menu.svg" (click)="toggleMenu()">
+    </ion-buttons>
+    <ion-title>Listed Motor</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ng-container *ngIf="vehicles_list?.length >0">
+    <ng-container *ngFor="let p of vehicles_list; let i = index">
+      <ion-row class="pd_bs" *ngIf="i % 2 === 0">
+        <ion-col size="4" class="lambo">
+            <img src="{{base_url}}{{p.license_no_img}}">
+        </ion-col>
+        <ion-col class="trip_dates" size="4">
+            <h4>License Number</h4>
+            <p class="blue">Availability Status</p>
+            <p class="b_list7" *ngIf="p.available == 'Yes'"><b class="bullet"></b> Available</p>
+            <p class="b_list7" *ngIf="p.available == 'No'"><b class="bullet"></b> Unavailable</p>
+            <p class="give_rating" (click)="goToEdit(p)">Edit Details</p>
+        </ion-col>
+        <ion-col class="trip_end_date" size="4">
+          <ion-item lines="none">
+            <ng-container *ngIf="p.available == 'Yes'">
+              <ion-toggle slot="start" name="blueberry" color="tertiary" checked></ion-toggle>
+            </ng-container>
+            <ng-container *ngIf="p.available == 'No'">
+              <ion-toggle slot="start" name="blueberry" color="tertiary" ></ion-toggle>
+            </ng-container>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="pd_bs bg_grey" *ngIf="i % 2 != 0">
+        <ion-col size="4" class="lambo">
+            <img src="{{base_url}}{{p.license_no_img}}">
+        </ion-col>
+        <ion-col class="trip_dates" size="4">
+            <h4>License Number</h4>
+            <p class="blue">Availability Status</p>
+            <p class="b_list7" *ngIf="p.available == 'Yes'"><b class="bullet"></b> Available</p>
+            <p class="b_list7" *ngIf="p.available == 'No'"><b class="bullet"></b> Unavailable</p>
+            <p class="give_rating" (click)="goToEdit(p)">Edit Details</p>
+        </ion-col>
+        <ion-col class="trip_end_date" size="4">
+          <ion-item lines="none">
+            <ng-container *ngIf="p.available == 'Yes'">
+              <ion-toggle slot="start" name="blueberry" color="tertiary" checked></ion-toggle>
+            </ng-container>
+            <ng-container *ngIf="p.available == 'No'">
+              <ion-toggle slot="start" name="blueberry" color="tertiary" ></ion-toggle>
+            </ng-container>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  </ng-container>
+</ng-container>
+<ng-container *ngIf="vehicles_list?.length == 0">
+  <ion-row>
+    <ion-col class="ion-text-center">
+        <h2>Data Not Found!</h2>
+    </ion-col>
+  </ion-row>
+</ng-container>
+  <ion-row>
+    <ion-col size="2"></ion-col>
+    <ion-col size="8">
+      <ion-button color="primary" expand="block" shape="round" (click)="goToBikeList()">List a Motor</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/img/Menu.svg" (click)="toggleMenu()">
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="notify bg_grey">
+    <ion-col size="6">
+        <h4>Notifications</h4>
+        <p>Enable your notifications</p>
+    </ion-col>
+    <ion-col class="ion-text-right arrow_right">
+      <ion-item  lines="none" >
+        <ion-toggle slot="start"  color="tertiary" (ionChange)="notifie()" [(ngModel)]="Notifications"  ></ion-toggle>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <!--ion-row class="notify">
+    <ion-col size="6">
+        <h4>Payment Details</h4>
+        <p>Lorem Ipsum Dolar sit</p>
+    </ion-col>
+    <ion-col class="ion-text-right arrow_right">
+      <img src="assets/img/Arrow_right.svg" (click)="goToPayment()">
+    </ion-col>
+  </ion-row-->
+  <ion-row class="notify bg_grey" (click)="goToChangePassword()">
+    <ion-col size="6">
+        <h4>Change Password</h4>
+        <p>Lorem Ipsum Dolar sit</p>
+    </ion-col>
+    <ion-col class="ion-text-right arrow_right">
+      <img src="assets/img/Arrow_right.svg" >
+    </ion-col>
+  </ion-row>
+</ion-content>

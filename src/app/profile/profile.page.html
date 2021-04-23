@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/img/Menu.svg" (click)="toggleMenu()">
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row class="bys">
+    <ion-col size="3" class="ion-text-center">
+    </ion-col>
+    <ion-col size="6" class="ion-text-center">
+      <ng-container *ngIf="profileImage == '' || profileImage == undefined">
+        <img src="assets/img/place_holder.svg">
+        <img src="assets/img/Edit_button.svg" class="btn_edit_profile" (click)="uploadProfile()">
+      </ng-container>
+      <ng-container *ngIf="profileImage">
+        <img src="{{profileImage}}" class="solid_img">
+        <img src="assets/img/Edit_button.svg" class="btn_edit_profile" (click)="uploadProfile()">
+      </ng-container>
+    </ion-col>
+    <ion-col size="3" class="ion-text-center">
+    </ion-col>
+    <ion-col size="12">
+      <ion-textarea rows="6" placeholder="About" [(ngModel)]="About" class="list_3" (ionBlur)="validateForm()">
+      </ion-textarea>
+      <span *ngIf="AboutError" class="error ion-padding">
+        About is required.
+      </span>
+    </ion-col>
+    <ion-col size="12">
+      <ion-input placeholder="Email" class="input_list ot_auto" [(ngModel)]="Email" (ionBlur)="validateForm()"
+        readonly=""></ion-input>
+      <span *ngIf="EmailError" class="error ion-padding">
+        Email is required.
+      </span>
+    </ion-col>
+    <ion-col size="12">
+      <ion-input placeholder="Works" class="input_list ot_auto" [(ngModel)]="Works" (ionBlur)="validateForm()">
+      </ion-input>
+      <span *ngIf="WorksError" class="error ion-padding">
+        Works is required.
+      </span>
+    </ion-col>
+    <ion-col size="12">
+      <ion-select placeholder="Language" [(ngModel)]="Language" (ionBlur)="validateForm()">
+        <ion-select-option value="{{p.languages_id}}" *ngFor="let p of languages; let i = index">{{p.name}}
+        </ion-select-option>
+      </ion-select>
+      <span *ngIf="LanguageError" class="error ion-padding">
+        Language is required.
+      </span>
+    </ion-col>
+    <ion-col size="12">
+      <ion-select placeholder="Lives" [(ngModel)]="Lives" placeholder="Lives" (ionBlur)="validateForm()">
+        <ion-select-option value="{{p.id}}" *ngFor="let p of countries; let i = index">{{p.name}}</ion-select-option>
+      </ion-select>
+      <span *ngIf="LivesError" class="error ion-padding">
+        Lives is required.
+      </span>
+    </ion-col>
+    <ion-col size="12">
+      <ion-select placeholder="currencies" [(ngModel)]="Currencies" placeholder="Currencies" (ionBlur)="validateForm()">
+        <ion-select-option value="{{p.currencies_id}}" *ngFor="let p of currencies; let i = index">{{p.name}} -
+          ({{p.symbol}})</ion-select-option>
+      </ion-select>
+      <span *ngIf="CurrencyError" class="error ion-padding">
+        Currency is required.
+      </span>
+    </ion-col>
+    <!-- <ion-col size="12">
+      <ion-input placeholder="Account Number" class="input_list ot_auto" [(ngModel)]="accountNumber"
+        (ionBlur)="validateForm()"></ion-input>
+      <span *ngIf="accountNumberError" class="error ion-padding">
+        Account Number is required.
+      </span>
+    </ion-col> -->
+    <!-- <ion-col size="12">
+      <ion-input placeholder="Account Title" class="input_list ot_auto" [(ngModel)]="accountTitle"
+        (ionBlur)="validateForm()"></ion-input>
+      <span *ngIf="accountTitleError" class="error ion-padding">
+        Account Title is required.
+      </span>
+    </ion-col> -->
+  </ion-row>
+  <ion-row>
+    <ion-col size="2"></ion-col>
+    <ion-col size="8">
+      <ion-button color="primary" expand="block" shape="round" (click)="submitForm()">Update</ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

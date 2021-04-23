@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/img/Menu.svg" (click)="toggleMenu()">
+    </ion-buttons>
+    <ion-title>Bookings</ion-title>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div class="list_item_main">
+    <ion-row class="list_item_child" (click)="goToBookingList()" >
+      <ion-col size="8">
+          <h5>Other Car</h5>
+          <h4 class="dark_p_color">Bookings</h4>
+      </ion-col>
+      <ion-col size="4" class="ion-text-right">
+        <img src="assets/img/Arrow_w.svg" >
+      </ion-col>
+    </ion-row>
+    <ion-row class="list_item_child" (click)="goToListedVehicle()" >
+      <ion-col size="8">
+          <h5>Listed Vehicle</h5>
+          <h4 class="dark_p_color">Bookings</h4>
+      </ion-col>
+      <ion-col size="4" class="ion-text-right">
+        <img src="assets/img/Arrow_w.svg" >
+      </ion-col>
+    </ion-row>
+  </div>
+  
+  <!--ion-row>
+    <ion-col size="6">
+        <h5>Other Car</h5>
+        <h4>Bookings</h4>
+     </ion-col>
+     <ion-col size="6">
+        <img src="assets/img/trikiyo.png" >
+     </ion-col>
+  </ion-row-->
+</ion-content>

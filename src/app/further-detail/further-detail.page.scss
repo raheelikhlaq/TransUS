@@ -1,0 +1,93 @@
+ion-toolbar {
+    padding: 0.8em 0.1em 0 0;
+    --background: #c4932f;
+}
+
+@media only screen and(min-height : 800px) {
+    ion-toolbar {
+        padding: 3em 0.1em 8px 0;
+        --background: #c4932f;
+    }
+}
+
+ion-title {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+}
+ion-button {
+    --padding-bottom: 1.5em;
+    --padding-top: 1.5em;
+    --box-shadow: none;
+}
+.f_1 h4 {
+    margin: 0px;
+    margin-top: 8px;
+}
+.f_1 p {
+    margin: 0px;
+    font-size: 12px;
+}
+.btn_footer {
+    padding: 0.5em 1em 1.2em 1em;
+}
+.info {
+    background: #6e6d6d;
+    padding: 0.4em 0em;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+}
+.info p {
+    margin: 0px;
+    color: #c4932f;
+    font-size: 10px;
+}
+.f_2 {
+    background: #f9f9f9;
+    padding: 0em 2.5em;
+}
+.f_3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.f_4 {
+    font-size: 12px;
+}
+.f_5 {
+    margin: 0px;
+    margin-top: 4px;
+    font-size: 14px;
+}
+.f_6 {
+    padding: 0em 2.5em;
+}
+.f_6 span {
+    font-size: 12px;
+}
+.f_7 h5 {
+    font-size: 14px;
+}
+.f_7 p {
+    font-size: 10px;
+    margin: 0px;
+}
+.f_8 p {
+    font-size: 13px;
+}
+.f_10 {
+    padding: 0em 2.5em;
+}
+.f_11 p {
+    margin: 4px 0px;
+    font-size: 12px;
+}
+.f_bottom {
+    margin-bottom: 4em;
+}
+
+p {
+    color: black;
+}

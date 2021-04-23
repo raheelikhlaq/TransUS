@@ -1,0 +1,109 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <img src="assets/img/Arrow.svg" (click)="back()">
+  </ion-buttons>
+  <ion-title>{{cars_list_result.model_name}}</ion-title>
+
+</ion-toolbar>
+
+<ion-content>
+  <div class="f_2">
+    <ion-row>
+      <ion-col class="ion-text-center f_1">
+        <h4 style="color: rgb(0, 0, 0);">Date and Location</h4>
+        <p>Pick Up and Return</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="5" class="ion-text-center">
+        <p class="f_5">{{start_date}} </p>
+        <p class="f_4">{{cars_list_result.pickup_location}}</p>
+      </ion-col>
+      <ion-col size="2" class="ion-text-center f_3">
+        <img src="assets/img/Label.svg">
+      </ion-col>
+      <ion-col size="5" class="ion-text-center">
+        <p class="f_5"> {{end_date}} </p>
+        <p class="f_4">{{cars_list_result.dropoff_location}}</p>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="f_10">
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <h4>TRIP COST</h4>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-left" size="6">
+        <span>Weekly discount savings</span>
+      </ion-col>
+      <ion-col class="ion-text-right" size="6">
+        <span>15%</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-left f_7" size="6">
+        <h5>DISTANCE INCLUDED</h5>
+        <p class="dark_white_light_black">$0.54 charge for each additional mile</p>
+      </ion-col>
+      <ion-col class="ion-text-right f_8" size="6">
+        <p class="dark_white_light_black">1000 MI</p>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="f_2">
+    <ion-row>
+      <ion-col class="ion-text-center f_1">
+        <h4 style="color: black;">Location</h4>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="5" class="ion-text-center">
+        <p class="f_5">Pickup</p>
+        <p class="f_4">{{cars_list_result.pickup_location}}</p>
+      </ion-col>
+      <ion-col size="2" class="ion-text-center f_3">
+        <img src="assets/img/Label.svg">
+      </ion-col>
+      <ion-col size="5" class="ion-text-center">
+        <p class="f_5"> Drop off</p>
+        <p class="f_4">{{cars_list_result.dropoff_location}}</p>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="f_10 f_bottom">
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <h4>FEATURES</h4>
+      </ion-col>
+    </ion-row>
+    <ion-row class="f_11">
+      <ion-col class="ion-text-left" size="3">
+        <p class="dark_white_light_black">{{cars_list_result.no_of_seats}} seats</p>
+      </ion-col>
+      <ion-col class="ion-text-left" size="3">
+        <p class="dark_white_light_black">{{cars_list_result.no_of_doors}} doors</p>
+      </ion-col>
+      <ion-col class="ion-text-left" size="3">
+        <p class="dark_white_light_black">Gas (Regular)</p>
+      </ion-col>
+      <ion-col class="ion-text-left" size="3">
+        <p class="dark_white_light_black">Automatic</p>
+      </ion-col>
+      <ion-col class="ion-text-left" size="3">
+        <p class="dark_white_light_black">Convertable</p>
+      </ion-col>
+      <ion-col class="ion-text-left" size="3">
+        <p class="dark_white_light_black">{{cars_list_result.no_of_wheels}} wheel drive</p>
+      </ion-col>
+
+    </ion-row>
+  </div>
+  <ion-row class="info">
+    <ion-col class="ion-text-center">
+      <img src="assets/img/Info_yellow.svg">
+      <p>Further Details</p>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,214 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/img/Arrow.svg" (click)="back()">
+    </ion-buttons>
+    <ion-title>{{model_name}}</ion-title>
+    
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+ 
+  <div class="list_1">
+    <ion-row>
+      <ion-col>
+        <h3 style="color: black;">Trip Dates</h3>
+        <p class="upload_images left_4">Start Date</p>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="calender_slider">
+    <ion-row>
+      <ion-col size="3" class="ion-text-right">
+        <img src="assets/img/left.svg" (click)="slidePrev()" >
+      </ion-col>
+      <ion-col size="6" class="ion-text-center">
+        <h4 style="color: black;" class="SFUIText-HeavyItalic calender_slider_text">{{start_date_month}} , {{currentYear}}</h4>
+      </ion-col>
+      <ion-col size="3" class="ion-text-left">
+        <img src="assets/img/right.svg" (click)="slideNext()">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-slides class="start_date" [options]="option1"   #startSlides>
+          <ion-slide *ngFor="let i of days" (click)="getStartIndex(i)">
+              <span style="color: black;"   *ngIf="i<=9" [class.activeState]="sliderStartBoolean == i">{{i}}</span>
+              <span  *ngIf="i>9" class="num" [class.activeState]="sliderStartBoolean == i">{{i}}</span>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="list_1">
+    <ion-row>
+      <ion-col>
+        <p  class="upload_images left_4">End Date</p>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="calender_slider">
+    <ion-row>
+      <ion-col size="3" class="ion-text-right">
+        <img src="assets/img/left.svg" (click)="slidePrev2()" >
+      </ion-col>
+      <ion-col size="6" class="ion-text-center">
+        <h4 style="color: black;" class="SFUIText-HeavyItalic calender_slider_text">{{end_date_month}} , {{currentYearTwo}}</h4>
+      </ion-col>
+      <ion-col size="3" class="ion-text-left">
+        <img src="assets/img/right.svg" (click)="slideNext2()">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-slides class="end_date"  [options]="option1" #endSlides>
+          <ion-slide *ngFor="let i of days" (click)="getEndIndex(i)">
+            <span style="color: black;"  *ngIf="i<=9" [class.activeEndState]="sliderEndBoolean == i">{{i}}</span>
+            <span  *ngIf="i>9" class="num" [class.activeEndState]="sliderEndBoolean == i">{{i}}</span>
+        </ion-slide>
+      </ion-slides>
+      </ion-col>
+    </ion-row>
+  </div>
+  <p *ngIf="dateError" class="error ion-padding ion-text-center sz">
+    Vehicle available from: {{db_start_date}} -  to: {{db_end_date}}
+  </p>
+  <p *ngIf="dateStartError" class="error ion-padding ion-text-center sz">
+    End Date Cannot be smaller then Start Date
+  </p>
+  
+  <div class="list_1">
+    <ion-row>
+      <ion-col>
+        <p class="upload_images left_4">Start Time</p>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-row class="bg_white">
+    <ion-col size="2"></ion-col>
+    <ion-col size="2" class="vertical_list">
+      <ion-slides class="vertical_slider s_hours" [options]="option"  >
+        <ion-slide  *ngFor="let i of hours" >
+          <ng-container *ngIf="i<=9">
+            <p>0{{i}}</p>
+          </ng-container>
+          <ng-container *ngIf="i>9">
+            <p>{{i}}</p>
+          </ng-container>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+    <ion-col size="2" class="vertical_list">
+      <ion-slides class="vertical_slider s_mints" [options]="option"  >
+        <ion-slide  *ngFor="let i of mints" >
+          <ng-container *ngIf="i<=9">
+            <p>0{{i}}</p>
+          </ng-container>
+          <ng-container *ngIf="i>9">
+            <p>{{i}}</p>
+          </ng-container>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+    <ion-col size="2" class="vertical_list s_v">
+      <ion-slides class="vertical_slider" [options]="option"  >
+        <ion-slide>
+          <p>AM</p>
+        </ion-slide>
+        <ion-slide>
+          <p>PM</p>
+        </ion-slide>
+        <ion-slide>
+          <p>AM</p>
+        </ion-slide>
+        <ion-slide>
+          <p>PM</p>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+  <div class="list_1">
+    <ion-row>
+      <ion-col>
+        <p class="upload_images left_4">End Time</p>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-row class="bg_white">
+    <ion-col size="2"></ion-col>
+    <ion-col size="2" class="vertical_list">
+      <ion-slides class="vertical_slider e_hours" [options]="option"  >
+        <ion-slide  *ngFor="let i of hours" >
+          <ng-container *ngIf="i<=9">
+            <p>0{{i}}</p>
+          </ng-container>
+          <ng-container *ngIf="i>9">
+            <p>{{i}}</p>
+          </ng-container>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+    <ion-col size="2" class="vertical_list">
+      <ion-slides class="vertical_slider e_mints" [options]="option"  >
+        <ion-slide  *ngFor="let i of mints" >
+          <ng-container *ngIf="i<=9">
+            <p>0{{i}}</p>
+          </ng-container>
+          <ng-container *ngIf="i>9">
+            <p>{{i}}</p>
+          </ng-container>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+    <ion-col size="2" class="vertical_list">
+      <ion-slides class="vertical_slider e_v" [options]="option"  >
+        <ion-slide>
+          <p>AM</p>
+        </ion-slide>
+        <ion-slide>
+          <p>PM</p>
+        </ion-slide>
+        <ion-slide>
+          <p>AM</p>
+        </ion-slide>
+        <ion-slide>
+          <p>PM</p>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+  <div class="list_1">
+    <ion-row>
+      <ion-col>
+        <h3>Driving License</h3>
+        <p class="upload_images left_4">Upload your driving license ID</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+          <ion-row>
+            <ion-col size="12" class="list_2" (click)="uploadDocument()" *ngIf="document_one =='' || document_one ==undefined">
+              <img src="assets/img/Menu_Plus.svg" >
+            </ion-col>
+            <ion-col size="12" class="real_image" (click)="uploadDocument()" *ngIf="document_one">
+              <img src="{{document_one}}" class="imgh">
+            </ion-col>
+            <span *ngIf="document_oneError" class="error ion-padding">
+              Document is required.
+            </span>
+          </ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
+  
+  <ion-row>
+    <ion-col size="2"></ion-col>
+    <ion-col size="8">
+      <ion-button color="secondary" expand="block" shape="round" (click)="submitForm()">Book Now</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

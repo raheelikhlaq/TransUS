@@ -1,0 +1,112 @@
+<ion-content >
+  <!-- style="--background:url(assets/img/Background.png)   0 0/100% 100% no-repeat;" -->
+  <ion-row class="mm">
+    <ion-col size="2" class="back_arrow">
+      <img src="assets/img/Arrow.svg" class="back_arrow" (click)="Gotologin()">
+    </ion-col>
+    <ion-col size="8" class="ion-text-center">
+      <img src="assets/img/logo.png" class="logo">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center icon_top">
+      <img src="assets/img/usericon.svg" class="usericon" (click)="uploadProfile()" *ngIf="profileImage == undefined">
+      <img src="{{profileImage}}" (click)="uploadProfile()" *ngIf="profileImage" class="solid_img">
+      <span *ngIf="picError" class="error ion-padding" style="display: grid;">
+        Profile image is required.
+      </span>
+    </ion-col>
+  </ion-row>
+  <div class="bp">
+    <ion-row>
+      <ion-col>
+        <ion-input placeholder="Username" class="rm_auto" [(ngModel)]="name" (ionBlur)="validateForm()"></ion-input>
+        <span *ngIf="nameError" class="error ion-padding">
+          Name is required.
+        </span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input type="number" placeholder="Mobile number" class="rm_auto" [(ngModel)]="mobileNumber"
+          (ionBlur)="validateForm()"></ion-input>
+        <span *ngIf="mobileNumberError" class="error ion-padding">
+          Mobile Number is required.
+        </span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input placeholder="Email" [(ngModel)]="email" class="rm_auto" (ionBlur)="validateForm()"></ion-input>
+        <span *ngIf="emailError" class="error ion-padding">
+          Email is required.
+        </span>
+        <span *ngIf="invalidEmailError" class="error ion-padding">
+          Please provide valid email id.
+        </span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input type="password" placeholder="Password" class="rm_auto" [(ngModel)]="password"
+          (ionBlur)="validateForm()"></ion-input>
+        <span *ngIf="passwordError" class="error ion-padding">
+          Password is required.
+        </span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="mit2">
+      <ion-col size="1">
+        <ion-checkbox [(ngModel)]="terms" (ionChange)="changeTerms($event)"></ion-checkbox>
+      </ion-col>
+      <ion-col size="11" class="fix-ios">
+        <p class="white agree">I agree to the terms of service and privacy policy</p>
+        <p class="views">View terms of service and privacy policy</p>
+      </ion-col>
+      <ion-col size="1" class="mit">
+        <ion-checkbox [(ngModel)]="offers"></ion-checkbox>
+      </ion-col>
+      <ion-col size="11" class="mit fix-ios">
+        <p class="white agree" style="margin-top: 3px;">Email me with news, offers, and awesome cars</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <span *ngIf="termsError" class="error ion-padding" style="font-size: 12px;">
+          Please accept privacy policies to signup
+        </span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center parent_btn">
+        <ion-button color="primary" shape="round" expand="block" (click)="submitForm()">Sign up</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="bb_top">
+      <ion-col size="5">
+        <hr class="bb">
+      </ion-col>
+      <ion-col size="2" class="white ion-text-center">OR</ion-col>
+      <ion-col size="5">
+        <hr class="bb">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" class="ion-text-left">
+        <ion-button class="fb">
+          <img src="assets/img/Facebook.svg" (click)="LoginWithFacebook()">
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" class="ion-text-right" (click)="LoginWithGoogle()">
+        <ion-button class="google">
+          <img src="assets/img/google.svg">
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-row>
+    <ion-col class="ion-text-center" (click)="Gotologin()">
+      <p class="white signup_text">Already got an account? Login</p>
+    </ion-col>
+  </ion-row>
+</ion-content>

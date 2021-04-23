@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/img/Menu.svg" (click)="toggleMenu()">
+    </ion-buttons>
+    <ion-title>Listed Cars</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+<ng-container *ngIf="vehicles_list?.length >0">
+  <ng-container *ngFor="let p of vehicles_list; let i = index">
+      <ng-container *ngIf="p.vehicle_imgs"> 
+
+    
+    <ion-row class="pd_bs" *ngIf="i % 2 === 0" >
+      <ion-col size="4" class="lambo">
+          <h4>License Plate</h4>
+          <img *ngIf="!p.vehicle_imgs" src="assets/img/car_3.svg">
+          <img *ngIf="p.vehicle_imgs" src="{{base_url}}{{p.vehicle_imgs[0]}}">
+          
+      </ion-col>
+      <ion-col class="trip_dates" size="4">
+          <p class="blue">Trip Dates</p>
+          <p class="primary">Start Date</p>
+          <p>{{p.start_date}}</p>
+          <p class="primary">Total Cost</p>
+          <p>${{p.charge_per_day}}</p>
+          <p class="give_rating" (click)="editDetail(p)">Edit Details</p>
+      </ion-col>
+      <ion-col class="trip_end_date" size="4">
+        <p class="primary"> End Date</p>
+        <p>{{p.end_date}}</p>
+
+        <p *ngIf="p.admin_status == 'Approved' " class="give_rating-status-aproved"  >Approved</p>
+        <p *ngIf="p.admin_status == 'Pending' " class="give_rating-status-panding"  >Pending</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="pd_bs bg_grey" *ngIf="i % 2 != 0">
+      <ion-col size="4" class="lambo">
+          <h4>License Plate</h4>
+          <!-- <img src="{{base_url}}{{p.vehicle_imgs[0]}}"> -->
+          <img *ngIf="!p.vehicle_imgs" src="assets/img/car_3.svg">
+          <img *ngIf="p.vehicle_imgs" src="{{base_url}}{{p.vehicle_imgs[0]}}">
+      </ion-col>
+      <ion-col class="trip_dates" size="4">
+          <p class="blue">Trip Dates</p>
+          <p class="primary">Start Date</p>
+          <p>{{p.start_date}}</p>
+          <p class="primary">Total Cost</p>
+          <p>${{p.charge_per_day}}</p>
+          <p class="give_rating" (click)="editDetail(p)">Edit Details</p>
+      </ion-col>
+      <ion-col class="trip_end_date" size="4">
+        <p class="primary"> End Date</p>
+        <p>{{p.end_date}}</p>
+
+        <p *ngIf="p.admin_status == 'Approved' " class="give_rating-status-aproved"  >Approved</p>
+        <p *ngIf="p.admin_status == 'Pending' " class="give_rating-status-panding"  >Pending</p>
+      </ion-col>
+    </ion-row>  
+   </ng-container>  
+  </ng-container>
+</ng-container>
+<ng-container *ngIf="vehicles_list?.length == 0">
+    <ion-row>
+      <ion-col class="ion-text-center">
+          <h2>Data Not Found!</h2>
+      </ion-col>
+    </ion-row>
+</ng-container>
+  <ion-row>
+    <ion-col size="2"></ion-col>
+    <ion-col size="8">
+      <ion-button color="primary" expand="block" shape="round" (click)="goToCarList()">List a Car</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

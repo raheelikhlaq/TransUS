@@ -1,0 +1,261 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/img/Menu.svg" (click)="toggleMenu()">
+    </ion-buttons>
+      
+    <ion-searchbar [(ngModel)]="source" (ionInput)="UpdateSearchResults()" placeholder="ENTER CITY, AIRPORT, OR ADDRESS"></ion-searchbar>
+ 
+   </ion-toolbar>
+   <ion-list class="bg_list" [hidden]="autocompleteItems.length == 0">
+    <ion-item lines="full" style="--padding-top: 4px; --padding-bottom: 4px;" *ngFor="let item of autocompleteItems" button="true" (click)="SelectSearchResult(item.description)">
+      <ion-label><h2>{{ item.description }}</h2></ion-label>
+    </ion-item>
+  </ion-list>
+</ion-header>
+<ion-content>
+    
+  <ion-row class="sort">
+    <ion-col size="6" class="ion-text-left">
+      <p class="text1 SFUIText-HeavyItalic">Sort</p>
+    </ion-col>
+    <ion-col size="6" class="ion-text-right">
+      <!--p class="text2">Relevance <img src="assets/img/pecil_curve.svg"></p-->
+    </ion-col>
+  </ion-row>
+  <div class="bg_grey calender_slider">
+    <ion-row>
+      <ion-col size="3" class="ion-text-right">
+        <img src="assets/img/left.svg" (click)="slidePrev()" >
+      </ion-col>
+      <ion-col size="6" class="ion-text-center">
+        <h4 class="SFUIText-HeavyItalic calender_slider_text  dark_p_color">{{start_date_month}} , {{currentYear}}</h4>
+      </ion-col>
+      <ion-col size="3" class="ion-text-left">
+        <img src="assets/img/right.svg" (click)="slideNext()">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-slides class="start_date" [options]="option1"   #startSlides>
+          <ion-slide class="dark_p_color" *ngFor="let i of days"  (click)="getStartIndex(i)">
+              <span  *ngIf="i<=9" [class.activeState]="sliderStartBoolean == i">{{i}}</span>
+              <span  *ngIf="i>9" class="num" [class.activeState]="sliderStartBoolean == i">{{i}}</span>
+          </ion-slide>
+          
+      </ion-slides>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-row class="m_price">
+    <ion-col size="12" class="price">
+      <b class="SFUIText-HeavyItalic">PRICE</b>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-label class="huly">{{currencySymbol}} {{min_price}}-{{currencySymbol}} {{max_price}}/hour</ion-label>
+      <ion-range id="dual-range" min="{{min_price}}" max="{{max_price}}" [(ngModel)]="price" dual-knobs pin color="primary">
+      </ion-range>
+     </ion-col>
+  </ion-row>
+  <!--ion-row class="tog_main">
+    <ion-col size="9" class="tog1">
+        <h4 class="SFUIText-HeavyItalic">BOOK INSTANTLY</h4>
+        <p>Book without waiting for owner approval</p>
+    </ion-col>
+    <ion-col size="3" class="ion-text-right">
+      <ion-item lines="none">
+        <ion-toggle slot="start" name="blueberry" color="tertiary" checked></ion-toggle>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row class="tog_main bg_none" >
+    <ion-col size="9" class="tog1">
+        <h4 class="SFUIText-HeavyItalic">DELIVERY</h4>
+        <p>Get the car delivered directly to you</p>
+    </ion-col>
+    <ion-col size="3" class="ion-text-right">
+      <ion-item lines="none">
+        <ion-toggle slot="start" name="blueberry" color="tertiary" checked></ion-toggle>
+      </ion-item>
+    </ion-col>
+  </ion-row-->
+  <ion-row class="tog_main" >
+    <ion-col size="9" class="tog1">
+        <h4 class="SFUIText-HeavyItalic">BUSINESS CLASS</h4>
+        <p>Cars for business tarvel</p>
+    </ion-col>
+    <ion-col size="3" class="ion-text-right">
+      <ion-item lines="none">
+        <ion-toggle slot="start" name="blueberry" color="tertiary" checked></ion-toggle>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row class="tog_main bg_none" >
+    <ion-col size="9" class="tog1">
+        <h4 class="SFUIText-HeavyItalic">DELUXE CLASS</h4>
+        <p>Exclusive cars for guests ages 25+</p>
+    </ion-col>
+    <ion-col size="3" class="ion-text-right">
+      <ion-item lines="none">
+        <ion-toggle slot="start" name="blueberry" color="tertiary" checked></ion-toggle>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row class="tog_main" >
+    <ion-col size="9" class="tog1">
+        <h4 class="SFUIText-HeavyItalic">SUPER DELUXE CLASS</h4>
+        <p>Super exclusive cars for guests ages 30+</p>
+    </ion-col>
+    <ion-col size="3" class="ion-text-right">
+      <ion-item lines="none">
+        <ion-toggle slot="start" name="blueberry" color="tertiary" checked></ion-toggle>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <!--ion-row class="m_price">
+    <ion-col size="12" class="price">
+      <b class="SFUIText-HeavyItalic">MILES INCLUDED</b>
+    </ion-col>
+    <ion-col class="ion-text-center">
+      <ion-label class="huly">100 MI/day or more</ion-label>
+      
+      <ion-range min="-200" max="200" pin color="primary">
+      </ion-range>
+     </ion-col>
+  </ion-row-->
+  <ion-row class="main_drop" style="padding-top: 4px;">
+    <!--ion-col size="6" class="m_f">
+      <ion-row class="m_s" (click)="openFeature()">
+        <ion-col size="10" class="m_t">
+          <h5 class="SFUIText-HeavyItalic">FEATURES</h5>
+          <p>{{featureText}}</p>
+        </ion-col>
+        <ion-col class="arrow_down" size="2">
+          <img src="assets/img/Arrow_Down.svg">
+        </ion-col>
+      </ion-row>
+      <ion-select  [(ngModel)]="feature" (ionChange)="getFeatureVal()" [hidden]="featureShowList" #featureSelect>
+        <ion-select-option value="test 1,test 1" >test 1</ion-select-option>
+        <ion-select-option value="test 2,test 1" >test 1</ion-select-option>
+      </ion-select>
+    </ion-col-->
+    
+    <ion-col size="6" class="m_f">
+      <ion-row class="m_s" (click)="openVehicle()">
+        <ion-col size="10" class="m_t">
+          <h5 class="SFUIText-HeavyItalic">VEHICLE TYPE</h5>
+          <p>{{vehicleTypeText}}</p>
+        </ion-col>
+        <ion-col class="arrow_down" size="2">
+          <img src="assets/img/Arrow_Down.svg">
+        </ion-col>
+      </ion-row>
+      <ion-select  [(ngModel)]="vehicleType" (ionChange)="getVehicleVal()" [hidden]="vehicleShowList" #vehicleSelect>
+        <ion-select-option value="{{p.vehicles_type_id}},{{p.type_name}}" *ngFor="let p of vehicle_types; let i = index">{{p.type_name}}</ion-select-option>
+      </ion-select>
+    </ion-col>
+    <ion-col size="6" class="m_r">
+      <ion-row class="m_s" (click)="openTransmission()">
+        <ion-col size="10" class="m_t">
+          <h5 class="SFUIText-HeavyItalic">TRANSMISSION</h5>
+          <p>{{transmissionText}}</p>
+        </ion-col>
+        <ion-col class="arrow_down" size="2">
+          <img src="assets/img/Arrow_Down.svg">
+        </ion-col>
+      </ion-row>
+      <ion-select  [(ngModel)]="transmission" (ionChange)="getTransmissionVal()" [hidden]="transmissionShowList" #transmissionSelect>
+        <ion-select-option value="{{p.gear_type_id}},{{p.name}}" *ngFor="let p of transmissions; let i = index">{{p.name}}</ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <ion-row class="main_drop">
+    <ion-col size="6" class="m_f">
+      <ion-row class="m_s" (click)="openMake()">
+        <ion-col size="10" class="m_t">
+          <h5 class="SFUIText-HeavyItalic">MAKE</h5>
+          <p>{{makeText}}</p>
+        </ion-col>
+        <ion-col class="arrow_down" size="2">
+          <img src="assets/img/Arrow_Down.svg">
+        </ion-col>
+      </ion-row>
+      <ion-select  [(ngModel)]="make" (ionChange)="getMakeVal()" [hidden]="makeShowList" #makeSelect>
+        <ion-select-option value="{{p.veh_make_id}},{{p.name}}" *ngFor="let p of makes; let i = index">{{p.name}}</ion-select-option>
+      </ion-select>
+    </ion-col>
+    <ion-col size="6" class="m_r">
+      <ion-row class="m_s" (click)="openModel()">
+        <ion-col size="10" class="m_t">
+          <h5 class="SFUIText-HeavyItalic">MODEL</h5>
+          <p>{{modelText}}</p>
+        </ion-col>
+        <ion-col class="arrow_down" size="2">
+          <img src="assets/img/Arrow_Down.svg">
+        </ion-col>
+      </ion-row>
+      <ion-select  [(ngModel)]="model" (ionChange)="getModelVal()" [hidden]="modelShowList" #modelSelect>
+        <ion-select-option value="{{p.model_id}},{{p.name}}" *ngFor="let p of models; let i = index">{{p.name}}</ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <ion-row class="main_drop">
+    <ion-col size="6" class="m_f">
+      <ion-row class="m_s" (click)="openYears()">
+        <ion-col size="10" class="m_t">
+          <h5 class="SFUIText-HeavyItalic">YEARS</h5>
+          <p>{{yearsText}}</p>
+        </ion-col>
+        <ion-col class="arrow_down" size="2">
+          <img src="assets/img/Arrow_Down.svg">
+        </ion-col>
+      </ion-row>
+      <ion-select  [(ngModel)]="years" (ionChange)="getYearsVal()" [hidden]="yearsShowList" #yearsSelect>
+        <ion-select-option value="2018,2018" >2018</ion-select-option>
+        <ion-select-option value="2020,2020" >2020</ion-select-option>
+      </ion-select>
+    </ion-col>
+    <ion-col size="6" class="m_r">
+      <ion-row class="m_s" (click)="openNos()">
+        <ion-col size="10" class="m_t">
+          <h5 class="SFUIText-HeavyItalic">NUMBER OF SEATS</h5>
+          <p>{{nosText}}</p>
+        </ion-col>
+        <ion-col class="arrow_down" size="2">
+          <img src="assets/img/Arrow_Down.svg">
+        </ion-col>
+      </ion-row>
+      <ion-select  [(ngModel)]="nos" (ionChange)="getnosVal()" [hidden]="nosShowList" #nosSelect>
+        <ion-select-option value="2,2" >2</ion-select-option>
+        <ion-select-option value="4,4" >4</ion-select-option>
+        <ion-select-option value="6,6" >6</ion-select-option>
+        <ion-select-option value="8,8" >8</ion-select-option>
+        <ion-select-option value="10,10" >10</ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <!--ion-row class="main_drop">
+    <ion-col size="6" class="m_f">
+      <ion-row class="m_s" (click)="openColor()">
+        <ion-col size="10" class="m_t">
+          <h5 class="SFUIText-HeavyItalic">COLOR</h5>
+          <p>{{colorText}}</p>
+        </ion-col>
+        <ion-col class="arrow_down" size="2">
+          <img src="assets/img/Arrow_Down.svg">
+        </ion-col>
+      </ion-row>
+      <ion-select  [(ngModel)]="color" (ionChange)="getColorVal()" [hidden]="colorShowList" #colorSelect>
+        <ion-select-option value="Red,Red" >Red</ion-select-option>
+        <ion-select-option value="Blue,Blue" >Blue</ion-select-option>
+      </ion-select>
+    </ion-col>
+    
+  </ion-row-->
+  <ion-row class="view_result">
+    <ion-col size="2"></ion-col>
+    <ion-col size="8">
+      <ion-button color="secondary" expand="block" (click)="submitForm()" shape="round">View Result</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

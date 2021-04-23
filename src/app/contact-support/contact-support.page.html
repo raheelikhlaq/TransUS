@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/img/Menu.svg" (click)="toggleMenu()">
+    </ion-buttons>
+    <ion-title>Customer Support</ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <img src="assets/img/Vector.svg">
+    </ion-col>
+  </ion-row>
+  <div class="b_m">
+  <ion-row>
+    <ion-col>
+      <ion-input placeholder="Email" class="input_list ot_auto" [(ngModel)]="Email" (ionBlur)="validateForm()"></ion-input>
+      <span *ngIf="EmailError" class="error ion-padding">
+        Email is required.
+      </span>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-input placeholder="Subject" class="input_list ot_auto" [(ngModel)]="Subject" (ionBlur)="validateForm()"></ion-input>
+      <span *ngIf="SubjectError" class="error ion-padding">
+        Subject is required.
+      </span>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-textarea rows="6" placeholder="Description" class="list_3" [(ngModel)]="Description" (ionBlur)="validateForm()"></ion-textarea>
+      <span *ngIf="DescriptionError" class="error ion-padding">
+        Description is required.
+      </span>
+    </ion-col>
+  </ion-row>
+  </div>  
+  <ion-row class="btn_footer">
+    <ion-col size="2"></ion-col>
+    <ion-col size="8">
+      <ion-button color="primary" expand="block" shape="round" (click)="submitForm()">Send</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img src="assets/img/Arrow.svg" (click)="goToHome()">
+    </ion-buttons>
+    <ion-title>Set Route</ion-title>
+   </ion-toolbar>
+</ion-header>
+<!--ion-content class="location-page">
+  <ion-searchbar [(ngModel)]="userAddress" mode="ios" animated placeholder="Enter your  address" (ionInput)="UpdateSearchResults()" (ionClear)="ClearAutocomplete()">
+  </ion-searchbar>
+  <ion-list [hidden]="autocompleteItems.length == 0">
+    <ion-item lines="full" style="--padding-top: 4px; --padding-bottom: 4px;" *ngFor="let item of autocompleteItems" button="true" (click)="SelectSearchResult(item.description)">
+      <ion-label><h2>{{ item.description }}</h2></ion-label>
+    </ion-item>
+  </ion-list>
+  <div class="map-wrapper">
+    <div id="map_center">
+      <img src="assets/img/pin.png" style="width: 55%;"/>
+    </div>
+    <div #map id="map"></div>
+  </div>
+</ion-content>
+
+<ion-footer>
+    <p style="margin-left: 15px;margin-bottom: 0px;" *ngIf="pAdress">{{pAdress}}</p>
+    <ion-button color="success" expand="full" (click)="apply()" [disabled]="btnApply">Deliver here</ion-button>
+</ion-footer-->
+<ion-content>
+    <ion-row class="list_1">
+
+    <ion-col size="12">
+      <ion-input  class="input_list" [(ngModel)]="source" (ionInput)="UpdateSearchResults()" placeholder="Pickup"></ion-input>
+      <span *ngIf="showSourceError" class="error ion-padding">
+        pickup location is required.
+      </span>
+      <ion-list [hidden]="autocompleteItems.length == 0">
+        <ion-item lines="full" style="--padding-top: 4px; --padding-bottom: 4px;" *ngFor="let item of autocompleteItems" button="true" (click)="SelectSearchResult(item.description)">
+          <ion-label><h2>{{ item.description }}</h2></ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-input class="input_list" placeholder="Drop off" [(ngModel)]="destination" (ionInput)="UpdateDestinationResults()"></ion-input>
+      <span *ngIf="showDestinationError" class="error ion-padding">
+        dropoff location is required.
+      </span>
+      <ion-list [hidden]="detinationCompleteItems.length == 0">
+        <ion-item lines="full" style="--padding-top: 4px; --padding-bottom: 4px;" *ngFor="let item of detinationCompleteItems" button="true" (click)="SelectDestinationResult(item.description)">
+          <ion-label><h2>{{ item.description }}</h2></ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button color="primary" expand="block" shape="round"  (click)="calculateAndDisplayRoute()">Show Route</ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button color="secondary" expand="block" shape="round"  (click)="backToList()">Get Route</ion-button>
+    </ion-col>
+  </ion-row>
+  <div #mapElement class="map"></div>
+</ion-content>

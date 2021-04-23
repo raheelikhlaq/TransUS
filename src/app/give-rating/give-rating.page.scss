@@ -1,0 +1,52 @@
+
+
+ion-button{
+    --padding-bottom: 1.5em;
+    --padding-top: 1.5em;
+    --box-shadow: none;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+.m_0{
+    margin:0px;
+    padding: 0em 18%;
+}
+
+.select_color{
+    border: 1px solid #000;
+    border-radius: 25px;
+    padding: 12px 12px;
+}
+h1{
+    color:#1A6BBE;
+    margin-top:0px;
+}
+ion-item{
+    border: 1px solid #d4dce1;
+    text-align: center;
+    border-radius: 40px;
+    --background: #F7F8FA;
+    --color: #d4dce1;
+    margin: 0em 0.3em;
+}
+
+.list_3{
+    background: #F7F8FA;
+    border: 1px solid #D4DCE1;
+    border-radius: 10px;
+    color: #000;
+    --placeholder-color: #d4dce1;
+    font-size: 13px;
+    --padding-start: 1.5em;
+    --padding-top: 1.5em;
+}
+.ionic5-star-rating button{
+    margin-top: 1em;
+}
+.my_rating img{
+    margin-right: 10px;
+}

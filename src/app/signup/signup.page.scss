@@ -1,0 +1,93 @@
+
+ion-content {
+    background-color: #000000;
+    --background-color: #000000;
+    --background:none;
+    background: url(../../assets/img/Background.png) no-repeat 0 0;
+    background-size: cover;
+}
+.back_arrow{
+   margin-top: 0.7em;
+   padding-left: 1em;
+}
+.logo{
+    width: 70%;
+}
+.mm{
+    margin-top: 1em;
+}
+ion-input{
+    border: 1px solid #fff;
+    border-radius: 25px;
+    --padding-bottom: 1em;
+    --padding-top: 1em;
+    --color: #fff;
+    --padding-start: 1em;
+    margin-top: 0.4em;
+}
+.bp{
+    padding: 0em 15%;
+}
+.white{
+    color: #fff;
+}
+ion-button{
+    --padding-bottom: 1.45em;
+    --padding-top: 1.45em;
+    --box-shadow: none;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+.parent_btn{
+    margin: 0 1em;
+}
+.bb{
+    border-bottom: 1px solid #fff;
+}
+.bb_top{
+   margin: 1.5em 0em;
+}
+.fb{
+    --background: #3245B8;
+    --padding-start: 1em;
+    --padding-end: 1em;
+    --border-radius: 25px;
+}
+.google{
+    --background: #F04336;
+    --padding-start: 1em;
+    --padding-end: 1em;
+    --border-radius: 25px;
+}
+.signup_text{
+    margin-top: 4em;
+}
+.agree{
+     margin: 0px;
+    font-size: 11px;
+}
+.views{
+    margin: 0px;
+    color: #c4932f;
+    font-size: 11px;
+}
+.mit{
+    margin-top: 0.7em;
+}
+.mit2{
+    margin-bottom: 4px;
+}
+.usericon{
+     width: 25%;
+}
+.icon_top{
+    margin: 0.5em 0em;
+}
+.error{
+    color:red;
+}
+.solid_img{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
