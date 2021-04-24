@@ -335,7 +335,7 @@ var CarBookingPage = /** @class */ (function () {
                     _this.response = JSON.parse(response['_body']);
                     console.log(_this.response);
                     if (_this.response.status == 'error') {
-                        _this.presentToast('Oops!something went wrong!');
+                        _this.presentToast('Vehicle is not Available on this date');
                     }
                     else if (_this.response.status == 'success') {
                         _this.presentToast(_this.response.msg);

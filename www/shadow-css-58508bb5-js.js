@@ -10,7 +10,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scopeCss", function() { return scopeCss; });
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
 
 
 /*
@@ -453,7 +453,7 @@ var scopeCss = function scopeCss(cssText, scopeId, commentOriginalSelector) {
   }
 
   var scoped = scopeCssText(cssText, scopeId, hostScopeId, slotScopeId);
-  cssText = [scoped.cssText].concat(Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(commentsWithHash)).join('\n');
+  cssText = [scoped.cssText].concat(Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(commentsWithHash)).join('\n');
 
   if (commentOriginalSelector) {
     orgSelectors.forEach(function (_ref) {

@@ -269,7 +269,7 @@ export class CarBookingPage implements OnInit {
           this.response = JSON.parse(response['_body']);
           console.log(this.response);
           if (this.response.status == 'error') {
-            this.presentToast('Oops!something went wrong!');
+            this.presentToast('Vehicle is not Available on this date');
           } else if (this.response.status == 'success') {
             this.presentToast(this.response.msg);
             this.document_one = '';

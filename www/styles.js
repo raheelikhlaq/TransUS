@@ -486,8 +486,8 @@ module.exports = content.locals || {};
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\ali project\TransUsLatest\src\theme\variables.scss */"./src/theme/variables.scss");
-module.exports = __webpack_require__(/*! D:\ali project\TransUsLatest\src\global.scss */"./src/global.scss");
+__webpack_require__(/*! D:\Github Projects\TransUS\src\theme\variables.scss */"./src/theme/variables.scss");
+module.exports = __webpack_require__(/*! D:\Github Projects\TransUS\src\global.scss */"./src/global.scss");
 
 
 /***/ })

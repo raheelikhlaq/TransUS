@@ -48,9 +48,11 @@ export class ListYourCarPage implements OnInit {
   end_date: string;
   dropoff: any;
   pickup: any;
-  document_one: any;
-  document_two: any;
-  document_three: any;
+  document_one: any = '';
+  document_two: any = '';
+  document_three: any = '';
+  document_six: string = '';
+  document_seven: string = '';
   document_four: any;
   document_five: any;
   ModelError: boolean;
@@ -94,8 +96,7 @@ export class ListYourCarPage implements OnInit {
   sliderEndBoolean: any;
   document_sixError: boolean;
   document_sevenError: boolean;
-  document_six: string;
-  document_seven: string;
+
   validation: boolean = false;
   loading: HTMLIonLoadingElement;
   max_price: any;
@@ -679,9 +680,125 @@ export class ListYourCarPage implements OnInit {
     });
     alert.present();
   }
+  uploadDocumentsPhotossss(params){
+    this.paramsTesting(params);
+  }
+
+    documenting:{documentnumber:any, imageNumber:any}
+    comptDec=[];
+  paramsTesting(params){
+    if(params == '1'){
+      console.log(this.document_one);
+      if(this.document_one == ''){
+        //complete array calling
+      
+       
+      }
+      else{
+        // single calling
+        var base64 =  this.singleCallingImgs();
+        //  var base640 = `data:image/png;base64,${results[0]}`;  
+         this.image1 = base64
+         this.document_one = "data:image/png;base64,"+base64;
+      }
+    }
+    else if(params == '2'){
+      console.log(this.document_two);
+      if(this.document_two == ''){
+        //complete array calling after 1
+      
+      }
+      else{
+        // single calling
+        var base64 =  this.singleCallingImgs();
+        //  var base640 = `data:image/png;base64,${results[0]}`;  
+         this.image2 = base64
+         this.document_two = "data:image/png;base64,"+base64;
+      }
+    }
+    else if(params == '3'){
+      console.log(this.document_three);
+      if(this.document_three == ''){
+        //complete array calling after 2
+      
+      }
+      else{
+        // single calling
+        var base64 =  this.singleCallingImgs();
+        //  var base640 = `data:image/png;base64,${results[0]}`;  
+         this.image3 = base64
+         this.document_three = "data:image/png;base64,"+base64;
+      }
+    }
+    else if(params == '6'){
+      console.log(this.document_six);
+      if(this.document_six == ''){
+        //complete array calling after 3
+       
+      }
+      else{
+        // single calling
+        var base64 =  this.singleCallingImgs();
+        //  var base640 = `data:image/png;base64,${results[0]}`;  
+         this.image6 = base64
+         this.document_six = "data:image/png;base64,"+base64;
+      }
+    }
+    if(params == '7'){
+      console.log(this.document_seven);
+      if(this.document_seven == ''){
+        //complete array calling after 6
+        var numberImages = 1;
+
+         this.results=  this.singleCallingImgs();
+         console.log('from restun' + this.results);
+        //  var base640 = `data:image/png;base64,${results[0]}`;  
+        for (var i = 0; i < this.results.length; i++) {
+          console.log('Image URI: sucessed from restun' + this.results[i]);
+          if(i==0){   
+            var base640 = `data:image/png;base64,${this.results[0]}`;  
+            this.image7 = this.results[0]
+              this.document_seven = base640;
+         
+          }
+        }
+        console.log( "from retunr",base64 )
+         this.image7 = base64
+         
+         this.document_seven = `data:image/png;base64,${base64}`;
+      }
+      else{
+        // single calling
+        var base64 =  this.singleCallingImgs();
+        //  var base640 = `data:image/png;base64,${results[0]}`;  
+         this.image7 = base64
+         this.document_seven = `data:image/png;base64,${base64}`;
+      }
+    }
+  }
+  results:any;
+
+
+  singleCallingImgs( ){
+    var options = {
+      maximumImagesCount: 1,
+      outputType: 1
+    };
+    this.imagePicker.getPictures(options).then((results) => {
+      // console.log("enter in    ", document_Number, image_number);
+      return results;
+      }, (err) => { 
+        console.log(err, "error in images??")
+      });
+
+
+  }
+
+  
 
     uploadDocumentsPhotos(params){
-      console.log("params", params)
+      console.log("params", )
+      
       var options = {
         maximumImagesCount: 5,
         outputType: 1

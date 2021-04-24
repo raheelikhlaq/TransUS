@@ -74,83 +74,124 @@ export class ViewAllNotificationsPage implements OnInit {
   accptOffer(p) {
 
     console.log(p);
-
-    if (p.offer_id) {
-      this.readNotification(p)
-      var stringy = JSON.stringify({
-        "requestType": "check_offer_by_id",
-        "customerID": this.userID,
-        "offerID": p.offer_id,
-        "currencyID": this.currencies_id
-      });
-      this.restService.inquire_charges(stringy).subscribe(response => {
-        this.response = JSON.parse(response['_body']);
-        console.log(this.response);
-        if (this.response.status == 'NotFound') {
-          console.log('NotFound');
-        } else if (this.response.status == 'Found') {
-          this.offerPopup(this.response.offers, p.offer_id);
-        }
-      }, err => {
-
-      });
-    }
-
-
-    if (p.type_id == '1' || p.type_id == '3') {
-      console.log('msggggggggggg',p);
-      this.readNotification(p)
-      var myData = JSON.stringify({
-        userID: p.receiver_id,
-        otherUserId: p.sender_id,
-        user_name: p.sender_name,
-        profile_img: p.sender_img_url
-
-      });
-      console.log(myData);
-      this.router.navigate(['/chat-detail'], {
-        queryParams: {
-          value: myData
-        }
-      });
-
-    }
-
-    if (p.type_id == '5' || p.type_id == '7') {
     
-    //  this.readNotification(p);
+    if(p.type_id == '1'){
+      this.router.navigate(['/chat-list'])
+    }
+    if(p.type_id == '2'){
+      this.router.navigate(['/booking-list'])
+    }
+    if(p.type_id == '3'){
+      this.router.navigate(['/chat-list'])
+    }
+    if(p.type_id == '5'){
+      this.router.navigate(['/other-booking-list'])
+    }
+    if(p.type_id == '6'){
+      this.router.navigate(['/listed-car'])
+    }
+    if(p.type_id == '7'){
+      this.router.navigate(['/listed-car'])
+    }
+    if(p.type_id == '8'){
+      this.router.navigate(['/listed-car'])
+    }
 
-      var vhDetails = JSON.stringify({
-        requestType: "get_car_details_by_id",
-        usersID: this.userID,
-        vehicleID: p.vehicle_id,
-        currencyID: this.currencies_id
-      })
+    if(p.type_id == '9'){
+      this.router.navigate(['/other-booking-list'])
+    }
+    if(p.type_id == '10'){
+      this.router.navigate(['/other-booking-list'])
+    }
+    if(p.type_id == '11'){
+      this.router.navigate(['//other-booking-list'])
+    }
 
-      console.log(vhDetails);
-      this.router.navigate(['/listed-car']);
+    if(p.type_id == '12'){
+      this.router.navigate(['/other-booking-list'])
+    }
+    if(p.type_id == '13'){
+      this.router.navigate(['/listed-car'])
+    }
+
+    // if (p.offer_id) {
+    //   this.readNotification(p)
+    //   var stringy = JSON.stringify({
+    //     "requestType": "check_offer_by_id",
+    //     "customerID": this.userID,
+    //     "offerID": p.offer_id,
+    //     "currencyID": this.currencies_id
+    //   });
+    //   this.restService.inquire_charges(stringy).subscribe(response => {
+    //     this.response = JSON.parse(response['_body']);
+    //     console.log(this.response);
+    //     if (this.response.status == 'NotFound') {
+    //       console.log('NotFound');
+    //     } else if (this.response.status == 'Found') {
+    //       this.offerPopup(this.response.offers, p.offer_id);
+    //     }
+    //   }, err => {
+
+    //   });
+    // }
 
 
-      // this.restService.list_vehicles(vhDetails).subscribe(vhRes =>{
-      //   console.log(JSON.parse(vhRes['_body'])," resss wheel");
-      //   this.gotoDetails =JSON.parse(vhRes['_body'])
-      //   console.log(this.gotoDetails.vehicles_list[0], "listing")
-      //   var myData = JSON.stringify({
-      //     cars_list_result: this.gotoDetails.vehicles_list[0],
-      //     redirect: '/notification'
-      //   });
+    // if (p.type_id == '1' || p.type_id == '3') {
+    //   console.log('msggggggggggg',p);
+    //   this.readNotification(p)
+    //   var myData = JSON.stringify({
+    //     userID: p.receiver_id,
+    //     otherUserId: p.sender_id,
+    //     user_name: p.sender_name,
+    //     profile_img: p.sender_img_url
 
-      //   this.router.navigate(['/car-detail'], {
-      //     queryParams: {
-      //       value: myData  
-      //     },
-      //   });
-      // },(err)=>{
-      //   console.log(err);
-      // });
+    //   });
+    //   console.log(myData);
+    //   this.router.navigate(['/chat-detail'], {
+    //     queryParams: {
+    //       value: myData
+    //     }
+    //   });
+
+    // }
+
+    // if (p.type_id == '5' || p.type_id == '7') {
+    
+    // //  this.readNotification(p);
+
+    //   var vhDetails = JSON.stringify({
+    //     requestType: "get_car_details_by_id",
+    //     usersID: this.userID,
+    //     vehicleID: p.vehicle_id,
+    //     currencyID: this.currencies_id
+    //   })
+
+    //   console.log(vhDetails);
+    //   this.router.navigate(['/listed-car']);
+
+
+    //   // this.restService.list_vehicles(vhDetails).subscribe(vhRes =>{
+    //   //   console.log(JSON.parse(vhRes['_body'])," resss wheel");
+    //   //   this.gotoDetails =JSON.parse(vhRes['_body'])
+    //   //   console.log(this.gotoDetails.vehicles_list[0], "listing")
+    //   //   var myData = JSON.stringify({
+    //   //     cars_list_result: this.gotoDetails.vehicles_list[0],
+    //   //     redirect: '/notification'
+    //   //   });
+
+    //   //   this.router.navigate(['/car-detail'], {
+    //   //     queryParams: {
+    //   //       value: myData  
+    //   //     },
+    //   //   });
+    //   // },(err)=>{
+    //   //   console.log(err);
+    //   // });
 
     
-    }
+    // }
+
+
   }
 
 

@@ -29,7 +29,7 @@
           "NSCameraUsageDescription": [
             {
               "xml": "<string>Need to access camera to scan documents.</string>",
-              "count": 51
+              "count": 57
             }
           ]
         }

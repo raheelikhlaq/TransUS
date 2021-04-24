@@ -71,8 +71,8 @@ export class HomePage implements OnInit {
  
       });
 
-      this.oneSignal.handleNotificationOpened().subscribe(() => {
- 
+      this.oneSignal.handleNotificationOpened().subscribe((res) => {
+        console.log(res, "received notiiiiiiiiiiiiify")
       });
 
       this.oneSignal.endInit();
@@ -271,7 +271,8 @@ export class HomePage implements OnInit {
 
     var SearchingData = JSON.stringify({
       "currencyID": this.currencyID,
-      "requestType":"all_veh"
+      "requestType":"all_veh",
+      "userID":this.userID
     })
     this.restService.allVehicles(SearchingData).subscribe(resSearching =>{
       console.log(JSON.parse(resSearching['_body']),"searching DAta")
@@ -305,6 +306,7 @@ export class HomePage implements OnInit {
       "currencyID": this.currencyID,
       "requestType":"select_veh",
       "carTypeID":id,
+      "userID":this.userID
     })   
     console.log(data)
     this.restService.filterSearching(data).subscribe(res=>{
@@ -411,47 +413,89 @@ export class HomePage implements OnInit {
 
   accptOffer(p) {
 
-    console.log(p);
+    console.log(p, "ok nice notificatino");
 
-    if (p.offer_id) {
-      var stringy = JSON.stringify({
-        "requestType": "check_offer_by_id",
-        "customerID": this.userID,
-        "offerID": p.offer_id,
-        "currencyID": this.currencies_id
-      });
-      this.restService.inquire_charges(stringy).subscribe(response => {
-        this.response = JSON.parse(response['_body']);
-        console.log(this.response);
-        if (this.response.status == 'NotFound') {
-          console.log('NotFound');
-        } else if (this.response.status == 'Found') {
-          this.offerPopup(this.response.offers, p.offer_id);
-        }
-      }, err => {
-
-      });
+    if(p.type_id == '1'){
+      this.router.navigate(['/chat-list'])
+    }
+    if(p.type_id == '2'){
+      this.router.navigate(['/booking-list'])
+    }
+    if(p.type_id == '3'){
+      this.router.navigate(['/chat-list'])
+    }
+    if(p.type_id == '5'){
+      this.router.navigate(['/other-booking-list'])
+    }
+    if(p.type_id == '6'){
+      this.router.navigate(['/listed-car'])
+    }
+    if(p.type_id == '7'){
+      this.router.navigate(['/listed-car'])
+    }
+    if(p.type_id == '8'){
+      this.router.navigate(['/listed-car'])
     }
 
-
-    if (p.type_id == '1' || p.type_id == '3') {
-      console.log('msggggggggggg', p);
-
-      var myData = JSON.stringify({
-        userID: p.receiver_id,
-        otherUserId: p.sender_id,
-        user_name: p.sender_name,
-        profile_img: p.sender_img_url
-
-      });
-      console.log(myData);
-      this.router.navigate(['/chat-detail'], {
-        queryParams: {
-          value: myData
-        }
-      });
-
+    if(p.type_id == '9'){
+      this.router.navigate(['/other-booking-list'])
     }
+    if(p.type_id == '10'){
+      this.router.navigate(['/other-booking-list'])
+    }
+    if(p.type_id == '11'){
+      this.router.navigate(['//other-booking-list'])
+    }
+
+    if(p.type_id == '12'){
+      this.router.navigate(['/other-booking-list'])
+    }
+    if(p.type_id == '13'){
+      this.router.navigate(['/listed-car'])
+    }
+
+    // if (p.offer_id) {
+    //   var stringy = JSON.stringify({
+    //     "requestType": "check_offer_by_id",
+    //     "customerID": this.userID,
+    //     "offerID": p.offer_id,
+    //     "currencyID": this.currencies_id
+    //   });
+    //   this.restService.inquire_charges(stringy).subscribe(response => {
+    //     this.response = JSON.parse(response['_body']);
+    //     console.log(this.response);
+    //     if (this.response.status == 'NotFound') {
+    //       console.log('NotFound');
+    //     } else if (this.response.status == 'Found') {
+    //       this.offerPopup(this.response.offers, p.offer_id);
+    //     }
+    //   }, err => {
+
+    //   });
+    // }
+
+
+    // if (p.type_id == '1' || p.type_id == '3') {
+    //   console.log('msggggggggggg', p);
+
+    //   var myData = JSON.stringify({
+    //     userID: p.receiver_id,
+    //     otherUserId: p.sender_id,
+    //     user_name: p.sender_name,
+    //     profile_img: p.sender_img_url
+
+    //   });
+    //   console.log(myData);
+    //   this.router.navigate(['/chat-detail'], {
+    //     queryParams: {
+    //       value: myData
+    //     }
+    //   });
+
+    // }
+
+
+
   }
 
 

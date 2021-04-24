@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons class=\"mf\"  slot=\"start\">\n      <img src=\"assets/img/Menu.svg\" class=\"mleft\" (click)=\"toggleMenu()\">\n    </ion-buttons>\n    <ion-title>Earnings</ion-title>\n    \n   </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <div class=\"wallet_main\">\n    <ion-row class=\"wallet_inner\">\n      <ion-col size=\"6\">\n        <p class=\"dark_p_color\">Wallet Balance</p>\n        <h3 class=\"dark_p_color\">{{currency_symbol}}{{wallet_amount}}</h3>\n      </ion-col>\n      <ion-col size=\"6\">\n        <ion-button color=\"secondary\" expand=\"block\" shape=\"round\" (click)=\"withdrawRequest()\">Withdraw</ion-button>\n      </ion-col>\n    </ion-row>\n  </div>\n \n  <ion-row class=\"graph_main\">\n    <ion-col size=\"12\" class=\"graph_inner\">\n      <div style=\"display: block;\">\n        <canvas baseChart \n          height=\"350\"\n          [colors]=\"chartColors\"\n          [datasets]=\"barChartData\"\n          [labels]=\"barChartLabels\"\n          [options]=\"barChartOptions\"\n          [plugins]=\"barChartPlugins\"\n          [legend]=\"barChartLegend\"\n          [chartType]=\"barChartType\">\n        </canvas>\n      </div>\n    </ion-col>\n  </ion-row>\n  <div class=\"total_main alura\">\n    <ion-row>\n      <ion-col size=\"6\">Earnings</ion-col>\n      <ion-col size=\"6\" class=\"ion-text-right\">{{currency_symbol}}{{total_earning}}</ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col size=\"6\">Trip Earnings</ion-col>\n      <ion-col size=\"6\" class=\"ion-text-right\">{{currency_symbol}}{{total_trip_cost}}</ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col size=\"6\">Taxes</ion-col>\n      <ion-col size=\"6\" class=\"ion-text-right\">{{currency_symbol}}{{total_tax}}</ion-col>\n    </ion-row>\n  </div>\n  \n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons class=\"mf\"  slot=\"start\">\n      <img src=\"assets/img/Menu.svg\" class=\"mleft\" (click)=\"toggleMenu()\">\n    </ion-buttons>\n    <ion-title>Earnings</ion-title>\n    \n   </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <div class=\"wallet_main\">\n    <ion-row class=\"wallet_inner\">\n      <ion-col size=\"6\">\n        <p class=\"dark_p_color\">Wallet Balance</p>\n        <h3 class=\"dark_p_color\">{{currency_symbol}}{{wallet_amount}}</h3>\n      </ion-col>\n      <ion-col size=\"6\">\n        <ion-button color=\"secondary\" expand=\"block\" shape=\"round\" (click)=\"withdrawRequest()\">Withdraw</ion-button>\n      </ion-col>\n    </ion-row>\n  </div>\n \n  <ion-row class=\"graph_main\">\n    <ion-col size=\"12\" class=\"graph_inner\">\n      <div style=\"display: block;\">\n        <canvas baseChart \n          height=\"350\"\n          [colors]=\"chartColors\"\n          [datasets]=\"barChartData\"\n          [labels]=\"barChartLabels\"\n          [options]=\"barChartOptions\"\n          [plugins]=\"barChartPlugins\"\n          [legend]=\"barChartLegend\"\n          [chartType]=\"barChartType\">\n        </canvas>\n      </div>\n    </ion-col>\n  </ion-row>\n  <div class=\"total_main alura\">\n    <ion-row>\n      <ion-col size=\"6\">Earnings</ion-col>\n      <ion-col size=\"6\" class=\"ion-text-right\">{{currency_symbol}}{{total_earning}}</ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col size=\"6\">Trip Earnings</ion-col>\n      <ion-col size=\"6\" class=\"ion-text-right\">{{currency_symbol}}{{total_trip_cost}}</ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col size=\"6\">Taxes</ion-col>\n      <ion-col size=\"6\" class=\"ion-text-right\">{{currency_symbol}}{{total_tax}}</ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col size=\"6\">Refund</ion-col>\n      <ion-col size=\"6\" class=\"ion-text-right\">{{currency_symbol}}{{total_refund}}</ion-col>\n    </ion-row>\n  </div>\n  \n</ion-content>\n");
 
 /***/ }),
 
@@ -217,6 +217,7 @@ var EarningPage = /** @class */ (function () {
         ];
         this.total_earning = 0;
         this.total_tax = 0;
+        this.total_refund = 0;
         this.total_trip_cost = 0;
         this.sundayEarning = 0;
         this.mondayEarning = 0;
@@ -255,6 +256,7 @@ var EarningPage = /** @class */ (function () {
                 _this.total_earning = _this.response.total_earning;
                 _this.total_tax = _this.response.total_tax;
                 _this.total_trip_cost = _this.response.total_trip_cost;
+                _this.total_refund = _this.response.total_refund;
                 _this.wallet_amount = _this.response.wallet_amount;
                 _this.earning_details = _this.response.earning_details;
                 for (var i = 0; i < _this.earning_details.length; i++) {

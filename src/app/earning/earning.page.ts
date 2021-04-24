@@ -96,6 +96,7 @@ export class EarningPage implements OnInit {
   currencies_id: any;
   total_earning: number = 0;
   total_tax: number = 0;
+  total_refund:number = 0;
   total_trip_cost: number = 0;
   currency_symbol: any;
   wallet_amount: any;
@@ -137,6 +138,7 @@ export class EarningPage implements OnInit {
       this.total_earning  = this.response.total_earning;
       this.total_tax      = this.response.total_tax;
       this.total_trip_cost= this.response.total_trip_cost;
+      this.total_refund = this.response.total_refund;
       this.wallet_amount  = this.response.wallet_amount;
 
 
