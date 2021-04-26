@@ -1816,10 +1816,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ionic-native/photo-viewer/ngx */ "./node_modules/@ionic-native/photo-viewer/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _photoviewer_photoviewer_module__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./photoviewer/photoviewer.module */ "./src/app/photoviewer/photoviewer.module.ts");
 /* harmony import */ var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @ionic-native/image-picker/ngx */ "./node_modules/@ionic-native/image-picker/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var flutterwave_angular_v3__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! flutterwave-angular-v3 */ "./node_modules/flutterwave-angular-v3/__ivy_ngcc__/flutterwave-angular-v3.js");
-/* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ "./node_modules/@ionic-native/unique-device-id/__ivy_ngcc__/ngx/index.js");
-
+/* harmony import */ var flutterwave_angular_v3__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! flutterwave-angular-v3 */ "./node_modules/flutterwave-angular-v3/__ivy_ngcc__/flutterwave-angular-v3.js");
+/* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ "./node_modules/@ionic-native/unique-device-id/__ivy_ngcc__/ngx/index.js");
 
 
 
@@ -1866,7 +1864,7 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_16__["ReactiveFormsModule"],
                 ng2_charts__WEBPACK_IMPORTED_MODULE_22__["ChartsModule"],
                 _photoviewer_photoviewer_module__WEBPACK_IMPORTED_MODULE_24__["PhotoviewerPageModule"],
-                flutterwave_angular_v3__WEBPACK_IMPORTED_MODULE_27__["FlutterwaveModule"]
+                flutterwave_angular_v3__WEBPACK_IMPORTED_MODULE_26__["FlutterwaveModule"]
             ],
             providers: [
                 _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
@@ -1879,9 +1877,8 @@ var AppModule = /** @class */ (function () {
                 ngx_image_compress__WEBPACK_IMPORTED_MODULE_20__["NgxImageCompressService"],
                 _ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_23__["PhotoViewer"],
                 _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_21__["OneSignal"],
-                _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_26__["InAppBrowser"],
                 _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_25__["ImagePicker"],
-                _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_28__["UniqueDeviceID"],
+                _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_27__["UniqueDeviceID"],
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]

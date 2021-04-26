@@ -162,18 +162,18 @@
       "PHOTO_LIBRARY_USAGE_DESCRIPTION": "Choose Photos"
     }
   },
-  "cordova-plugin-inappbrowser": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-inappbrowser@4.1.0"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-uniquedeviceid": {
     "source": {
       "type": "registry",
       "id": "cordova-plugin-uniquedeviceid"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-inappbrowser": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-inappbrowser@4.1.0"
     },
     "is_top_level": true,
     "variables": {}

@@ -31,8 +31,7 @@ import { ChartsModule } from 'ng2-charts';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import { PhotoviewerPageModule } from './photoviewer/photoviewer.module';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-import { FlutterwaveModule } from "flutterwave-angular-v3"
+ import { FlutterwaveModule } from "flutterwave-angular-v3"
 import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
 
 @NgModule({
@@ -62,7 +61,7 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
     NgxImageCompressService,
     PhotoViewer,
     OneSignal,
-    InAppBrowser,
+ 
     ImagePicker,
     UniqueDeviceID,
 

@@ -4,8 +4,7 @@ import { RestService } from '../rest.service';
 
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import { Storage } from '@ionic/storage';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-import { AsyncPaymentOptions, Flutterwave } from 'flutterwave-angular-v3';
+ import { AsyncPaymentOptions, Flutterwave } from 'flutterwave-angular-v3';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
 @Component({
   selector: 'app-summary',
@@ -30,7 +29,7 @@ export class SummaryPage implements OnInit {
   meta = {counsumer_id: '', consumer_mac: ''}
   constructor(private photoViewer: PhotoViewer,private storage: Storage,
     public router:Router,public activatedRoute:ActivatedRoute,
-    public iab:InAppBrowser, public flutterwave:Flutterwave,
+     public flutterwave:Flutterwave,
     public restService:RestService, public uniqueID:UniqueDeviceID ) {
     this.activatedRoute.queryParams.subscribe((res)=>{
       this.response = JSON.parse(res.value);
@@ -111,7 +110,7 @@ export class SummaryPage implements OnInit {
      this.fLink = this.ForLink.data.link
      console.log(this.fLink)
  
-     const browser = this.iab.create(this.fLink, '_blank', { location: 'no', footer: 'yes', zoom: 'no', usewkwebview: 'yes', toolbar: 'yes' ,closebuttoncaption:'CLOSE WINDOW'});
+  //   const browser = this.iab.create(this.fLink, '_blank', { location: 'no', footer: 'yes', zoom: 'no', usewkwebview: 'yes', toolbar: 'yes' ,closebuttoncaption:'CLOSE WINDOW'});
 
    },err =>{
      console.log(err)

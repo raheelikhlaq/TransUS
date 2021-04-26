@@ -117,6 +117,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "merges": [
         "window.plugins.uniqueDeviceID"
       ]
+    },
+    {
+      "id": "cordova-plugin-inappbrowser.inappbrowser",
+      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+      "pluginId": "cordova-plugin-inappbrowser",
+      "clobbers": [
+        "cordova.InAppBrowser.open"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -137,6 +145,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-androidx": "3.0.0",
     "cordova-plugin-androidx-adapter": "1.1.3",
     "cordova-plugin-telerik-imagepicker": "2.3.5",
-    "cordova-plugin-uniquedeviceid": "1.3.2"
+    "cordova-plugin-uniquedeviceid": "1.3.2",
+    "cordova-plugin-inappbrowser": "4.1.0"
   };
 });

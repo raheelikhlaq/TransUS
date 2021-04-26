@@ -303,50 +303,53 @@ var HomePage = /** @class */ (function () {
         console.log(stringy);
         this.restService.homeData(stringy).subscribe(function (response) {
             _this.New_car_types = [];
-            _this.response = JSON.parse(response['_body']);
-            console.log(_this.response);
-            _this.car_types = _this.response.car_types;
-            console.log(_this.car_types, "types");
-            if (_this.car_types[3].name == 'Car') {
-                _this.New_car_types.push(_this.car_types[3]);
-                console.log(_this.New_car_types, "finnal");
-                if (_this.car_types[1].name == 'Suv') {
-                    _this.New_car_types.push(_this.car_types[1]);
-                    if (_this.car_types[0].name == 'Van') {
-                        _this.New_car_types.push(_this.car_types[0]);
-                        if (_this.car_types[2].name == 'Mini Van') {
-                            _this.New_car_types.push(_this.car_types[2]);
-                            console.log(_this.New_car_types, "finnal");
+            _this.newvar1 = response;
+            if (JSON.parse(_this.newvar1['_body'])) {
+                _this.response = JSON.parse(_this.newvar1['_body']);
+                console.log(_this.response);
+                _this.car_types = _this.response.car_types;
+                console.log(_this.car_types, "types");
+                if (_this.car_types[3].name == 'Car') {
+                    _this.New_car_types.push(_this.car_types[3]);
+                    console.log(_this.New_car_types, "finnal");
+                    if (_this.car_types[1].name == 'Suv') {
+                        _this.New_car_types.push(_this.car_types[1]);
+                        if (_this.car_types[0].name == 'Van') {
+                            _this.New_car_types.push(_this.car_types[0]);
+                            if (_this.car_types[2].name == 'Mini Van') {
+                                _this.New_car_types.push(_this.car_types[2]);
+                                console.log(_this.New_car_types, "finnal");
+                            }
                         }
                     }
                 }
+                _this.top_rated_cars = _this.response.top_rated_cars.cars_list_result;
+                _this.top_rated_motors = _this.response.top_rated_motors.motors_list_result;
+                var stringfy = JSON.stringify({
+                    "requestType": 'get_all',
+                    "usersID": _this.userID,
+                    "limit": 4,
+                    "offset": 0,
+                    'readFilter': "Unread"
+                });
+                console.log(stringy);
+                _this.restService.notifications(stringfy).subscribe(function (response) {
+                    _this.response = JSON.parse(response['_body']);
+                    if (_this.sliderStartBoolean) {
+                        _this.getStartIndex(_this.sliderStartBoolean);
+                    }
+                    else {
+                        _this.getStartIndex(0);
+                    }
+                    _this.dismiss();
+                    _this.notifications = _this.response.notifications;
+                    // this.sliderStartBoolean = 0;
+                    // this.getStartIndex(0);
+                    console.log(_this.response);
+                }, function (err) {
+                    _this.dismiss();
+                });
             }
-            _this.top_rated_cars = _this.response.top_rated_cars.cars_list_result;
-            _this.top_rated_motors = _this.response.top_rated_motors.motors_list_result;
-            var stringfy = JSON.stringify({
-                "requestType": 'get_all',
-                "usersID": _this.userID,
-                "limit": 4,
-                "offset": 0,
-                'readFilter': "Unread"
-            });
-            console.log(stringy);
-            _this.restService.notifications(stringfy).subscribe(function (response) {
-                _this.response = JSON.parse(response['_body']);
-                if (_this.sliderStartBoolean) {
-                    _this.getStartIndex(_this.sliderStartBoolean);
-                }
-                else {
-                    _this.getStartIndex(0);
-                }
-                _this.dismiss();
-                _this.notifications = _this.response.notifications;
-                // this.sliderStartBoolean = 0;
-                // this.getStartIndex(0);
-                console.log(_this.response);
-            }, function (err) {
-                _this.dismiss();
-            });
         }, function (err) {
             _this.dismiss();
         });
@@ -356,14 +359,18 @@ var HomePage = /** @class */ (function () {
             "userID": this.userID
         });
         this.restService.allVehicles(SearchingData).subscribe(function (resSearching) {
-            console.log(JSON.parse(resSearching['_body']), "searching DAta");
-            _this.responsess = JSON.parse(resSearching['_body']);
-            console.log(_this.responsess, "from body ");
-            if (_this.responsess.status == 'NotFound') {
-                // this.presentToast('Data Not Found!');
-            }
-            else if (_this.responsess.status == 'Found') {
-                console.log(_this.responsess.all_approved_cars);
+            console.log(resSearching, " line 280");
+            _this.newvar2 = resSearching;
+            if (JSON.parse(_this.newvar2['_body'])) {
+                console.log(JSON.parse(_this.newvar2['_body']), "searching DAta");
+                _this.responsess = JSON.parse(_this.newvar2['_body']);
+                console.log(_this.responsess, "from body ");
+                if (_this.responsess.status == 'NotFound') {
+                    // this.presentToast('Data Not Found!');
+                }
+                else if (_this.responsess.status == 'Found') {
+                    console.log(_this.responsess.all_approved_cars);
+                }
             }
         });
     };

@@ -204,6 +204,8 @@ export class HomePage implements OnInit {
     });
   }
   New_car_types=[];
+  newvar1:any;
+  newvar2:any;
   homeData() {
    
     var stringy = JSON.stringify({
@@ -212,9 +214,11 @@ export class HomePage implements OnInit {
       "currencyID": this.currencyID
     });
     console.log(stringy);
-    this.restService.homeData(stringy).subscribe(response => {
+    this.restService.homeData(stringy).subscribe((response) => {
       this.New_car_types = [];
-      this.response = JSON.parse(response['_body']);
+      this.newvar1 = response;
+      if(JSON.parse(this.newvar1['_body'])){
+      this.response = JSON.parse(this.newvar1['_body']);
 
       console.log(this.response);
       this.car_types = this.response.car_types;
@@ -265,6 +269,7 @@ export class HomePage implements OnInit {
       }, err => {
         this.dismiss();
       });
+    }
     }, err => {
       this.dismiss();
     });
@@ -275,8 +280,11 @@ export class HomePage implements OnInit {
       "userID":this.userID
     })
     this.restService.allVehicles(SearchingData).subscribe(resSearching =>{
-      console.log(JSON.parse(resSearching['_body']),"searching DAta")
-      this.responsess =  JSON.parse(resSearching['_body']);
+      console.log(resSearching," line 280")
+      this.newvar2 = resSearching;
+      if(JSON.parse(this.newvar2['_body'])){
+      console.log(JSON.parse(this.newvar2['_body']),"searching DAta")
+      this.responsess =  JSON.parse(this.newvar2['_body']);
       console.log(this.responsess, "from body ")
       if(this.responsess.status == 'NotFound'){
         // this.presentToast('Data Not Found!');
@@ -284,6 +292,7 @@ export class HomePage implements OnInit {
        console.log(this.responsess.all_approved_cars);
   
      }
+    }
     })
   }
   responsess:any;

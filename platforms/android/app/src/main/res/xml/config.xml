@@ -50,6 +50,9 @@
     <feature name="UniqueDeviceID">
         <param name="android-package" value="hu.dpal.phonegap.plugins.UniqueDeviceID" />
     </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
     <feature name="CDVIonicKeyboard">
         <param name="android-package" onload="true" value="io.ionic.keyboard.CDVIonicKeyboard" />
     </feature>

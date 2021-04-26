@@ -127,10 +127,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _rest_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../rest.service */ "./src/app/rest.service.ts");
 /* harmony import */ var _ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/photo-viewer/ngx */ "./node_modules/@ionic-native/photo-viewer/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
-/* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var flutterwave_angular_v3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! flutterwave-angular-v3 */ "./node_modules/flutterwave-angular-v3/__ivy_ngcc__/flutterwave-angular-v3.js");
-/* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ "./node_modules/@ionic-native/unique-device-id/__ivy_ngcc__/ngx/index.js");
-
+/* harmony import */ var flutterwave_angular_v3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! flutterwave-angular-v3 */ "./node_modules/flutterwave-angular-v3/__ivy_ngcc__/flutterwave-angular-v3.js");
+/* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ "./node_modules/@ionic-native/unique-device-id/__ivy_ngcc__/ngx/index.js");
 
 
 
@@ -140,13 +138,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var SummaryPage = /** @class */ (function () {
-    function SummaryPage(photoViewer, storage, router, activatedRoute, iab, flutterwave, restService, uniqueID) {
+    function SummaryPage(photoViewer, storage, router, activatedRoute, flutterwave, restService, uniqueID) {
         var _this = this;
         this.photoViewer = photoViewer;
         this.storage = storage;
         this.router = router;
         this.activatedRoute = activatedRoute;
-        this.iab = iab;
         this.flutterwave = flutterwave;
         this.restService = restService;
         this.uniqueID = uniqueID;
@@ -221,7 +218,7 @@ var SummaryPage = /** @class */ (function () {
             console.log(_this.ForLink.data.link);
             _this.fLink = _this.ForLink.data.link;
             console.log(_this.fLink);
-            var browser = _this.iab.create(_this.fLink, '_blank', { location: 'no', footer: 'yes', zoom: 'no', usewkwebview: 'yes', toolbar: 'yes', closebuttoncaption: 'CLOSE WINDOW' });
+            //   const browser = this.iab.create(this.fLink, '_blank', { location: 'no', footer: 'yes', zoom: 'no', usewkwebview: 'yes', toolbar: 'yes' ,closebuttoncaption:'CLOSE WINDOW'});
         }, function (err) {
             console.log(err);
         });
@@ -295,10 +292,9 @@ var SummaryPage = /** @class */ (function () {
         { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"] },
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
-        { type: _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_6__["InAppBrowser"] },
-        { type: flutterwave_angular_v3__WEBPACK_IMPORTED_MODULE_7__["Flutterwave"] },
+        { type: flutterwave_angular_v3__WEBPACK_IMPORTED_MODULE_6__["Flutterwave"] },
         { type: _rest_service__WEBPACK_IMPORTED_MODULE_3__["RestService"] },
-        { type: _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_8__["UniqueDeviceID"] }
+        { type: _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_7__["UniqueDeviceID"] }
     ]; };
     SummaryPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
