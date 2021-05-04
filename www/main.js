@@ -1415,7 +1415,7 @@ var routes = [
     },
     {
         path: 'summary',
-        loadChildren: function () { return __webpack_require__.e(/*! import() | summary-summary-module */ "summary-summary-module").then(__webpack_require__.bind(null, /*! ./summary/summary.module */ "./src/app/summary/summary.module.ts")).then(function (m) { return m.SummaryPageModule; }); }
+        loadChildren: function () { return Promise.all(/*! import() | summary-summary-module */[__webpack_require__.e("default~flutter-waves-flutter-waves-module~summary-summary-module"), __webpack_require__.e("summary-summary-module")]).then(__webpack_require__.bind(null, /*! ./summary/summary.module */ "./src/app/summary/summary.module.ts")).then(function (m) { return m.SummaryPageModule; }); }
     },
     {
         path: 'listed-car',
@@ -1511,7 +1511,7 @@ var routes = [
     },
     {
         path: 'flutter-waves',
-        loadChildren: function () { return __webpack_require__.e(/*! import() | flutter-waves-flutter-waves-module */ "flutter-waves-flutter-waves-module").then(__webpack_require__.bind(null, /*! ./flutter-waves/flutter-waves.module */ "./src/app/flutter-waves/flutter-waves.module.ts")).then(function (m) { return m.FlutterWavesPageModule; }); }
+        loadChildren: function () { return Promise.all(/*! import() | flutter-waves-flutter-waves-module */[__webpack_require__.e("default~flutter-waves-flutter-waves-module~summary-summary-module"), __webpack_require__.e("flutter-waves-flutter-waves-module")]).then(__webpack_require__.bind(null, /*! ./flutter-waves/flutter-waves.module */ "./src/app/flutter-waves/flutter-waves.module.ts")).then(function (m) { return m.FlutterWavesPageModule; }); }
     }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -1816,9 +1816,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ionic-native/photo-viewer/ngx */ "./node_modules/@ionic-native/photo-viewer/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _photoviewer_photoviewer_module__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./photoviewer/photoviewer.module */ "./src/app/photoviewer/photoviewer.module.ts");
 /* harmony import */ var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @ionic-native/image-picker/ngx */ "./node_modules/@ionic-native/image-picker/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var flutterwave_angular_v3__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! flutterwave-angular-v3 */ "./node_modules/flutterwave-angular-v3/__ivy_ngcc__/flutterwave-angular-v3.js");
-/* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ "./node_modules/@ionic-native/unique-device-id/__ivy_ngcc__/ngx/index.js");
-
+/* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ "./node_modules/@ionic-native/unique-device-id/__ivy_ngcc__/ngx/index.js");
 
 
 
@@ -1864,7 +1862,6 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_16__["ReactiveFormsModule"],
                 ng2_charts__WEBPACK_IMPORTED_MODULE_22__["ChartsModule"],
                 _photoviewer_photoviewer_module__WEBPACK_IMPORTED_MODULE_24__["PhotoviewerPageModule"],
-                flutterwave_angular_v3__WEBPACK_IMPORTED_MODULE_26__["FlutterwaveModule"]
             ],
             providers: [
                 _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
@@ -1878,7 +1875,7 @@ var AppModule = /** @class */ (function () {
                 _ionic_native_photo_viewer_ngx__WEBPACK_IMPORTED_MODULE_23__["PhotoViewer"],
                 _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_21__["OneSignal"],
                 _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_25__["ImagePicker"],
-                _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_27__["UniqueDeviceID"],
+                _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_26__["UniqueDeviceID"],
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]

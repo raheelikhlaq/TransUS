@@ -86,7 +86,7 @@ var CarBookingPageModule = /** @class */ (function () {
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
-                _car_booking_routing_module__WEBPACK_IMPORTED_MODULE_5__["CarBookingPageRoutingModule"]
+                _car_booking_routing_module__WEBPACK_IMPORTED_MODULE_5__["CarBookingPageRoutingModule"],
             ],
             declarations: [_car_booking_page__WEBPACK_IMPORTED_MODULE_6__["CarBookingPage"]]
         })

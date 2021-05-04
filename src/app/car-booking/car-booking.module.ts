@@ -13,7 +13,8 @@ import { CarBookingPage } from './car-booking.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    CarBookingPageRoutingModule
+    CarBookingPageRoutingModule,
+ 
   ],
   declarations: [CarBookingPage]
 })

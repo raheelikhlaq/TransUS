@@ -90,10 +90,11 @@ ion-button{
     margin-top: 10px !important;
 }
 .btn_fixed{
-    position: fixed;
+    position: absolute;
     bottom: 1em;
     left: 3em;
     right: 3em;
+    width: 75%;
     text-align: center;
 }
 
