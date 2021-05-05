@@ -1415,7 +1415,7 @@ var routes = [
     },
     {
         path: 'summary',
-        loadChildren: function () { return Promise.all(/*! import() | summary-summary-module */[__webpack_require__.e("default~flutter-waves-flutter-waves-module~summary-summary-module"), __webpack_require__.e("summary-summary-module")]).then(__webpack_require__.bind(null, /*! ./summary/summary.module */ "./src/app/summary/summary.module.ts")).then(function (m) { return m.SummaryPageModule; }); }
+        loadChildren: function () { return __webpack_require__.e(/*! import() | summary-summary-module */ "summary-summary-module").then(__webpack_require__.bind(null, /*! ./summary/summary.module */ "./src/app/summary/summary.module.ts")).then(function (m) { return m.SummaryPageModule; }); }
     },
     {
         path: 'listed-car',
@@ -1509,10 +1509,6 @@ var routes = [
         path: 'photoviewer',
         loadChildren: function () { return Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./photoviewer/photoviewer.module */ "./src/app/photoviewer/photoviewer.module.ts")).then(function (m) { return m.PhotoviewerPageModule; }); }
     },
-    {
-        path: 'flutter-waves',
-        loadChildren: function () { return Promise.all(/*! import() | flutter-waves-flutter-waves-module */[__webpack_require__.e("default~flutter-waves-flutter-waves-module~summary-summary-module"), __webpack_require__.e("flutter-waves-flutter-waves-module")]).then(__webpack_require__.bind(null, /*! ./flutter-waves/flutter-waves.module */ "./src/app/flutter-waves/flutter-waves.module.ts")).then(function (m) { return m.FlutterWavesPageModule; }); }
-    }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -1817,6 +1813,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _photoviewer_photoviewer_module__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./photoviewer/photoviewer.module */ "./src/app/photoviewer/photoviewer.module.ts");
 /* harmony import */ var _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @ionic-native/image-picker/ngx */ "./node_modules/@ionic-native/image-picker/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ "./node_modules/@ionic-native/unique-device-id/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var flutterwave_angular_v3__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! flutterwave-angular-v3 */ "./node_modules/flutterwave-angular-v3/__ivy_ngcc__/flutterwave-angular-v3.js");
+
 
 
 
@@ -1861,6 +1859,7 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_16__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_16__["ReactiveFormsModule"],
                 ng2_charts__WEBPACK_IMPORTED_MODULE_22__["ChartsModule"],
+                flutterwave_angular_v3__WEBPACK_IMPORTED_MODULE_27__["FlutterwaveModule"],
                 _photoviewer_photoviewer_module__WEBPACK_IMPORTED_MODULE_24__["PhotoviewerPageModule"],
             ],
             providers: [
