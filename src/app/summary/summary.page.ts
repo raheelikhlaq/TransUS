@@ -4,8 +4,7 @@ import { RestService } from '../rest.service';
 
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import { Storage } from '@ionic/storage';
-//  import { AsyncPaymentOptions, Flutterwave } from 'flutterwave-angular-v3';
-import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
+ import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
 import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-summary',
@@ -26,12 +25,10 @@ export class SummaryPage implements OnInit {
   booking_id:any;
   publicKey:string;
   customerDetails = { name: '', email: '', phone_number: ''}
-  customizations = {title: 'TransUS', description: 'Pay now for confrim your booking', logo: 'https://flutterwave.com/images/logo-colored.svg'}
-  meta = {counsumer_id: '', consumer_mac: ''}
+   meta = {counsumer_id: '', consumer_mac: ''}
   constructor(private photoViewer: PhotoViewer,private storage: Storage,
     public router:Router,public activatedRoute:ActivatedRoute,
-    //  public flutterwave:Flutterwave,
-    public toastController:ToastController,
+     public toastController:ToastController,
     public restService:RestService, public uniqueID:UniqueDeviceID ) {
     this.activatedRoute.queryParams.subscribe((res)=>{
       this.response = JSON.parse(res.value);
@@ -137,12 +134,12 @@ export class SummaryPage implements OnInit {
     });
     
     // this.router.navigate(['/payment-detail'],{
-    this.router.navigate(['/flutter-waves'],{
+    // this.router.navigate(['/flutter-waves'],{
 
-      queryParams: {
-        value : myData
-        },
-      });
+    //   queryParams: {
+    //     value : myData
+    //     },
+    //   });
   }
 
 
@@ -157,46 +154,7 @@ export class SummaryPage implements OnInit {
   getRespo:any;
   flutterWavesss(){
 
-    
-  //  var paymentData : AsyncPaymentOptions = {
-  //     public_key: this.publicKey,
-  //     tx_ref: this.generateReference(),
-  //     amount: this.trip_cost,
-  //     currency: 'USD',
-  //     payment_options: 'card',
-  //     meta: this.meta,
-  //     customer: this.customerDetails,
-  //     customizations: this.customizations,
-  //    }
-  //    console.log("complete result = ", paymentData);
-  //   this.flutterwave.asyncInlinePay(paymentData).then(
-  //     (response) =>{
-  //       console.log("Promise Res line 88" , response)
-  //       this.getRespo = response;
-  //       this.flutterwave.closePaymentModal(5);
-  //       if(this.getRespo.status == "successful"){
-          
-  //         console.log("success condition");
-  //         var sucFul = JSON.stringify({
-  //         requestType:"payment_process",
-  //         amount: this.getRespo.amount,
-  //         customer_userid:this.userID,
-  //         flw_ref:this.getRespo.flw_ref,
-  //         transaction_id: this.getRespo.transaction_id,
-  //         bookings_id: this.booking_id,
-  //         ownerID: this.booking_details.veh_users_id,
-  //         currency:"USD",
-  //         currencyID:"1"
-  //       })
-  //       this.restService.paidbooking(sucFul).subscribe(res=>{
-  //         console.log(res,"paid save in webservice")
-  //         this.paymentDone = true;
-  //       },err => {
-  //         console.log(err);
-  //       })
-        
-  //       }
-  //     });
+     
   }   
  
   closedPaymentModal(): void {
