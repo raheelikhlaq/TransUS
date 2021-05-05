@@ -32,8 +32,7 @@ import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import { PhotoviewerPageModule } from './photoviewer/photoviewer.module';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
  import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
- import { FlutterwaveModule } from "flutterwave-angular-v3"
- 
+  
 @NgModule({
   declarations: [AppComponent, VerifyMobileNumberPage, ForgotPasswordPage],
   entryComponents: [VerifyMobileNumberPage, ForgotPasswordPage],
@@ -47,8 +46,7 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
     FormsModule,
     ReactiveFormsModule,
     ChartsModule,
-    FlutterwaveModule,
-    PhotoviewerPageModule,
+     PhotoviewerPageModule,
      
      
  
