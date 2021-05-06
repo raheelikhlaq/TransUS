@@ -163,10 +163,7 @@ const routes: Routes = [
     path: 'photoviewer',
     loadChildren: () => import('./photoviewer/photoviewer.module').then( m => m.PhotoviewerPageModule)
   },
-  // {
-  //   path: 'flutter-waves',
-  //   loadChildren: () => import('./flutter-waves/flutter-waves.module').then( m => m.FlutterWavesPageModule)
-  // }
+ 
 ];
 
 @NgModule({
