@@ -210,11 +210,12 @@
     <ion-row>
       <ion-col size="6">
           <ion-row>
-            <ion-col size="12" class="list_9" (click)="uploadDocument(4)" *ngIf="document_four =='' || document_four ==undefined">
+            <!-- uploadDocument()  -->
+            <ion-col size="12" class="list_9" (click)="takeImageFromCamerass(4)" *ngIf="document_four =='' || document_four ==undefined">
               <img src="assets/img/Menu_Plus.svg">
               <p>Road Worthy</p>
             </ion-col>
-            <ion-col size="12" class="real_image_2" (click)="uploadDocument(4)" *ngIf="document_four">
+            <ion-col size="12" class="real_image_2" (click)="takeImageFromCamerass(4)" *ngIf="document_four">
               <img src="{{document_four}}" >
             </ion-col>
             <span *ngIf="document_fourError" class="error ion-padding">
@@ -224,11 +225,12 @@
       </ion-col>
       <ion-col size="6">
         <ion-row>
-          <ion-col size="12" class="list_9" (click)="uploadDocument(5)" *ngIf="document_five =='' || document_five ==undefined">
+          <!-- uploadDocument() -->
+          <ion-col size="12" class="list_9" (click)="takeImageFromCamerass(5)" *ngIf="document_five =='' || document_five ==undefined">
             <img src="assets/img/Menu_Plus.svg">
             <p>Insurance</p>
           </ion-col>
-          <ion-col size="12" class="real_image_2" (click)="uploadDocument(5)" *ngIf="document_five">
+          <ion-col size="12" class="real_image_2" (click)="takeImageFromCamerass(5)" *ngIf="document_five">
             <img src="{{document_five}}" >
           </ion-col>
           <span *ngIf="document_fiveError" class="error ion-padding">

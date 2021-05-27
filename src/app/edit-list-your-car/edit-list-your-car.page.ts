@@ -6,6 +6,7 @@ import { CameraimageService } from '../cameraimage.service';
 import { RestService } from '../rest.service';
 import { Storage } from '@ionic/storage';
 import { NgxImageCompressService } from 'ngx-image-compress';
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
 
 @Component({
   selector: 'app-edit-list-your-car',
@@ -131,7 +132,9 @@ export class EditListYourCarPage implements OnInit {
   startmonthCounter: number=1;
   dateStartError: boolean;
   constructor(public loadingController: LoadingController,public activatedRoute:ActivatedRoute,public popoverController: PopoverController,private storage: Storage,public toastController: ToastController,public router:Router,public restService:RestService,public alertCtrl: AlertController,
-    public imageService: CameraimageService,public menuCtrl: MenuController,private imageCompress: NgxImageCompressService,) {
+    public imageService: CameraimageService,
+    public menuCtrl: MenuController,private imageCompress: NgxImageCompressService,
+    public imagePicker:ImagePicker) {
       this.activatedRoute.queryParams.subscribe((res)=>{
         
           this.response = JSON.parse(res.value);
@@ -620,6 +623,87 @@ export class EditListYourCarPage implements OnInit {
     alert.present();
   }
 
+  
+  takeImageFromCamerass(param){
+
+
+    
+    var options = {
+      maximumImagesCount: 1,
+      outputType: 1
+    };
+
+    
+    this.imagePicker.getPictures(options).then((imageData) => {
+
+      console.log('Image URI: ' + imageData);
+
+      var base64 = `data:image/png;base64,${imageData}`;
+      this.imageCompress.compressFile(base64, 0, 50, 50).then(
+        result => {
+          console.log(result);
+          console.log('Size in bytes is now:', this.imageCompress.byteCount(result));
+          if(param == 1){
+                    this.document_one   = result;
+                    this.documentUploadOne = true;
+                  }else if(param == 2){
+                      this.document_two = result;
+                      this.documentUploadTwo = true;
+                  }else if(param == 3){
+                    this.document_three = result;
+                    this.documentUploadThree = true;
+                  }else if(param == 4){
+                    this.document_four  = result;
+                    this.documentUploadFour = true;
+                  }else if(param == 5){
+                    this.document_five  = result;
+                    this.documentUploadFive = true;
+                  }else if(param == 6){
+                    this.document_six = result;
+                    this.documentUploadSix = true;
+                  }else if(param == 7){
+                    this.document_seven = result;
+                    this.documentUploadSeven = true;
+                  }
+        }
+      );
+    }, (err) => {
+      console.log('imagepicker  now:', err);
+     });
+
+   
+    // this.imageService.selectImageInCamera().then((imageData) => {
+    //   var base64 = `data:image/png;base64,${imageData}`;
+    //   this.imageCompress.compressFile(base64,0, 50, 50).then(
+    //    result => {
+    //      console.log(result);
+    //      console.log('Size in bytes is now:', this.imageCompress.byteCount(result));
+    //       if(param == 1){
+    //         this.document_one   = result;
+    //         this.documentUploadOne = true;
+    //       }else if(param == 2){
+    //           this.document_two = result;
+    //           this.documentUploadTwo = true;
+    //       }else if(param == 3){
+    //         this.document_three = result;
+    //         this.documentUploadThree = true;
+    //       }else if(param == 4){
+    //         this.document_four  = result;
+    //         this.documentUploadFour = true;
+    //       }else if(param == 5){
+    //         this.document_five  = result;
+    //         this.documentUploadFive = true;
+    //       }else if(param == 6){
+    //         this.document_six = result;
+    //         this.documentUploadSix = true;
+    //       }else if(param == 7){
+    //         this.document_seven = result;
+    //         this.documentUploadSeven = true;
+    //       }
+    //     }
+    //    );
+    //   }).catch(err => console.error(err));
+  }
   takeImageFromCamera(param){
    
     this.imageService.selectImageInCamera().then((imageData) => {

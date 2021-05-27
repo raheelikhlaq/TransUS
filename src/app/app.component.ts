@@ -7,6 +7,7 @@ import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
 import { SubjectEventsService } from './subject-events.service';
 import { RestService } from './rest.service';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -103,6 +104,7 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar,
     public menuCtrl: MenuController,
     public restService:RestService,
+    public screenOrientation:ScreenOrientation,
     public subjectEvents: SubjectEventsService
   ) {
     this.initializeApp();
@@ -114,7 +116,8 @@ export class AppComponent implements OnInit {
       this.splashScreen.hide();
       this.statusBar.overlaysWebView(false)
       this.statusBar.backgroundColorByHexString('000000');
-      
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      this.screenOrientation.lock("PORTRAIT");
       this.statusBar.styleLightContent();
       this.getProfileData();
       /*this.events.subscribe('sidebar', sidebar => {
@@ -202,5 +205,6 @@ export class AppComponent implements OnInit {
   }
   toggleMenu() {
     this.menuCtrl.toggle();
+    this.menuCtrl.close();
   }
 }

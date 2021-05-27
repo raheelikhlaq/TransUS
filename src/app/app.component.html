@@ -2,7 +2,7 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
-        <ion-row>
+        <ion-row (click)="toggleMenu()">
           <ion-col size="4" class="ion-text-center tp" (click)="toggleMenu()">
             <img src="assets/img/cross.svg">
           </ion-col>

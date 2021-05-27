@@ -32,7 +32,10 @@ import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import { PhotoviewerPageModule } from './photoviewer/photoviewer.module';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
  import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
-  
+ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+
+
 @NgModule({
   declarations: [AppComponent, VerifyMobileNumberPage, ForgotPasswordPage],
   entryComponents: [VerifyMobileNumberPage, ForgotPasswordPage],
@@ -62,7 +65,8 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
     NgxImageCompressService,
     PhotoViewer,
     OneSignal,
-   
+    ScreenOrientation,
+    SocialSharing,
     ImagePicker,
     UniqueDeviceID,
 

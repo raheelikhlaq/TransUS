@@ -5,6 +5,8 @@ import { LoadingController, MenuController, PopoverController } from '@ionic/ang
 import { Storage } from '@ionic/storage';
 import { AcceptOfferPage } from '../accept-offer/accept-offer.page';
 import { RestService } from '../rest.service';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -36,6 +38,7 @@ export class HomePage implements OnInit {
   constructor(public loadingController: LoadingController, 
     private storage: Storage, public router: Router, public menuCtrl: MenuController, 
     public restService: RestService, public popoverController: PopoverController,
+    public socialSharing:SocialSharing,
     public oneSignal:OneSignal) {
     this.pet = 'cars';
 
@@ -524,4 +527,22 @@ export class HomePage implements OnInit {
     })
     return await popover.present();
   }
+
+
+  share(){
+    var text =  "TransUS \n Transport for Us All!"
+    var options = {
+      message: text + "\n  Appstore -> https://apps.apple.com/de/app/com.transus.app/id1497697781\n\nPlaystore -> https://play.google.com/store/apps/details?id=com.transus.app",
+      }
+    this.socialSharing.shareWithOptions(options).then(res=>{
+      console.log(res,":sharing result")
+      var deviceID = localStorage.getItem("deviceId");
+      
+      
+    },err =>{
+      console.log(err)
+    })
+  }
+
+
 }

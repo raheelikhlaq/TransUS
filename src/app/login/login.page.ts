@@ -56,7 +56,7 @@ export class LoginPage implements OnInit {
         this.response = JSON.parse(response['_body']);
         console.log(this.response);
         if (this.response.status == 'NotFound') {
-          this.presentToast('Inavlid email or password');
+          this.presentToast('Invalid email or password');
         } else if (this.response.status == 'Found') {
           this.presentToast('Login successfully!');
           this.storage.set('user_details', this.response.user_details);

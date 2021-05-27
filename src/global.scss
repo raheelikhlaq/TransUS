@@ -128,6 +128,11 @@ ion-segment-button {
     top: 30% !important;
     margin: 0 auto;
     border-radius: 18px;
+    left: 8%;
+}
+.popover-content.sc-ion-popover-ios{
+    position: relative;
+    left: 8%;
 }
 .sc-ion-popover-ios-h {
     --width: 85%;

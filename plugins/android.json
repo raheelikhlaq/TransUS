@@ -10,6 +10,12 @@
     "com-sarriaroman-photoviewer": {
       "PACKAGE_NAME": "com.transus.app"
     },
+    "cordova-plugin-androidx": {
+      "PACKAGE_NAME": "com.transus.app"
+    },
+    "cordova-plugin-androidx-adapter": {
+      "PACKAGE_NAME": "com.transus.app"
+    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.transus.app"
     },
@@ -28,6 +34,9 @@
       "PLAY_SERVICES_VERSION": "15.0.1",
       "PACKAGE_NAME": "com.transus.app"
     },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.transus.app"
+    },
     "cordova-plugin-ionic-keyboard": {
       "PACKAGE_NAME": "com.transus.app"
     },
@@ -44,6 +53,13 @@
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "com.transus.app"
     },
+    "cordova-plugin-telerik-imagepicker": {
+      "ANDROID_SUPPORT_V7_VERSION": "27.+",
+      "PACKAGE_NAME": "com.transus.app"
+    },
+    "cordova-plugin-uniquedeviceid": {
+      "PACKAGE_NAME": "com.transus.app"
+    },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.transus.app"
     },
@@ -53,25 +69,18 @@
     "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "com.transus.app"
     },
-    "cordova-plugin-androidx": {
+    "cordova-plugin-screen-orientation": {
       "PACKAGE_NAME": "com.transus.app"
     },
-    "cordova-plugin-androidx-adapter": {
-      "PACKAGE_NAME": "com.transus.app"
-    },
-    "cordova-plugin-telerik-imagepicker": {
-      "ANDROID_SUPPORT_V7_VERSION": "27.+",
-      "PACKAGE_NAME": "com.transus.app"
-    },
-    "cordova-plugin-uniquedeviceid": {
-      "PACKAGE_NAME": "com.transus.app"
-    },
-    "cordova-plugin-inappbrowser": {
+    "cordova-plugin-x-socialsharing": {
       "PACKAGE_NAME": "com.transus.app"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.transus.app"
+    },
+    "es6-promise-plugin": {
       "PACKAGE_NAME": "com.transus.app"
     }
   }
