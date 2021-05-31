@@ -12,12 +12,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_item_option", function() { return ItemOption; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_item_options", function() { return ItemOptions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_item_sliding", function() { return ItemSliding; });
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var _index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index-e806d1f6.js */ "./node_modules/@ionic/core/dist/esm/index-e806d1f6.js");
 /* harmony import */ var _ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ionic-global-9d5c8ee3.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-9d5c8ee3.js");
 /* harmony import */ var _helpers_90f46169_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./helpers-90f46169.js */ "./node_modules/@ionic/core/dist/esm/helpers-90f46169.js");
@@ -36,7 +36,7 @@ var itemOptionMdCss = ":host{--background:var(--ion-color-primary, #3880ff);--co
 
 var ItemOption = /*#__PURE__*/function () {
   function ItemOption(hostRef) {
-    Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, ItemOption);
+    Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, ItemOption);
 
     Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_5__["r"])(this, hostRef);
     /**
@@ -64,7 +64,7 @@ var ItemOption = /*#__PURE__*/function () {
     };
   }
 
-  Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(ItemOption, [{
+  Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(ItemOption, [{
     key: "render",
     value: function render() {
       var _createColorClasses;
@@ -83,7 +83,7 @@ var ItemOption = /*#__PURE__*/function () {
       };
       return Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_5__["h"])(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_5__["H"], {
         onClick: this.onClick,
-        class: Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_8__["c"])(this.color, (_createColorClasses = {}, Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_createColorClasses, mode, true), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_createColorClasses, 'item-option-disabled', disabled), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_createColorClasses, 'item-option-expandable', expandable), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_createColorClasses, 'ion-activatable', true), _createColorClasses))
+        class: Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_8__["c"])(this.color, (_createColorClasses = {}, Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_createColorClasses, mode, true), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_createColorClasses, 'item-option-disabled', disabled), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_createColorClasses, 'item-option-expandable', expandable), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_createColorClasses, 'ion-activatable', true), _createColorClasses))
       }, Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_5__["h"])(TagType, Object.assign({}, attrs, {
         class: "button-native",
         part: "native",
@@ -123,7 +123,7 @@ var itemOptionsMdCss = "ion-item-options{top:0;right:0;-ms-flex-pack:end;justify
 
 var ItemOptions = /*#__PURE__*/function () {
   function ItemOptions(hostRef) {
-    Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, ItemOptions);
+    Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, ItemOptions);
 
     Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_5__["r"])(this, hostRef);
     this.ionSwipe = Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_5__["e"])(this, "ionSwipe", 7);
@@ -137,11 +137,11 @@ var ItemOptions = /*#__PURE__*/function () {
   /** @internal */
 
 
-  Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(ItemOptions, [{
+  Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(ItemOptions, [{
     key: "fireSwipeEvent",
     value: function () {
-      var _fireSwipeEvent = Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        return D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      var _fireSwipeEvent = Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
@@ -171,7 +171,7 @@ var ItemOptions = /*#__PURE__*/function () {
       var mode = Object(_ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_6__["b"])(this);
       var isEnd = Object(_helpers_90f46169_js__WEBPACK_IMPORTED_MODULE_7__["l"])(this.side);
       return Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_5__["h"])(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_5__["H"], {
-        class: (_class = {}, Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class, mode, true), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class, "item-options-".concat(mode), true), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class, 'item-options-start', !isEnd), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class, 'item-options-end', isEnd), _class)
+        class: (_class = {}, Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class, mode, true), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class, "item-options-".concat(mode), true), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class, 'item-options-start', !isEnd), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class, 'item-options-end', isEnd), _class)
       });
     }
   }, {
@@ -195,7 +195,7 @@ var openSlidingItem;
 
 var ItemSliding = /*#__PURE__*/function () {
   function ItemSliding(hostRef) {
-    Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, ItemSliding);
+    Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, ItemSliding);
 
     Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_5__["r"])(this, hostRef);
     this.ionDrag = Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_5__["e"])(this, "ionDrag", 7);
@@ -218,7 +218,7 @@ var ItemSliding = /*#__PURE__*/function () {
     this.disabled = false;
   }
 
-  Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(ItemSliding, [{
+  Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(ItemSliding, [{
     key: "disabledChanged",
     value: function disabledChanged() {
       if (this.gesture) {
@@ -228,10 +228,10 @@ var ItemSliding = /*#__PURE__*/function () {
   }, {
     key: "connectedCallback",
     value: function () {
-      var _connectedCallback = Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var _connectedCallback = Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
         var _this = this;
 
-        return D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        return D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
@@ -324,11 +324,11 @@ var ItemSliding = /*#__PURE__*/function () {
   }, {
     key: "open",
     value: function () {
-      var _open = Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(side) {
+      var _open = Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(side) {
         var _this2 = this;
 
         var optionsToOpen, isStartOpen, isEndOpen;
-        return D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        return D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
@@ -423,8 +423,8 @@ var ItemSliding = /*#__PURE__*/function () {
   }, {
     key: "close",
     value: function () {
-      var _close = Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
-        return D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+      var _close = Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+        return D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
@@ -451,8 +451,8 @@ var ItemSliding = /*#__PURE__*/function () {
   }, {
     key: "closeOpened",
     value: function () {
-      var _closeOpened = Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
-        return D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+      var _closeOpened = Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
+        return D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
           while (1) {
             switch (_context5.prev = _context5.next) {
               case 0:
@@ -503,9 +503,9 @@ var ItemSliding = /*#__PURE__*/function () {
   }, {
     key: "updateOptions",
     value: function () {
-      var _updateOptions = Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6() {
+      var _updateOptions = Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6() {
         var options, sides, i, option, side;
-        return D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
+        return D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
           while (1) {
             switch (_context6.prev = _context6.next) {
               case 0:
@@ -781,15 +781,15 @@ var ItemSliding = /*#__PURE__*/function () {
 
       var mode = Object(_ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_6__["b"])(this);
       return Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_5__["h"])(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_5__["H"], {
-        class: (_class2 = {}, Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class2, mode, true), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class2, 'item-sliding-active-slide', this.state !== 2
+        class: (_class2 = {}, Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class2, mode, true), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class2, 'item-sliding-active-slide', this.state !== 2
         /* Disabled */
-        ), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class2, 'item-sliding-active-options-end', (this.state & 8
+        ), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class2, 'item-sliding-active-options-end', (this.state & 8
         /* End */
-        ) !== 0), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class2, 'item-sliding-active-options-start', (this.state & 16
+        ) !== 0), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class2, 'item-sliding-active-options-start', (this.state & 16
         /* Start */
-        ) !== 0), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class2, 'item-sliding-active-swipe-end', (this.state & 32
+        ) !== 0), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class2, 'item-sliding-active-swipe-end', (this.state & 32
         /* SwipeEnd */
-        ) !== 0), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class2, 'item-sliding-active-swipe-start', (this.state & 64
+        ) !== 0), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_class2, 'item-sliding-active-swipe-start', (this.state & 64
         /* SwipeStart */
         ) !== 0), _class2)
       });

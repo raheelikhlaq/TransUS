@@ -10,9 +10,9 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_chip", function() { return Chip; });
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var _index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index-e806d1f6.js */ "./node_modules/@ionic/core/dist/esm/index-e806d1f6.js");
 /* harmony import */ var _ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ionic-global-9d5c8ee3.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-9d5c8ee3.js");
 /* harmony import */ var _theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./theme-ff3fc52f.js */ "./node_modules/@ionic/core/dist/esm/theme-ff3fc52f.js");
@@ -27,7 +27,7 @@ var chipMdCss = ":host{--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1
 
 var Chip = /*#__PURE__*/function () {
   function Chip(hostRef) {
-    Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Chip);
+    Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Chip);
 
     Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_3__["r"])(this, hostRef);
     /**
@@ -42,7 +42,7 @@ var Chip = /*#__PURE__*/function () {
     this.disabled = false;
   }
 
-  Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Chip, [{
+  Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Chip, [{
     key: "render",
     value: function render() {
       var _createColorClasses;
@@ -50,7 +50,7 @@ var Chip = /*#__PURE__*/function () {
       var mode = Object(_ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_4__["b"])(this);
       return Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_3__["h"])(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_3__["H"], {
         "aria-disabled": this.disabled ? 'true' : null,
-        class: Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_5__["c"])(this.color, (_createColorClasses = {}, Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, mode, true), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'chip-outline', this.outline), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'chip-disabled', this.disabled), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'ion-activatable', true), _createColorClasses))
+        class: Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_5__["c"])(this.color, (_createColorClasses = {}, Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, mode, true), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'chip-outline', this.outline), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'chip-disabled', this.disabled), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'ion-activatable', true), _createColorClasses))
       }, Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_3__["h"])("slot", null), mode === 'md' && Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_3__["h"])("ion-ripple-effect", null));
     }
   }]);

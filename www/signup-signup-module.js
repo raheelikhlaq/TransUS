@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content >\n  <!-- style=\"--background:url(assets/img/Background.png)   0 0/100% 100% no-repeat;\" -->\n  <ion-row class=\"mm\">\n    <ion-col size=\"2\" class=\"back_arrow\">\n      <img src=\"assets/img/Arrow.svg\" class=\"back_arrow\" (click)=\"Gotologin()\">\n    </ion-col>\n    <ion-col size=\"8\" class=\"ion-text-center\">\n      <img src=\"assets/img/logo.png\" class=\"logo\">\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col class=\"ion-text-center icon_top\">\n      <img src=\"assets/img/usericon.svg\" class=\"usericon\" (click)=\"uploadProfile()\" *ngIf=\"profileImage == undefined\">\n      <img src=\"{{profileImage}}\" (click)=\"uploadProfile()\" *ngIf=\"profileImage\" class=\"solid_img\">\n      <span *ngIf=\"picError\" class=\"error ion-padding\" style=\"display: grid;\">\n        Profile image is required.\n      </span>\n    </ion-col>\n  </ion-row>\n  <div class=\"bp\">\n    <ion-row>\n      <ion-col>\n        <ion-input placeholder=\"Username\" class=\"rm_auto\" [(ngModel)]=\"name\" (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"nameError\" class=\"error ion-padding\">\n          Name is required.\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-input type=\"number\" placeholder=\"Mobile number\" class=\"rm_auto\" [(ngModel)]=\"mobileNumber\"\n          (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"mobileNumberError\" class=\"error ion-padding\">\n          Mobile Number is required.\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-input placeholder=\"Email\" [(ngModel)]=\"email\" class=\"rm_auto\" (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"emailError\" class=\"error ion-padding\">\n          Email is required.\n        </span>\n        <span *ngIf=\"invalidEmailError\" class=\"error ion-padding\">\n          Please provide valid email id.\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-input type=\"password\" placeholder=\"Password\" class=\"rm_auto\" [(ngModel)]=\"password\"\n          (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"passwordError\" class=\"error ion-padding\">\n          Password is required.\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"mit2\">\n      <ion-col size=\"1\">\n        <ion-checkbox [(ngModel)]=\"terms\" (ionChange)=\"changeTerms($event)\"></ion-checkbox>\n      </ion-col>\n      <ion-col size=\"11\" class=\"fix-ios\">\n        <p class=\"white agree\">I agree to the terms of service and privacy policy</p>\n        <p class=\"views\">View terms of service and privacy policy</p>\n      </ion-col>\n      <ion-col size=\"1\" class=\"mit\">\n        <ion-checkbox [(ngModel)]=\"offers\"></ion-checkbox>\n      </ion-col>\n      <ion-col size=\"11\" class=\"mit fix-ios\">\n        <p class=\"white agree\" style=\"margin-top: 3px;\">Email me with news, offers, and awesome cars</p>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <span *ngIf=\"termsError\" class=\"error ion-padding\" style=\"font-size: 12px;\">\n          Please accept privacy policies to signup\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class=\"ion-text-center parent_btn\">\n        <ion-button color=\"primary\" shape=\"round\" expand=\"block\" (click)=\"submitForm()\">Sign up</ion-button>\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"bb_top\">\n      <ion-col size=\"5\">\n        <hr class=\"bb\">\n      </ion-col>\n      <ion-col size=\"2\" class=\"white ion-text-center\">OR</ion-col>\n      <ion-col size=\"5\">\n        <hr class=\"bb\">\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col size=\"6\" class=\"ion-text-left\">\n        <ion-button class=\"fb\">\n          <img src=\"assets/img/Facebook.svg\" (click)=\"LoginWithFacebook()\">\n        </ion-button>\n      </ion-col>\n      <ion-col size=\"6\" class=\"ion-text-right\" (click)=\"LoginWithGoogle()\">\n        <ion-button class=\"google\">\n          <img src=\"assets/img/google.svg\">\n        </ion-button>\n      </ion-col>\n    </ion-row>\n  </div>\n  <ion-row>\n    <ion-col class=\"ion-text-center\" (click)=\"Gotologin()\">\n      <p class=\"white signup_text\">Already got an account? Login</p>\n    </ion-col>\n  </ion-row>\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content >\n  <!-- style=\"--background:url(assets/img/Background.png)   0 0/100% 100% no-repeat;\" -->\n  <ion-row class=\"mm\">\n    <ion-col size=\"2\" class=\"back_arrow\">\n      <img src=\"assets/img/Arrow.svg\" class=\"back_arrow\" (click)=\"Gotologin()\">\n    </ion-col>\n    <ion-col size=\"8\" class=\"ion-text-center\">\n      <img src=\"assets/img/logo.png\" class=\"logo\">\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col class=\"ion-text-center icon_top\">\n      <img src=\"assets/img/usericon.svg\" class=\"usericon\" (click)=\"uploadProfile()\" *ngIf=\"profileImage == undefined\">\n     <ng-container *ngIf=\"platformIOS\">\n      <img style=\"transform: rotate(90deg);\" src=\"{{profileImage}}\" (click)=\"uploadProfile()\" *ngIf=\"profileImage\" class=\"solid_img\">\n     </ng-container>\n     <ng-container *ngIf=\"!platformIOS\">\n      <img   src=\"{{profileImage}}\" (click)=\"uploadProfile()\" *ngIf=\"profileImage\" class=\"solid_img\">\n      </ng-container>\n      <span *ngIf=\"picError\" class=\"error ion-padding\" style=\"display: grid;\">\n        Profile image is required.\n      </span>\n    </ion-col>\n  </ion-row>\n\n  \n  <ion-row *ngIf=\"ShowLoading\" style=\"position: absolute; width: 100%; z-index: 9999;\">\n    <ion-col style=\"text-align: center;\">\n      <img style=\"width: 90px;\" src=\"assets/img/Loader.gif\">\n    </ion-col>\n  </ion-row>\n\n  \n  <div class=\"bp\">\n    <ion-row>\n      <ion-col>\n        <ion-input placeholder=\"Username\" class=\"rm_auto\" [(ngModel)]=\"name\" (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"nameError\" class=\"error ion-padding\">\n          Name is required.\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-input type=\"number\" placeholder=\"Mobile number\" class=\"rm_auto\" [(ngModel)]=\"mobileNumber\"\n          (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"mobileNumberError\" class=\"error ion-padding\">\n          Mobile Number is required.\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-input placeholder=\"Email\" [(ngModel)]=\"email\" class=\"rm_auto\" (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"emailError\" class=\"error ion-padding\">\n          Email is required.\n        </span>\n        <span *ngIf=\"invalidEmailError\" class=\"error ion-padding\">\n          Please provide valid email id.\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-input type=\"password\" placeholder=\"Password\" class=\"rm_auto\" [(ngModel)]=\"password\"\n          (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"passwordError\" class=\"error ion-padding\">\n          Password is required.\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"mit2\">\n      <ion-col size=\"1\">\n        <ion-checkbox [(ngModel)]=\"terms\" (ionChange)=\"changeTerms($event)\"></ion-checkbox>\n      </ion-col>\n      <ion-col size=\"11\" class=\"fix-ios\">\n        <p class=\"white agree\">I agree to the terms of service and privacy policy</p>\n        <p class=\"views\">View terms of service and privacy policy</p>\n      </ion-col>\n      <ion-col size=\"1\" class=\"mit\">\n        <ion-checkbox [(ngModel)]=\"offers\"></ion-checkbox>\n      </ion-col>\n      <ion-col size=\"11\" class=\"mit fix-ios\">\n        <p class=\"white agree\" style=\"margin-top: 3px;\">Email me with news, offers, and awesome cars</p>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <span *ngIf=\"termsError\" class=\"error ion-padding\" style=\"font-size: 12px;\">\n          Please accept privacy policies to signup\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class=\"ion-text-center parent_btn\">\n        <ion-button color=\"primary\" shape=\"round\" expand=\"block\" (click)=\"submitForm()\">Sign up</ion-button>\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"bb_top\">\n      <ion-col size=\"5\">\n        <hr class=\"bb\">\n      </ion-col>\n      <ion-col size=\"2\" class=\"white ion-text-center\">OR</ion-col>\n      <ion-col size=\"5\">\n        <hr class=\"bb\">\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col size=\"6\" class=\"ion-text-left\">\n        <ion-button class=\"fb\">\n          <img src=\"assets/img/Facebook.svg\" (click)=\"LoginWithFacebook()\">\n        </ion-button>\n      </ion-col>\n      <ion-col size=\"6\" class=\"ion-text-right\" (click)=\"LoginWithGoogle()\">\n        <ion-button class=\"google\">\n          <img src=\"assets/img/google.svg\">\n        </ion-button>\n      </ion-col>\n    </ion-row>\n  </div>\n  <ion-row>\n    <ion-col class=\"ion-text-center\" (click)=\"Gotologin()\">\n      <p class=\"white signup_text\">Already got an account? Login</p>\n    </ion-col>\n  </ion-row>\n</ion-content>");
 
 /***/ }),
 
@@ -107,7 +107,7 @@ var SignupPageModule = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-content {\n  background-color: #000000;\n  --background-color: #000000;\n  --background:none;\n  background: url('Background.png') no-repeat 0 0;\n  background-size: cover;\n}\n\n.back_arrow {\n  margin-top: 0.7em;\n  padding-left: 1em;\n}\n\n.logo {\n  width: 70%;\n}\n\n.mm {\n  margin-top: 1em;\n}\n\nion-input {\n  border: 1px solid #fff;\n  border-radius: 25px;\n  --padding-bottom: 1em;\n  --padding-top: 1em;\n  --color: #fff;\n  --padding-start: 1em;\n  margin-top: 0.4em;\n}\n\n.bp {\n  padding: 0em 15%;\n}\n\n.white {\n  color: #fff;\n}\n\nion-button {\n  --padding-bottom: 1.45em;\n  --padding-top: 1.45em;\n  --box-shadow: none;\n  font-size: 18px;\n  text-transform: capitalize;\n}\n\n.parent_btn {\n  margin: 0 1em;\n}\n\n.bb {\n  border-bottom: 1px solid #fff;\n}\n\n.bb_top {\n  margin: 1.5em 0em;\n}\n\n.fb {\n  --background: #3245B8;\n  --padding-start: 1em;\n  --padding-end: 1em;\n  --border-radius: 25px;\n}\n\n.google {\n  --background: #F04336;\n  --padding-start: 1em;\n  --padding-end: 1em;\n  --border-radius: 25px;\n}\n\n.signup_text {\n  margin-top: 4em;\n}\n\n.agree {\n  margin: 0px;\n  font-size: 11px;\n}\n\n.views {\n  margin: 0px;\n  color: #c4932f;\n  font-size: 11px;\n}\n\n.mit {\n  margin-top: 0.7em;\n}\n\n.mit2 {\n  margin-bottom: 4px;\n}\n\n.usericon {\n  width: 25%;\n}\n\n.icon_top {\n  margin: 0.5em 0em;\n}\n\n.error {\n  color: red;\n}\n\n.solid_img {\n  border-radius: 50%;\n  height: 100px;\n  width: 100px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2lnbnVwL3NpZ251cC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSx5QkFBQTtFQUNBLDJCQUFBO0VBQ0EsaUJBQUE7RUFDQSwrQ0FBQTtFQUNBLHNCQUFBO0FBQUo7O0FBRUE7RUFDRyxpQkFBQTtFQUNBLGlCQUFBO0FBQ0g7O0FBQ0E7RUFDSSxVQUFBO0FBRUo7O0FBQUE7RUFDSSxlQUFBO0FBR0o7O0FBREE7RUFDSSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EscUJBQUE7RUFDQSxrQkFBQTtFQUNBLGFBQUE7RUFDQSxvQkFBQTtFQUNBLGlCQUFBO0FBSUo7O0FBRkE7RUFDSSxnQkFBQTtBQUtKOztBQUhBO0VBQ0ksV0FBQTtBQU1KOztBQUpBO0VBQ0ksd0JBQUE7RUFDQSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLDBCQUFBO0FBT0o7O0FBTEE7RUFDSSxhQUFBO0FBUUo7O0FBTkE7RUFDSSw2QkFBQTtBQVNKOztBQVBBO0VBQ0csaUJBQUE7QUFVSDs7QUFSQTtFQUNJLHFCQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLHFCQUFBO0FBV0o7O0FBVEE7RUFDSSxxQkFBQTtFQUNBLG9CQUFBO0VBQ0Esa0JBQUE7RUFDQSxxQkFBQTtBQVlKOztBQVZBO0VBQ0ksZUFBQTtBQWFKOztBQVhBO0VBQ0ssV0FBQTtFQUNELGVBQUE7QUFjSjs7QUFaQTtFQUNJLFdBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtBQWVKOztBQWJBO0VBQ0ksaUJBQUE7QUFnQko7O0FBZEE7RUFDSSxrQkFBQTtBQWlCSjs7QUFmQTtFQUNLLFVBQUE7QUFrQkw7O0FBaEJBO0VBQ0ksaUJBQUE7QUFtQko7O0FBakJBO0VBQ0ksVUFBQTtBQW9CSjs7QUFsQkE7RUFDSSxrQkFBQTtFQUNBLGFBQUE7RUFDQSxZQUFBO0FBcUJKIiwiZmlsZSI6InNyYy9hcHAvc2lnbnVwL3NpZ251cC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcbmlvbi1jb250ZW50IHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwMDAwO1xuICAgIC0tYmFja2dyb3VuZC1jb2xvcjogIzAwMDAwMDtcbiAgICAtLWJhY2tncm91bmQ6bm9uZTtcbiAgICBiYWNrZ3JvdW5kOiB1cmwoLi4vLi4vYXNzZXRzL2ltZy9CYWNrZ3JvdW5kLnBuZykgbm8tcmVwZWF0IDAgMDtcbiAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xufVxuLmJhY2tfYXJyb3d7XG4gICBtYXJnaW4tdG9wOiAwLjdlbTtcbiAgIHBhZGRpbmctbGVmdDogMWVtO1xufVxuLmxvZ297XG4gICAgd2lkdGg6IDcwJTtcbn1cbi5tbXtcbiAgICBtYXJnaW4tdG9wOiAxZW07XG59XG5pb24taW5wdXR7XG4gICAgYm9yZGVyOiAxcHggc29saWQgI2ZmZjtcbiAgICBib3JkZXItcmFkaXVzOiAyNXB4O1xuICAgIC0tcGFkZGluZy1ib3R0b206IDFlbTtcbiAgICAtLXBhZGRpbmctdG9wOiAxZW07XG4gICAgLS1jb2xvcjogI2ZmZjtcbiAgICAtLXBhZGRpbmctc3RhcnQ6IDFlbTtcbiAgICBtYXJnaW4tdG9wOiAwLjRlbTtcbn1cbi5icHtcbiAgICBwYWRkaW5nOiAwZW0gMTUlO1xufVxuLndoaXRle1xuICAgIGNvbG9yOiAjZmZmO1xufVxuaW9uLWJ1dHRvbntcbiAgICAtLXBhZGRpbmctYm90dG9tOiAxLjQ1ZW07XG4gICAgLS1wYWRkaW5nLXRvcDogMS40NWVtO1xuICAgIC0tYm94LXNoYWRvdzogbm9uZTtcbiAgICBmb250LXNpemU6IDE4cHg7XG4gICAgdGV4dC10cmFuc2Zvcm06IGNhcGl0YWxpemU7XG59XG4ucGFyZW50X2J0bntcbiAgICBtYXJnaW46IDAgMWVtO1xufVxuLmJie1xuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZmZmO1xufVxuLmJiX3RvcHtcbiAgIG1hcmdpbjogMS41ZW0gMGVtO1xufVxuLmZie1xuICAgIC0tYmFja2dyb3VuZDogIzMyNDVCODtcbiAgICAtLXBhZGRpbmctc3RhcnQ6IDFlbTtcbiAgICAtLXBhZGRpbmctZW5kOiAxZW07XG4gICAgLS1ib3JkZXItcmFkaXVzOiAyNXB4O1xufVxuLmdvb2dsZXtcbiAgICAtLWJhY2tncm91bmQ6ICNGMDQzMzY7XG4gICAgLS1wYWRkaW5nLXN0YXJ0OiAxZW07XG4gICAgLS1wYWRkaW5nLWVuZDogMWVtO1xuICAgIC0tYm9yZGVyLXJhZGl1czogMjVweDtcbn1cbi5zaWdudXBfdGV4dHtcbiAgICBtYXJnaW4tdG9wOiA0ZW07XG59XG4uYWdyZWV7XG4gICAgIG1hcmdpbjogMHB4O1xuICAgIGZvbnQtc2l6ZTogMTFweDtcbn1cbi52aWV3c3tcbiAgICBtYXJnaW46IDBweDtcbiAgICBjb2xvcjogI2M0OTMyZjtcbiAgICBmb250LXNpemU6IDExcHg7XG59XG4ubWl0e1xuICAgIG1hcmdpbi10b3A6IDAuN2VtO1xufVxuLm1pdDJ7XG4gICAgbWFyZ2luLWJvdHRvbTogNHB4O1xufVxuLnVzZXJpY29ue1xuICAgICB3aWR0aDogMjUlO1xufVxuLmljb25fdG9we1xuICAgIG1hcmdpbjogMC41ZW0gMGVtO1xufVxuLmVycm9ye1xuICAgIGNvbG9yOnJlZDtcbn1cbi5zb2xpZF9pbWd7XG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xuICAgIGhlaWdodDogMTAwcHg7XG4gICAgd2lkdGg6IDEwMHB4O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-content {\n  background-color: #000000;\n  --background-color: #000000;\n  --background:none;\n  background: url('Background.png') no-repeat 0 0;\n  background-size: cover;\n}\n\n.back_arrow {\n  margin-top: 0.7em;\n  padding-left: 1em;\n}\n\n.logo {\n  width: 70%;\n}\n\n.mm {\n  margin-top: 1em;\n}\n\nion-input {\n  border: 1px solid #fff;\n  border-radius: 25px;\n  --padding-bottom: 1em;\n  --padding-top: 1em;\n  --color: #fff;\n  --padding-start: 1em;\n  margin-top: 0.4em;\n}\n\n.bp {\n  padding: 0em 15%;\n}\n\n.white {\n  color: #fff;\n}\n\nion-button {\n  --padding-bottom: 1.45em;\n  --padding-top: 1.45em;\n  --box-shadow: none;\n  font-size: 18px;\n  text-transform: capitalize;\n}\n\n.parent_btn {\n  margin: 0 1em;\n}\n\n.bb {\n  border-bottom: 1px solid #fff;\n}\n\n.bb_top {\n  margin: 1.5em 0em;\n}\n\n.fb {\n  --background: #3245B8;\n  --padding-start: 1em;\n  --padding-end: 1em;\n  --border-radius: 25px;\n}\n\n.google {\n  --background: #F04336;\n  --padding-start: 1em;\n  --padding-end: 1em;\n  --border-radius: 25px;\n}\n\n.signup_text {\n  margin-top: 4em;\n}\n\n.agree {\n  margin: 0px;\n  font-size: 11px;\n}\n\n.views {\n  margin: 0px;\n  color: #c4932f;\n  font-size: 11px;\n}\n\n.mit {\n  margin-top: 0.7em;\n}\n\n.mit2 {\n  margin-bottom: 4px;\n}\n\n.usericon {\n  width: 25%;\n}\n\n.icon_top {\n  margin: 0.5em 0em;\n}\n\n.error {\n  color: red;\n}\n\n.solid_img {\n  border-radius: 50%;\n  height: 100px;\n  width: 100px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2lnbnVwL3NpZ251cC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSx5QkFBQTtFQUNBLDJCQUFBO0VBQ0EsaUJBQUE7RUFDQSwrQ0FBQTtFQUNBLHNCQUFBO0FBQUo7O0FBRUE7RUFDRyxpQkFBQTtFQUNBLGlCQUFBO0FBQ0g7O0FBQ0E7RUFDSSxVQUFBO0FBRUo7O0FBQUE7RUFDSSxlQUFBO0FBR0o7O0FBREE7RUFDSSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EscUJBQUE7RUFDQSxrQkFBQTtFQUNBLGFBQUE7RUFDQSxvQkFBQTtFQUNBLGlCQUFBO0FBSUo7O0FBRkE7RUFDSSxnQkFBQTtBQUtKOztBQUhBO0VBQ0ksV0FBQTtBQU1KOztBQUpBO0VBQ0ksd0JBQUE7RUFDQSxxQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLDBCQUFBO0FBT0o7O0FBTEE7RUFDSSxhQUFBO0FBUUo7O0FBTkE7RUFDSSw2QkFBQTtBQVNKOztBQVBBO0VBQ0csaUJBQUE7QUFVSDs7QUFSQTtFQUNJLHFCQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLHFCQUFBO0FBV0o7O0FBVEE7RUFDSSxxQkFBQTtFQUNBLG9CQUFBO0VBQ0Esa0JBQUE7RUFDQSxxQkFBQTtBQVlKOztBQVZBO0VBQ0ksZUFBQTtBQWFKOztBQVhBO0VBQ0ssV0FBQTtFQUNELGVBQUE7QUFjSjs7QUFaQTtFQUNJLFdBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtBQWVKOztBQWJBO0VBQ0ksaUJBQUE7QUFnQko7O0FBZEE7RUFDSSxrQkFBQTtBQWlCSjs7QUFmQTtFQUNLLFVBQUE7QUFrQkw7O0FBaEJBO0VBQ0ksaUJBQUE7QUFtQko7O0FBakJBO0VBQ0ksVUFBQTtBQW9CSjs7QUFsQkE7RUFDSSxrQkFBQTtFQUNBLGFBQUE7RUFDQSxZQUFBO0FBcUJKIiwiZmlsZSI6InNyYy9hcHAvc2lnbnVwL3NpZ251cC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuaW9uLWNvbnRlbnQge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzAwMDAwMDtcclxuICAgIC0tYmFja2dyb3VuZC1jb2xvcjogIzAwMDAwMDtcclxuICAgIC0tYmFja2dyb3VuZDpub25lO1xyXG4gICAgYmFja2dyb3VuZDogdXJsKC4uLy4uL2Fzc2V0cy9pbWcvQmFja2dyb3VuZC5wbmcpIG5vLXJlcGVhdCAwIDA7XHJcbiAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xyXG59XHJcbi5iYWNrX2Fycm93e1xyXG4gICBtYXJnaW4tdG9wOiAwLjdlbTtcclxuICAgcGFkZGluZy1sZWZ0OiAxZW07XHJcbn1cclxuLmxvZ297XHJcbiAgICB3aWR0aDogNzAlO1xyXG59XHJcbi5tbXtcclxuICAgIG1hcmdpbi10b3A6IDFlbTtcclxufVxyXG5pb24taW5wdXR7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjZmZmO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMjVweDtcclxuICAgIC0tcGFkZGluZy1ib3R0b206IDFlbTtcclxuICAgIC0tcGFkZGluZy10b3A6IDFlbTtcclxuICAgIC0tY29sb3I6ICNmZmY7XHJcbiAgICAtLXBhZGRpbmctc3RhcnQ6IDFlbTtcclxuICAgIG1hcmdpbi10b3A6IDAuNGVtO1xyXG59XHJcbi5icHtcclxuICAgIHBhZGRpbmc6IDBlbSAxNSU7XHJcbn1cclxuLndoaXRle1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbn1cclxuaW9uLWJ1dHRvbntcclxuICAgIC0tcGFkZGluZy1ib3R0b206IDEuNDVlbTtcclxuICAgIC0tcGFkZGluZy10b3A6IDEuNDVlbTtcclxuICAgIC0tYm94LXNoYWRvdzogbm9uZTtcclxuICAgIGZvbnQtc2l6ZTogMThweDtcclxuICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG59XHJcbi5wYXJlbnRfYnRue1xyXG4gICAgbWFyZ2luOiAwIDFlbTtcclxufVxyXG4uYmJ7XHJcbiAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2ZmZjtcclxufVxyXG4uYmJfdG9we1xyXG4gICBtYXJnaW46IDEuNWVtIDBlbTtcclxufVxyXG4uZmJ7XHJcbiAgICAtLWJhY2tncm91bmQ6ICMzMjQ1Qjg7XHJcbiAgICAtLXBhZGRpbmctc3RhcnQ6IDFlbTtcclxuICAgIC0tcGFkZGluZy1lbmQ6IDFlbTtcclxuICAgIC0tYm9yZGVyLXJhZGl1czogMjVweDtcclxufVxyXG4uZ29vZ2xle1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjRjA0MzM2O1xyXG4gICAgLS1wYWRkaW5nLXN0YXJ0OiAxZW07XHJcbiAgICAtLXBhZGRpbmctZW5kOiAxZW07XHJcbiAgICAtLWJvcmRlci1yYWRpdXM6IDI1cHg7XHJcbn1cclxuLnNpZ251cF90ZXh0e1xyXG4gICAgbWFyZ2luLXRvcDogNGVtO1xyXG59XHJcbi5hZ3JlZXtcclxuICAgICBtYXJnaW46IDBweDtcclxuICAgIGZvbnQtc2l6ZTogMTFweDtcclxufVxyXG4udmlld3N7XHJcbiAgICBtYXJnaW46IDBweDtcclxuICAgIGNvbG9yOiAjYzQ5MzJmO1xyXG4gICAgZm9udC1zaXplOiAxMXB4O1xyXG59XHJcbi5taXR7XHJcbiAgICBtYXJnaW4tdG9wOiAwLjdlbTtcclxufVxyXG4ubWl0MntcclxuICAgIG1hcmdpbi1ib3R0b206IDRweDtcclxufVxyXG4udXNlcmljb257XHJcbiAgICAgd2lkdGg6IDI1JTtcclxufVxyXG4uaWNvbl90b3B7XHJcbiAgICBtYXJnaW46IDAuNWVtIDBlbTtcclxufVxyXG4uZXJyb3J7XHJcbiAgICBjb2xvcjpyZWQ7XHJcbn1cclxuLnNvbGlkX2ltZ3tcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIGhlaWdodDogMTAwcHg7XHJcbiAgICB3aWR0aDogMTAwcHg7XHJcbn0iXX0= */");
 
 /***/ }),
 
@@ -145,11 +145,12 @@ __webpack_require__.r(__webpack_exports__);
 
 //$ ionic cordova plugin add cordova-plugin-googleplus --variable REVERSED_CLIENT_ID=myreversedclientid
 var SignupPage = /** @class */ (function () {
-    function SignupPage(navCtrl, loadingController, subjectEvents, popoverController, storage, toastController, router, restService, alertCtrl, imageService, facebook, googlePlus) {
+    function SignupPage(navCtrl, loadingController, subjectEvents, popoverController, platform, storage, toastController, router, restService, alertCtrl, imageService, facebook, googlePlus) {
         this.navCtrl = navCtrl;
         this.loadingController = loadingController;
         this.subjectEvents = subjectEvents;
         this.popoverController = popoverController;
+        this.platform = platform;
         this.storage = storage;
         this.toastController = toastController;
         this.router = router;
@@ -174,8 +175,16 @@ var SignupPage = /** @class */ (function () {
         this.otpArr = '';
         this.otpMsg = '';
         this.responseOfOtp = '';
+        this.platformIOS = false;
+        this.ShowLoading = false;
     }
     SignupPage.prototype.ngOnInit = function () {
+        if (this.platform.is("ios")) {
+            this.platformIOS = true;
+        }
+        else {
+            this.platformIOS = false;
+        }
         // this.base64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==';
         // this.profileImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAIVBAMAAADbnobxAAAAFVBMVEX///8AI5XtKTlVbbgAF4/zcXvsHS5RBH79AAAFK0lEQVR42uzRMRHCQABFwTQIYAYFKEAT/kUk1fsWrti1sNf7AJ/fdYDX/3sAIUKECBEiRIgQIQ8hERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhEXKzR8cEAAAACIP6t/abJaACEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSERMvbomAAAAABhUP/WfrMEVCBCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJELWHh0TAADAMAzy73pfqmAfWCBCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZBHB3nlJ4w8GGmeAAAAAElFTkSuQmCC';
         // this.base64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAIVBAMAAADbnobxAAAAFVBMVEX///8AI5XtKTlVbbgAF4/zcXvsHS5RBH79AAAFK0lEQVR42uzRMRHCQABFwTQIYAYFKEAT/kUk1fsWrti1sNf7AJ/fdYDX/3sAIUKECBEiRIgQIQ8hERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhEXKzR8cEAAAACIP6t/abJaACEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSERMvbomAAAAABhUP/WfrMEVCBCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJELWHh0TAADAMAzy73pfqmAfWCBCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZBHB3nlJ4w8GGmeAAAAAElFTkSuQmCC';
@@ -201,7 +210,9 @@ var SignupPage = /** @class */ (function () {
                 requestType: 'send_otp',
                 phone_number: this.mobileNumber
             });
-            this.present();
+            localStorage.setItem("LoginWith", "phone");
+            // this.present()
+            this.ShowLoading = true;
             this.restService.auth_userAPI(ss).subscribe(function (ress) {
                 console.log(ress);
                 _this.responseOfOtp = JSON.parse(ress['_body']);
@@ -210,13 +221,15 @@ var SignupPage = /** @class */ (function () {
                     _this.otp = _this.responseOfOtp.otp_code;
                     _this.otpArr = _this.responseOfOtp.otp_code_array;
                     _this.otpMsg = _this.responseOfOtp.msg;
+                    _this.ShowLoading = false;
                     _this.verifyNumber();
                 }
                 else {
                     _this.otpMsg = _this.responseOfOtp.msg;
                     _this.presentToast(_this.otpMsg);
+                    _this.ShowLoading = false;
                 }
-                _this.dismiss();
+                // this.dismiss()
             });
             // this.present();
             // this.restService.authenticate(stringy).subscribe(response => {
@@ -298,6 +311,7 @@ var SignupPage = /** @class */ (function () {
     };
     SignupPage.prototype.LoginWithFacebook = function () {
         var _this = this;
+        localStorage.setItem("LoginWith", "facebook");
         this.facebook.login(['public_profile', 'email']).then(function (res) {
             console.log('Logged into Facebook!', res);
             _this.facebook.api('me?fields=id,name,email,first_name,picture.width(626).height(939).as(picture_large)', []).then(function (profile) {
@@ -327,6 +341,7 @@ var SignupPage = /** @class */ (function () {
     };
     SignupPage.prototype.LoginWithGoogle = function () {
         var _this = this;
+        localStorage.setItem("LoginWith", "google");
         this.googlePlus.login({})
             .then(function (res) {
             console.log(res);
@@ -346,6 +361,8 @@ var SignupPage = /** @class */ (function () {
                 else if (_this.response.status == 'success') {
                     // this.presentToast(this.response.msg);
                     //this.router.navigate(['/']);
+                    console.log(_this.response, "line number 254");
+                    console.log("before varification");
                     _this.verifyNumber();
                 }
             });
@@ -374,15 +391,70 @@ var SignupPage = /** @class */ (function () {
                             console.log(data);
                             console.log(data.data.val);
                             if (data.data.val == 'ok') {
+                                console.log("enter in condition");
                                 _this.presentToast('Account Created Successfully');
-                                _this.storage.set('user_details', _this.response.user_details);
-                                _this.storage.set('currency_symbol', _this.response.user_details.symbol);
-                                _this.storage.set('profile_img_url', _this.response.profile_img_url);
-                                _this.storage.set('base_urls', _this.baseUrl);
-                                _this.subjectEvents.publishSomeData({
-                                    sidebar: 'sidebar'
-                                });
-                                _this.navCtrl.navigateRoot('/');
+                                if (localStorage.getItem("LoginWith") == "phone") {
+                                    var stringy = JSON.stringify({
+                                        "requestType": "login",
+                                        "loginWith": "Email",
+                                        "email": _this.email,
+                                        "password": _this.password
+                                    });
+                                    console.log(stringy);
+                                    // this.present();
+                                    _this.ShowLoading = true;
+                                    _this.restService.authenticate(stringy).subscribe(function (response) {
+                                        _this.response = JSON.parse(response['_body']);
+                                        console.log(_this.response);
+                                        if (_this.response.status == 'NotFound') {
+                                            _this.presentToast('Invalid email or password');
+                                            _this.ShowLoading = false;
+                                        }
+                                        else if (_this.response.status == 'Found') {
+                                            _this.presentToast('Login successfully!');
+                                            _this.storage.set('user_details', _this.response.user_details);
+                                            _this.storage.set('profile_img_url', _this.response.profile_img_url);
+                                            _this.storage.set('country_name', _this.response.country_name);
+                                            _this.storage.set('base_urls', _this.baseUrl);
+                                            _this.storage.set('currency_symbol', _this.response.user_details.symbol);
+                                            _this.subjectEvents.publishSomeData({
+                                                sidebar: 'sidebar'
+                                            });
+                                            _this.navCtrl.navigateRoot('/');
+                                        }
+                                    });
+                                    // console.log(this.response,"line number 279");
+                                    // this.storage.set('user_details', this.response.user_details);
+                                    // this.storage.set('currency_symbol', this.response.user_details.symbol);
+                                    // this.storage.set('profile_img_url', this.response.profile_img_url);
+                                    // this.storage.set('base_urls', this.baseUrl);
+                                    // this.subjectEvents.publishSomeData({
+                                    //   sidebar: 'sidebar'
+                                    // });
+                                    // this.navCtrl.navigateRoot('/');
+                                }
+                                else if (localStorage.getItem("LoginWith") == "google") {
+                                    console.log(_this.response, "line number 279");
+                                    _this.storage.set('user_details', _this.response.user_details);
+                                    _this.storage.set('currency_symbol', _this.response.user_details.symbol);
+                                    _this.storage.set('profile_img_url', _this.response.profile_img_url);
+                                    _this.storage.set('base_urls', _this.baseUrl);
+                                    _this.subjectEvents.publishSomeData({
+                                        sidebar: 'sidebar'
+                                    });
+                                    _this.navCtrl.navigateRoot('/');
+                                }
+                                else if (localStorage.getItem("LoginWith") == "facebook") {
+                                    console.log(_this.response, "line number 279");
+                                    _this.storage.set('user_details', _this.response.user_details);
+                                    _this.storage.set('currency_symbol', _this.response.user_details.symbol);
+                                    _this.storage.set('profile_img_url', _this.response.profile_img_url);
+                                    _this.storage.set('base_urls', _this.baseUrl);
+                                    _this.subjectEvents.publishSomeData({
+                                        sidebar: 'sidebar'
+                                    });
+                                    _this.navCtrl.navigateRoot('/');
+                                }
                             }
                         });
                         return [4 /*yield*/, popover.present()];
@@ -496,6 +568,7 @@ var SignupPage = /** @class */ (function () {
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"] },
         { type: _subject_events_service__WEBPACK_IMPORTED_MODULE_10__["SubjectEventsService"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["PopoverController"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"] },
         { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_8__["Storage"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ToastController"] },
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },

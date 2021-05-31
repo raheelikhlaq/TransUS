@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content  >\n  <!-- style=\"--background:url(assets/img/Background.png)  0 0/100% 100% no-repeat;\" -->\n  <ion-row>\n    <ion-col class=\"back_arrow\">\n      <img src=\"assets/img/Arrow.svg\" (click)=\"goToHome()\">\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col class=\"ion-text-center logo\">\n      <img src=\"assets/img/logo.png\">\n    </ion-col>\n  </ion-row>\n  <div class=\"bp\">\n\n    <ion-row>\n      <ion-col>\n        <ion-input placeholder=\"Email\" class=\"rm_auto\" [(ngModel)]=\"email\" (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"emailError\" class=\"error ion-padding\">\n          Email is required.\n        </span>\n        <span *ngIf=\"invalidEmailError\" class=\"error ion-padding\">\n          Please provide valid email id.\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-input type=\"password\" class=\"rm_auto\" placeholder=\"password\" [(ngModel)]=\"password\"\n          (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"passwordError\" class=\"error ion-padding\">\n          Password is required.\n        </span>\n        <!--span class=\"error ion-padding\" >\n            Password should be min 6 chars long.\n          </span-->\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class=\"ion-text-right\">\n        <p class=\"white\" (click)=\"forgotPassword()\">Forgot your password?</p>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class=\"ion-text-center parent_btn\">\n        <ion-button color=\"primary\" shape=\"round\" expand=\"block\" (click)=\"submitForm()\">Login</ion-button>\n      </ion-col>\n    </ion-row>\n\n    <ion-row class=\"bb_top\">\n      <ion-col size=\"5\">\n        <hr class=\"bb\">\n      </ion-col>\n      <ion-col size=\"2\" class=\"white ion-text-center\">OR</ion-col>\n      <ion-col size=\"5\">\n        <hr class=\"bb\">\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col size=\"6\" class=\"ion-text-left\">\n        <ion-button class=\"fb\">\n          <img src=\"assets/img/Facebook.svg\" (click)=\"LoginWithFacebook()\">\n        </ion-button>\n      </ion-col>\n      <ion-col size=\"6\" class=\"ion-text-right\">\n        <ion-button class=\"google\">\n          <img src=\"assets/img/google.svg\" (click)=\"LoginWithGoogle()\">\n        </ion-button>\n      </ion-col>\n    </ion-row>\n  </div>\n  <ion-row>\n    <ion-col class=\"ion-text-center\" (click)=\"GotoSignup()\">\n      <p class=\"white signup_text\">Don't have an account? Sign up</p>\n    </ion-col>\n  </ion-row>\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content  >\n  <!-- style=\"--background:url(assets/img/Background.png)  0 0/100% 100% no-repeat;\" -->\n  <ion-row>\n    <ion-col class=\"back_arrow\">\n      <img src=\"assets/img/Arrow.svg\" (click)=\"goToHome()\">\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col class=\"ion-text-center logo\">\n      <img src=\"assets/img/logo.png\">\n    </ion-col>\n  </ion-row>\n\n  <ion-row *ngIf=\"ShowLoading\" style=\"position: absolute; width: 100%; z-index: 9999;\">\n    <ion-col style=\"text-align: center;\">\n      <img style=\"width: 90px;\" src=\"assets/img/Loader.gif\">\n    </ion-col>\n  </ion-row>\n  <div class=\"bp\">\n\n  \n\n    <ion-row>\n      <ion-col>\n        <ion-input placeholder=\"Email\" class=\"rm_auto\" [(ngModel)]=\"email\" (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"emailError\" class=\"error ion-padding\">\n          Email is required.\n        </span>\n        <span *ngIf=\"invalidEmailError\" class=\"error ion-padding\">\n          Please provide valid email id.\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-input type=\"password\" class=\"rm_auto\" placeholder=\"password\" [(ngModel)]=\"password\"\n          (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"passwordError\" class=\"error ion-padding\">\n          Password is required.\n        </span>\n        <!--span class=\"error ion-padding\" >\n            Password should be min 6 chars long.\n          </span-->\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class=\"ion-text-right\">\n        <p class=\"white\" (click)=\"forgotPassword()\">Forgot your password?</p>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class=\"ion-text-center parent_btn\">\n        <ion-button color=\"primary\" shape=\"round\" expand=\"block\" (click)=\"submitForm()\">Login</ion-button>\n      </ion-col>\n    </ion-row>\n\n    <ion-row class=\"bb_top\">\n      <ion-col size=\"5\">\n        <hr class=\"bb\">\n      </ion-col>\n      <ion-col size=\"2\" class=\"white ion-text-center\">OR</ion-col>\n      <ion-col size=\"5\">\n        <hr class=\"bb\">\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col size=\"6\" class=\"ion-text-left\">\n        <ion-button class=\"fb\">\n          <img src=\"assets/img/Facebook.svg\" (click)=\"LoginWithFacebook()\">\n        </ion-button>\n      </ion-col>\n      <ion-col size=\"6\" class=\"ion-text-right\">\n        <ion-button class=\"google\">\n          <img src=\"assets/img/google.svg\" (click)=\"LoginWithGoogle()\">\n        </ion-button>\n      </ion-col>\n    </ion-row>\n  </div>\n  <ion-row>\n    <ion-col class=\"ion-text-center\" (click)=\"GotoSignup()\">\n      <p class=\"white signup_text\">Don't have an account? Sign up</p>\n    </ion-col>\n  </ion-row>\n</ion-content>");
 
 /***/ }),
 
@@ -163,6 +163,7 @@ var LoginPage = /** @class */ (function () {
         this.invalidEmailError = false;
         this.validation = false;
         this.baseUrl = 'https://app.transusdrives.com/';
+        this.ShowLoading = false;
     }
     LoginPage.prototype.ngOnInit = function () {
     };
@@ -177,12 +178,14 @@ var LoginPage = /** @class */ (function () {
                 "password": this.password
             });
             console.log(stringy);
-            this.present();
+            // this.present();
+            this.ShowLoading = true;
             this.restService.authenticate(stringy).subscribe(function (response) {
                 _this.response = JSON.parse(response['_body']);
                 console.log(_this.response);
                 if (_this.response.status == 'NotFound') {
-                    _this.presentToast('Inavlid email or password');
+                    _this.presentToast('Invalid email or password');
+                    _this.ShowLoading = false;
                 }
                 else if (_this.response.status == 'Found') {
                     _this.presentToast('Login successfully!');
@@ -196,15 +199,18 @@ var LoginPage = /** @class */ (function () {
                     });
                     _this.navCtrl.navigateRoot('/');
                 }
-                _this.dismiss();
+                // this.dismiss();
+                _this.ShowLoading = false;
             }, function (err) {
                 _this.presentToast('Oops!somthing went wrong.');
-                _this.dismiss();
+                // this.dismiss();
+                _this.ShowLoading = false;
             });
         }
     };
     LoginPage.prototype.LoginWithFacebook = function () {
         var _this = this;
+        this.ShowLoading = true;
         this.facebook.login(['public_profile', 'email']).then(function (res) {
             console.log('Logged into Facebook!', res);
             _this.facebook.api('me?fields=id,name,email,first_name,picture.width(626).height(939).as(picture_large)', []).then(function (profile) {
@@ -232,8 +238,10 @@ var LoginPage = /** @class */ (function () {
                         });
                         _this.navCtrl.navigateRoot('/');
                     }
+                    _this.ShowLoading = false;
                 });
                 //this.userData = {email: profile['email'], first_name: profile['first_name'], picture: profile['picture_large']['data']['url'], username: profile['name']}
+                _this.ShowLoading = false;
             });
         }).catch(function (e) { return console.log('Error logging into Facebook', e); });
     };

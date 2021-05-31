@@ -76,12 +76,25 @@ export class FiltersPage implements OnInit {
   userID: any;
   currencyID: any='';
   currencySymbol: any;
+  i:any;
   constructor(private storage: Storage,public zone: NgZone,public router:Router,public toastController:ToastController,public restService:RestService,public menuCtrl:MenuController) {
     this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
     this.autocomplete = { input: '' };
     this.autocompleteItems = [];
     this.detinationCompleteItems = [];
-   }
+    var date   =    new Date();
+    var month = date.getMonth() +1;
+    var fMonth = this.monthList(month);
+    var dDate = date.getDate();
+    console.log(dDate)
+    // this.getStartIndex(dDate);
+    this.i = dDate 
+    console.log(date);
+    console.log(month)
+    console.log(fMonth)
+    this.start_date_month = fMonth; 
+    this.start_month_index= month;
+  }
 
   ngOnInit() {
     this.days = Array.from({length:30},(v,k)=>k+1);
@@ -239,6 +252,7 @@ export class FiltersPage implements OnInit {
     this.start_date_month =  this.monthList(this.start_month_index);
    // this.startSlides.slideNext();
   }
+  NoDataFount:any=[];
 
   submitForm(){
    // var feature = this.feature.split(',')[0];
@@ -301,7 +315,16 @@ export class FiltersPage implements OnInit {
     this.restService.filters(stringy).subscribe(response => {
       this.response =  JSON.parse(response['_body']);
       if(this.response.status == 'NotFound'){
-        this.presentToast('Data Not Found!');
+        var myData = JSON.stringify({
+          cars_list_result: this.NoDataFount
+        });
+        
+       this.router.navigate(['/car-list'],{
+          queryParams: {
+            value : myData
+            },
+          });
+        // this.presentToast('Data Not Found!');
      }else if(this.response.status == 'Found'){
        console.log(this.response.cars_list_result);
        var myData = JSON.stringify({

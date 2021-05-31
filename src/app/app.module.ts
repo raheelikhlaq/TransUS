@@ -34,6 +34,8 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { FlutterwaveModule } from "flutterwave-angular-v3"
 import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+
 
 @NgModule({
   declarations: [AppComponent, VerifyMobileNumberPage, ForgotPasswordPage],
@@ -65,6 +67,7 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
     InAppBrowser,
     ImagePicker,
     UniqueDeviceID,
+    SocialSharing,
 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

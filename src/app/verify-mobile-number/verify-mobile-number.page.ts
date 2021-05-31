@@ -13,7 +13,7 @@ export class VerifyMobileNumberPage implements OnInit {
   b1: number = 2;
   c1: number = 3;
   d1: number = 4;
-
+  ShowLoading:boolean=false;
   response: any = ''
   stringyOfSignup: any = ''
   loading: any = ''
@@ -72,8 +72,8 @@ export class VerifyMobileNumberPage implements OnInit {
     console.log(this.otpCodeOfthisScreen);
 
     if (this.otpCodeOfthisScreen == this.otp) {
-      this.present();
-
+      // this.present();
+      this.ShowLoading = true
       console.log(this.stringyOfSignup);
 
       this.restService.authenticate(this.stringyOfSignup).subscribe(response => {
@@ -82,7 +82,8 @@ export class VerifyMobileNumberPage implements OnInit {
         console.log(this.response.status);
         if (this.response.status == 'error') {
           this.presentToast(this.response.msg);
-          this.dismiss();
+          this.ShowLoading =false;
+          // this.dismiss();
         } else if (this.response.status == 'success') {
 
 
@@ -96,13 +97,15 @@ export class VerifyMobileNumberPage implements OnInit {
 
 
           this.router.navigate(['/']);
-          this.dismiss();
+          // this.dismiss();
+          this.ShowLoading=false;
 
 
 
         }
       }, err => {
-        this.dismiss();
+        // this.dismiss();
+        this.ShowLoading = false
       });
     } else {
       this.presentToast('Incorrect Code')
@@ -153,7 +156,8 @@ export class VerifyMobileNumberPage implements OnInit {
 
     })
 
-    this.present()
+    // this.present()
+    this.ShowLoading = true;
 
     this.restService.auth_userAPI(ss).subscribe((ress: any) => {
       console.log(ress)
@@ -183,7 +187,8 @@ export class VerifyMobileNumberPage implements OnInit {
         this.presentToast(this.otpMsg)
       }
 
-      this.dismiss()
+      // this.dismiss()
+      this.ShowLoading = false;
     })
 
 

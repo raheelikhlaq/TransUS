@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { LoadingController, MenuController, PopoverController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { AcceptOfferPage } from '../accept-offer/accept-offer.page';
@@ -36,11 +37,12 @@ export class HomePage implements OnInit {
   constructor(public loadingController: LoadingController, 
     private storage: Storage, public router: Router, public menuCtrl: MenuController, 
     public restService: RestService, public popoverController: PopoverController,
-    public oneSignal:OneSignal) {
+    public oneSignal:OneSignal, public socialSharing:SocialSharing) {
     this.pet = 'cars';
 
     this.storage.set('base_urls', this.baseUrl);
   }
+  ShowLoading:boolean = false;
   ngOnInit() {
     // alert("this is new build")
   }
@@ -52,7 +54,8 @@ export class HomePage implements OnInit {
   oneDataSet:any;
   userDetail:any;
   ionViewWillEnter() {
-    this.present();
+    // this.present();
+    this.ShowLoading = true;
     this.storage.get('user_details').then((user_details) => {
       console.log(user_details, "calling from home");
       if(user_details){
@@ -255,7 +258,8 @@ export class HomePage implements OnInit {
           this.getStartIndex(0);
         }
 
-        this.dismiss();
+        // this.dismiss();
+        this.ShowLoading = false;
         this.notifications = this.response.notifications;
         // this.sliderStartBoolean = 0;
 
@@ -263,10 +267,12 @@ export class HomePage implements OnInit {
         console.log(this.response);
 
       }, err => {
-        this.dismiss();
+        // this.dismiss();
+        this.ShowLoading = false;
       });
     }, err => {
-      this.dismiss();
+      // this.dismiss();
+      this.ShowLoading = false;
     });
 
     var SearchingData = JSON.stringify({
@@ -470,5 +476,18 @@ export class HomePage implements OnInit {
 
     })
     return await popover.present();
+  }
+
+
+  inviteFrnds(){
+    var text= "Invite your friends and earn credits"
+    var options = {
+      message: text + "\nAppstore -> https://apps.apple.com/de/app/trans-US/id1497697781\n\nPlaystore -> https://play.google.com/store/apps/details?id=com.transus.app",
+      }
+    this.socialSharing.shareWithOptions(options).then(res=>{
+      console.log(res)
+    },err =>{
+      console.log(err)
+    })
   }
 }

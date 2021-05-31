@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController, LoadingController, NavController, PopoverController, ToastController } from '@ionic/angular';
+import { AlertController, LoadingController, NavController, Platform, PopoverController, ToastController } from '@ionic/angular';
 import { CameraimageService } from '../cameraimage.service';
 import { RestService } from '../rest.service';
 
@@ -47,12 +47,27 @@ export class SignupPage implements OnInit {
   otpMsg: any = ''
 
   responseOfOtp: any = ''
+  platformIOS:boolean=false
 
+  constructor(public navCtrl: NavController, 
+    public loadingController: LoadingController, 
+    public subjectEvents: SubjectEventsService, 
+    public popoverController: PopoverController, 
+    public platform:Platform,
+    private storage: Storage, public toastController: ToastController, 
+    public router: Router, public restService: RestService, 
+    public alertCtrl: AlertController,
+    public imageService: CameraimageService, 
+    private facebook: Facebook, private googlePlus: GooglePlus) { }
 
-  constructor(public navCtrl: NavController, public loadingController: LoadingController, public subjectEvents: SubjectEventsService, public popoverController: PopoverController, private storage: Storage, public toastController: ToastController, public router: Router, public restService: RestService, public alertCtrl: AlertController,
-    public imageService: CameraimageService, private facebook: Facebook, private googlePlus: GooglePlus) { }
-
+    ShowLoading:boolean=false;
   ngOnInit() {
+    if(this.platform.is("ios")){
+      this.platformIOS = true;
+    }
+    else{
+      this.platformIOS = false
+    }
     // this.base64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==';
     // this.profileImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAIVBAMAAADbnobxAAAAFVBMVEX///8AI5XtKTlVbbgAF4/zcXvsHS5RBH79AAAFK0lEQVR42uzRMRHCQABFwTQIYAYFKEAT/kUk1fsWrti1sNf7AJ/fdYDX/3sAIUKECBEiRIgQIQ8hERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhEXKzR8cEAAAACIP6t/abJaACEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSERMvbomAAAAABhUP/WfrMEVCBCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJELWHh0TAADAMAzy73pfqmAfWCBCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZBHB3nlJ4w8GGmeAAAAAElFTkSuQmCC';
     // this.base64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAIVBAMAAADbnobxAAAAFVBMVEX///8AI5XtKTlVbbgAF4/zcXvsHS5RBH79AAAFK0lEQVR42uzRMRHCQABFwTQIYAYFKEAT/kUk1fsWrti1sNf7AJ/fdYDX/3sAIUKECBEiRIgQIQ8hERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhEXKzR8cEAAAACIP6t/abJaACEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSERMvbomAAAAABhUP/WfrMEVCBCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJEIi5IRESISckAiJkBMSIRFyQiIkQk5IhETICYmQCDkhERIhJyRCIuSEREiEnJAIiZATEiERckIiJEJOSIREyAmJkAg5IRESISckQiLkhERIhJyQCImQExIhEXJCIiRCTkiERMgJiZAIOSEREiEnJELWHh0TAADAMAzy73pfqmAfWCBCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZAREiERMkIiJEJGSIREyAiJkAgZIRESISMkQiJkhERIhIyQCImQERIhETJCIiRCRkiERMgIiZAIGSEREiEjJEIiZIRESISMkAiJkBESIREyQiIkQkZIhETICImQCBkhERIhIyRCImSEREiEjJAIiZBHB3nlJ4w8GGmeAAAAAElFTkSuQmCC';
@@ -81,9 +96,9 @@ export class SignupPage implements OnInit {
         phone_number: this.mobileNumber
 
       })
-
-      this.present()
-
+      localStorage.setItem("LoginWith","phone");
+      // this.present()
+      this.ShowLoading = true;
       this.restService.auth_userAPI(ss).subscribe((ress: any) => {
         console.log(ress)
 
@@ -98,15 +113,17 @@ export class SignupPage implements OnInit {
           this.otp = this.responseOfOtp.otp_code
           this.otpArr = this.responseOfOtp.otp_code_array
           this.otpMsg = this.responseOfOtp.msg
-
+          this.ShowLoading = false;
           this.verifyNumber();
+
 
         } else {
           this.otpMsg = this.responseOfOtp.msg
-          this.presentToast(this.otpMsg)
+          this.presentToast(this.otpMsg);
+          this.ShowLoading = false;
         }
 
-        this.dismiss()
+        // this.dismiss()
 
 
       })
@@ -188,6 +205,7 @@ export class SignupPage implements OnInit {
     }
   }
   LoginWithFacebook() {
+    localStorage.setItem("LoginWith","facebook");
     this.facebook.login(['public_profile', 'email']).then((res: FacebookLoginResponse) => {
       console.log('Logged into Facebook!', res)
       this.facebook.api('me?fields=id,name,email,first_name,picture.width(626).height(939).as(picture_large)', []).then(profile => {
@@ -216,6 +234,7 @@ export class SignupPage implements OnInit {
     }).catch(e => console.log('Error logging into Facebook', e));
   }
   LoginWithGoogle() {
+    localStorage.setItem("LoginWith","google");
     this.googlePlus.login({})
       .then(res => {
         console.log(res);
@@ -234,6 +253,8 @@ export class SignupPage implements OnInit {
           } else if (this.response.status == 'success') {
             // this.presentToast(this.response.msg);
             //this.router.navigate(['/']);
+            console.log(this.response,"line number 254")
+            console.log("before varification");
             this.verifyNumber();
 
           }
@@ -257,16 +278,75 @@ export class SignupPage implements OnInit {
       console.log(data);
       console.log(data.data.val);
       if (data.data.val == 'ok') {
+        console.log("enter in condition")
+     
+        if(localStorage.getItem("LoginWith") == "phone"){
 
-        this.presentToast('Account Created Successfully');
-        this.storage.set('user_details', this.response.user_details);
-        this.storage.set('currency_symbol', this.response.user_details.symbol);
-        this.storage.set('profile_img_url', this.response.profile_img_url);
-        this.storage.set('base_urls', this.baseUrl);
-        this.subjectEvents.publishSomeData({
-          sidebar: 'sidebar'
-        });
-        this.navCtrl.navigateRoot('/');
+          var stringy = JSON.stringify({
+            "requestType": "login",
+            "loginWith": "Email",
+            "email": this.email,
+            "password": this.password
+          });
+          console.log(stringy);
+          // this.present();
+          this.ShowLoading = true;
+          this.restService.authenticate(stringy).subscribe(response => {
+            this.response = JSON.parse(response['_body']);
+            console.log(this.response);
+            if (this.response.status == 'NotFound') {
+              this.presentToast('Invalid email or password');
+              this.ShowLoading = false;
+            } else if (this.response.status == 'Found') {
+              // this.presentToast('Login successfully!');
+              this.presentToast('Account Created Successfully');
+              this.storage.set('user_details', this.response.user_details);
+              this.storage.set('profile_img_url', this.response.profile_img_url);
+              this.storage.set('country_name', this.response.country_name);
+              this.storage.set('base_urls', this.baseUrl);
+              this.storage.set('currency_symbol', this.response.user_details.symbol);
+              this.subjectEvents.publishSomeData({
+                sidebar: 'sidebar'
+              });
+              this.navCtrl.navigateRoot('/');
+            }
+          });
+
+          // console.log(this.response,"line number 279");
+          // this.storage.set('user_details', this.response.user_details);
+          // this.storage.set('currency_symbol', this.response.user_details.symbol);
+          // this.storage.set('profile_img_url', this.response.profile_img_url);
+          // this.storage.set('base_urls', this.baseUrl);
+          // this.subjectEvents.publishSomeData({
+          //   sidebar: 'sidebar'
+          // });
+          // this.navCtrl.navigateRoot('/');
+        }
+        else if(localStorage.getItem("LoginWith") == "google"){
+          console.log(this.response,"line number 279");
+          this.storage.set('user_details', this.response.user_details);
+          this.storage.set('currency_symbol', this.response.user_details.symbol);
+          this.storage.set('profile_img_url', this.response.profile_img_url);
+          this.storage.set('base_urls', this.baseUrl);
+          this.presentToast('Account Created Successfully');
+          this.subjectEvents.publishSomeData({
+            sidebar: 'sidebar'
+          });
+          this.navCtrl.navigateRoot('/');
+        }
+        else if(localStorage.getItem("LoginWith") == "facebook"){
+          console.log(this.response,"line number 279");
+          this.storage.set('user_details', this.response.user_details);
+          this.storage.set('currency_symbol', this.response.user_details.symbol);
+          this.storage.set('profile_img_url', this.response.profile_img_url);
+          this.storage.set('base_urls', this.baseUrl);
+          this.presentToast('Account Created Successfully');
+          this.subjectEvents.publishSomeData({
+            sidebar: 'sidebar'
+          });
+          this.navCtrl.navigateRoot('/');
+        }
+      
       }
     })
     return await popover.present();

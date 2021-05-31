@@ -11,13 +11,13 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_segment", function() { return Segment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_segment_button", function() { return SegmentButton; });
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper */ "./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper.js");
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper */ "./node_modules/@babel/runtime/helpers/esm/createForOfIteratorHelper.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var _index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index-e806d1f6.js */ "./node_modules/@ionic/core/dist/esm/index-e806d1f6.js");
 /* harmony import */ var _ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ionic-global-9d5c8ee3.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-9d5c8ee3.js");
 /* harmony import */ var _helpers_90f46169_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./helpers-90f46169.js */ "./node_modules/@ionic/core/dist/esm/helpers-90f46169.js");
@@ -39,7 +39,7 @@ var Segment = /*#__PURE__*/function () {
   function Segment(hostRef) {
     var _this = this;
 
-    Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Segment);
+    Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Segment);
 
     Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_6__["r"])(this, hostRef);
     this.ionChange = Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_6__["e"])(this, "ionChange", 7);
@@ -90,7 +90,7 @@ var Segment = /*#__PURE__*/function () {
     };
   }
 
-  Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__["default"])(Segment, [{
+  Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__["default"])(Segment, [{
     key: "colorChanged",
     value: function colorChanged(value, oldValue) {
       /**
@@ -131,7 +131,7 @@ var Segment = /*#__PURE__*/function () {
       this.gestureChanged();
       var buttons = this.getButtons();
 
-      var _iterator = Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_3__["default"])(buttons),
+      var _iterator = Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_3__["default"])(buttons),
           _step;
 
       try {
@@ -165,10 +165,10 @@ var Segment = /*#__PURE__*/function () {
   }, {
     key: "componentDidLoad",
     value: function () {
-      var _componentDidLoad = Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee() {
+      var _componentDidLoad = Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])( /*#__PURE__*/D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee() {
         var _this2 = this;
 
-        return D_ali_project_TransUsLatest_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
+        return D_Github_Projects_TransUS_node_modules_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
@@ -384,7 +384,7 @@ var Segment = /*#__PURE__*/function () {
         return button.value === _this5.value;
       });
 
-      var _iterator2 = Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_3__["default"])(buttons),
+      var _iterator2 = Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_createForOfIteratorHelper__WEBPACK_IMPORTED_MODULE_3__["default"])(buttons),
           _step2;
 
       try {
@@ -502,7 +502,7 @@ var Segment = /*#__PURE__*/function () {
       var mode = Object(_ionic_global_9d5c8ee3_js__WEBPACK_IMPORTED_MODULE_7__["b"])(this);
       return Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_6__["h"])(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_6__["H"], {
         onClick: this.onClick,
-        class: Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_9__["c"])(this.color, (_createColorClasses = {}, Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, mode, true), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'in-toolbar', Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_9__["h"])('ion-toolbar', this.el)), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'in-toolbar-color', Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_9__["h"])('ion-toolbar[color]', this.el)), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'segment-activated', this.activated), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'segment-disabled', this.disabled), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'segment-scrollable', this.scrollable), _createColorClasses))
+        class: Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_9__["c"])(this.color, (_createColorClasses = {}, Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, mode, true), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'in-toolbar', Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_9__["h"])('ion-toolbar', this.el)), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'in-toolbar-color', Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_9__["h"])('ion-toolbar[color]', this.el)), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'segment-activated', this.activated), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'segment-disabled', this.disabled), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_createColorClasses, 'segment-scrollable', this.scrollable), _createColorClasses))
       }, Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_6__["h"])("slot", null));
     }
   }, {
@@ -537,7 +537,7 @@ var SegmentButton = /*#__PURE__*/function () {
   function SegmentButton(hostRef) {
     var _this7 = this;
 
-    Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_4__["default"])(this, SegmentButton);
+    Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_4__["default"])(this, SegmentButton);
 
     Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_6__["r"])(this, hostRef);
     this.segmentEl = null;
@@ -574,7 +574,7 @@ var SegmentButton = /*#__PURE__*/function () {
     };
   }
 
-  Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__["default"])(SegmentButton, [{
+  Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__["default"])(SegmentButton, [{
     key: "connectedCallback",
     value: function connectedCallback() {
       var segmentEl = this.segmentEl = this.el.closest('ion-segment');
@@ -616,7 +616,7 @@ var SegmentButton = /*#__PURE__*/function () {
 
       return Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_6__["h"])(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_6__["H"], {
         "aria-disabled": disabled ? 'true' : null,
-        class: (_class = {}, Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, mode, true), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'in-toolbar', Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_9__["h"])('ion-toolbar', this.el)), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'in-toolbar-color', Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_9__["h"])('ion-toolbar[color]', this.el)), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'in-segment', Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_9__["h"])('ion-segment', this.el)), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'in-segment-color', hasSegmentColor()), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'segment-button-has-label', hasLabel), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'segment-button-has-icon', hasIcon), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'segment-button-has-label-only', hasLabel && !hasIcon), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'segment-button-has-icon-only', hasIcon && !hasLabel), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'segment-button-disabled', disabled), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'segment-button-checked', checked), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, "segment-button-layout-".concat(layout), true), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'ion-activatable', true), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'ion-activatable-instant', true), Object(D_ali_project_TransUsLatest_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'ion-focusable', true), _class)
+        class: (_class = {}, Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, mode, true), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'in-toolbar', Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_9__["h"])('ion-toolbar', this.el)), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'in-toolbar-color', Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_9__["h"])('ion-toolbar[color]', this.el)), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'in-segment', Object(_theme_ff3fc52f_js__WEBPACK_IMPORTED_MODULE_9__["h"])('ion-segment', this.el)), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'in-segment-color', hasSegmentColor()), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'segment-button-has-label', hasLabel), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'segment-button-has-icon', hasIcon), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'segment-button-has-label-only', hasLabel && !hasIcon), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'segment-button-has-icon-only', hasIcon && !hasLabel), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'segment-button-disabled', disabled), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'segment-button-checked', checked), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, "segment-button-layout-".concat(layout), true), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'ion-activatable', true), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'ion-activatable-instant', true), Object(D_Github_Projects_TransUS_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_class, 'ion-focusable', true), _class)
       }, Object(_index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_6__["h"])("button", {
         type: type,
         "aria-pressed": checked ? 'true' : 'false',

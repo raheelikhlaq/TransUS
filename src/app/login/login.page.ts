@@ -29,6 +29,7 @@ export class LoginPage implements OnInit {
   validation: boolean = false;
   baseUrl: string = 'https://app.transusdrives.com/';
   loading: HTMLIonLoadingElement;
+  ShowLoading:boolean=false;
   constructor(public navCtrl: NavController,
     public loadingController: LoadingController,
     //private events: Events,
@@ -51,12 +52,14 @@ export class LoginPage implements OnInit {
         "password": this.password
       });
       console.log(stringy);
-      this.present();
+      // this.present();
+      this.ShowLoading = true;
       this.restService.authenticate(stringy).subscribe(response => {
         this.response = JSON.parse(response['_body']);
         console.log(this.response);
         if (this.response.status == 'NotFound') {
-          this.presentToast('Inavlid email or password');
+          this.presentToast('Invalid email or password');
+          this.ShowLoading = false;
         } else if (this.response.status == 'Found') {
           this.presentToast('Login successfully!');
           this.storage.set('user_details', this.response.user_details);
@@ -69,14 +72,18 @@ export class LoginPage implements OnInit {
           });
           this.navCtrl.navigateRoot('/');
         }
-        this.dismiss();
+        // this.dismiss();
+        this.ShowLoading = false;
       }, err => {
         this.presentToast('Oops!somthing went wrong.');
-        this.dismiss();
+        // this.dismiss();
+        this.ShowLoading = false;
       });
     }
   }
   LoginWithFacebook() {
+    this.ShowLoading = true;
+
     this.facebook.login(['public_profile', 'email']).then((res: FacebookLoginResponse) => {
       console.log('Logged into Facebook!', res)
       this.facebook.api('me?fields=id,name,email,first_name,picture.width(626).height(939).as(picture_large)', []).then(profile => {
@@ -103,8 +110,11 @@ export class LoginPage implements OnInit {
             });
             this.navCtrl.navigateRoot('/');
           }
+          this.ShowLoading = false;
         });
         //this.userData = {email: profile['email'], first_name: profile['first_name'], picture: profile['picture_large']['data']['url'], username: profile['name']}
+        this.ShowLoading = false;
+     
       });
     }).catch(e => console.log('Error logging into Facebook', e));
   }

@@ -11,12 +11,26 @@
   <ion-row>
     <ion-col class="ion-text-center icon_top">
       <img src="assets/img/usericon.svg" class="usericon" (click)="uploadProfile()" *ngIf="profileImage == undefined">
-      <img src="{{profileImage}}" (click)="uploadProfile()" *ngIf="profileImage" class="solid_img">
+     <ng-container *ngIf="platformIOS">
+      <img style="transform: rotate(90deg);" src="{{profileImage}}" (click)="uploadProfile()" *ngIf="profileImage" class="solid_img">
+     </ng-container>
+     <ng-container *ngIf="!platformIOS">
+      <img   src="{{profileImage}}" (click)="uploadProfile()" *ngIf="profileImage" class="solid_img">
+      </ng-container>
       <span *ngIf="picError" class="error ion-padding" style="display: grid;">
         Profile image is required.
       </span>
     </ion-col>
   </ion-row>
+
+  
+  <ion-row *ngIf="ShowLoading" style="position: absolute; width: 100%; z-index: 9999;">
+    <ion-col style="text-align: center;">
+      <img style="width: 90px;" src="assets/img/Loader.gif">
+    </ion-col>
+  </ion-row>
+
+  
   <div class="bp">
     <ion-row>
       <ion-col>

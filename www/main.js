@@ -572,7 +572,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-split-pane contentId=\"main-content\">\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\n      <ion-content>\n        <ion-row>\n          <ion-col size=\"4\" class=\"ion-text-center tp\" (click)=\"toggleMenu()\">\n            <img src=\"assets/img/cross.svg\">\n          </ion-col>\n        </ion-row>\n        <ion-menu-toggle auto-hide=\"false\"  >\n          <ion-row class=\"text-white\" *ngIf=\"login\">\n            <ion-col size=\"3\"></ion-col>\n            <ion-col size=\"6\" class=\"profile_img ion-text-center\">\n              <ng-container *ngIf=\"profile_image\">\n              <img src=\"{{profile_image}}\" (click)=\"goToProfile()\"  >\n              </ng-container>\n              <ng-container *ngIf=\"profile_image == undefined || profile_image==''\">\n                <img src=\"assets/img/usericon.svg\" (click)=\"goToProfile()\"  >\n                </ng-container>\n              <h3>{{user_name}}</h3>\n              <p>{{country}}</p>\n            </ion-col>\n            <ion-col size=\"3\"></ion-col>\n          <ng-container *ngFor=\"let p of withLogin; let i = index\">\n            <ion-col size=\"4\" class=\"ion-text-center ic_top\" (click)=\"selectedIndex = i\" (click)=\"goToPage(p.url)\" >\n              <ion-badge class=\"notification-view\" *ngIf=\"p.title == 'Notification' \" color=\"danger\">{{noty_length}}</ion-badge>\n              <img src=\"{{p.icon}}\">\n              <p>{{ p.title }}</p> \n            </ion-col>\n          </ng-container>\n          </ion-row>\n          <ion-row class=\"text-white\" *ngIf=\"login == false\">\n            <ng-container *ngFor=\"let p of withoutLogin; let i = index\">\n              <ion-col size=\"4\" class=\"ion-text-center ic_top\" (click)=\"selectedIndex = i\"  (click)=\"goToPage(p.url)\"  >\n                <img src=\"{{p.icon}}\">\n                <p>{{ p.title }}</p> \n              </ion-col>\n            </ng-container>\n            </ion-row>\n        </ion-menu-toggle>\n        <!--ion-list id=\"inbox-list\">\n          <ion-list-header>Inbox</ion-list-header>\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages; let i = index\">\n            \n            <ion-item (click)=\"selectedIndex = i\" routerDirection=\"root\" [routerLink]=\"[p.url]\" lines=\"none\" detail=\"false\" [class.selected]=\"selectedIndex == i\">\n              <ion-icon slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\n              <ion-label>{{ p.title }}</ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list-->\n      </ion-content>\n    </ion-menu>\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n        <ion-row>\r\n          <ion-col size=\"4\" class=\"ion-text-center tp\" (click)=\"toggleMenu()\">\r\n            <img src=\"assets/img/cross.svg\">\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-menu-toggle auto-hide=\"false\"  >\r\n          <ion-row class=\"text-white\" *ngIf=\"login\">\r\n            <ion-col size=\"3\"></ion-col>\r\n            <ion-col size=\"6\" class=\"profile_img ion-text-center\">\r\n              <ng-container *ngIf=\"profile_image\">\r\n              <img src=\"{{profile_image}}\" (click)=\"goToProfile()\"  >\r\n              </ng-container>\r\n              <ng-container *ngIf=\"profile_image == undefined || profile_image==''\">\r\n                <img src=\"assets/img/usericon.svg\" (click)=\"goToProfile()\"  >\r\n                </ng-container>\r\n              <h3>{{user_name}}</h3>\r\n              <p>{{country}}</p>\r\n            </ion-col>\r\n            <ion-col size=\"3\"></ion-col>\r\n          <ng-container *ngFor=\"let p of withLogin; let i = index\">\r\n            <ion-col size=\"4\" class=\"ion-text-center ic_top\" (click)=\"selectedIndex = i\" (click)=\"goToPage(p.url)\" >\r\n              <ion-badge class=\"notification-view\" *ngIf=\"p.title == 'Notification' \" color=\"danger\">{{noty_length}}</ion-badge>\r\n              <img src=\"{{p.icon}}\">\r\n              <p>{{ p.title }}</p> \r\n            </ion-col>\r\n          </ng-container>\r\n          </ion-row>\r\n          <ion-row class=\"text-white\" *ngIf=\"login == false\">\r\n            <ng-container *ngFor=\"let p of withoutLogin; let i = index\">\r\n              <ion-col size=\"4\" class=\"ion-text-center ic_top\" (click)=\"selectedIndex = i\"  (click)=\"goToPage(p.url)\"  >\r\n                <img src=\"{{p.icon}}\">\r\n                <p>{{ p.title }}</p> \r\n              </ion-col>\r\n            </ng-container>\r\n            </ion-row>\r\n        </ion-menu-toggle>\r\n        <!--ion-list id=\"inbox-list\">\r\n          <ion-list-header>Inbox</ion-list-header>\r\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages; let i = index\">\r\n            \r\n            <ion-item (click)=\"selectedIndex = i\" routerDirection=\"root\" [routerLink]=\"[p.url]\" lines=\"none\" detail=\"false\" [class.selected]=\"selectedIndex == i\">\r\n              <ion-icon slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list-->\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n");
 
 /***/ }),
 
@@ -585,7 +585,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<ion-content>\n  <div style=\"padding: 10px !important;\">\n  <ion-row>\n    <ion-col class=\"text-right\">\n      <img src=\"assets/img/minimize.svg\" (click)=\"ok()\">\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col class=\"text-center\" size=\"12\">\n      <h1 class=\"alura\">Forgot Your Passsword</h1>\n      <p class=\"alura m_0\"> Enter your email and we’ll send you new password</p>\n    </ion-col>\n  </ion-row>\n  <ion-col size=\"12\">\n    <ion-input placeholder=\"Email\"  [(ngModel)]=\"email\"  class=\"input_list ot_auto\"></ion-input>\n  </ion-col>\n  <ion-row>\n     <ion-col  size=\"3\">\n\n     </ion-col>\n     <ion-col size=\"6\" class=\"ion-text-center\">\n        <ion-button color=\"primary\" class=\"alura\"  (click)=\"goToHome()\" shape=\"round\" expand=\"block\">Reset</ion-button>  \n    </ion-col>\n  </ion-row>\n  </div>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<ion-content>\r\n  <div style=\"padding: 10px !important;\">\r\n  <ion-row>\r\n    <ion-col class=\"text-right\">\r\n      <img src=\"assets/img/minimize.svg\" (click)=\"ok()\">\r\n    </ion-col>\r\n  </ion-row>\r\n  <ion-row>\r\n    <ion-col class=\"text-center\" size=\"12\">\r\n      <h1 class=\"alura\">Forgot Your Passsword</h1>\r\n      <p class=\"alura m_0\"> Enter your email and we will send you new password</p>\r\n    </ion-col>\r\n  </ion-row>\r\n  <ion-col size=\"12\">\r\n    <ion-input placeholder=\"Email\"  [(ngModel)]=\"email\"  class=\"input_list ot_auto\"></ion-input>\r\n  </ion-col>\r\n  <ion-row>\r\n     <ion-col  size=\"3\">\r\n\r\n     </ion-col>\r\n     <ion-col size=\"6\" class=\"ion-text-center\">\r\n        <ion-button color=\"primary\" class=\"alura\"  (click)=\"goToHome()\" shape=\"round\" expand=\"block\">Reset</ion-button>  \r\n    </ion-col>\r\n  </ion-row>\r\n  </div>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -611,7 +611,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<ion-content>\n  <div style=\"padding: 10px !important;\">\n  <ion-row>\n    <ion-col class=\"text-right\">\n      <img src=\"assets/img/minimize.svg\" (click)=\"ok()\">\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col class=\"text-center\" size=\"12\">\n      <h1 class=\"alura\">Enter Code</h1>\n      <p class=\"alura m_0\"> Enter the 4 digit code that you received on your mobile number</p>\n    </ion-col>\n  </ion-row>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-item >\n          <ion-input type=\"tel\" placeholder=\"0\"  [(ngModel)]=\"a1\" maxlength=\"1\" tabindex=\"1\" (keyup)=\"moveFocus(b)\"  ></ion-input>\n        </ion-item>\n      </ion-col>\n      <ion-col >\n        <ion-item>\n          <ion-input type=\"tel\" placeholder=\"0\" [(ngModel)]=\"b1\" maxlength=\"1\"  tabindex=\"2\" #b (keyup)=\"moveFocus(c)\"  ></ion-input>\n        </ion-item>\n      </ion-col>\n      <ion-col >\n        <ion-item>\n          <ion-input type=\"tel\" placeholder=\"0\" [(ngModel)]=\"c1\" maxlength=\"1\"  tabindex=\"3\" #c (keyup)=\"moveFocus(d)\"  ></ion-input>\n        </ion-item>\n      </ion-col>\n      <ion-col >\n        <ion-item>\n          <ion-input type=\"tel\" placeholder=\"0\" [(ngModel)]=\"d1\" maxlength=\"1\"  tabindex=\"4\" #d  ></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n  <ion-row>\n     <ion-col  size=\"3\">\n\n     </ion-col>\n     <ion-col size=\"6\" class=\"ion-text-center\">\n        <ion-button color=\"primary\" class=\"alura\"  (click)=\"goToHome()\" shape=\"round\" expand=\"block\">Ok</ion-button>  \n        <p class=\"alura\" (click)=\"resend()\">Resend</p>\n    </ion-col>\n  </ion-row>\n  </div>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<ion-content>\n  <div style=\"padding: 10px !important;\">\n  <ion-row>\n    <ion-col class=\"text-right\">\n      <img src=\"assets/img/minimize.svg\" (click)=\"ok()\">\n    </ion-col>\n  </ion-row>\n\n  \n  <ion-row *ngIf=\"ShowLoading\" style=\"position: absolute; width: 100%; z-index: 9999;\">\n    <ion-col style=\"text-align: center;\">\n      <img style=\"width: 90px;\" src=\"assets/img/Loader.gif\">\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col class=\"text-center\" size=\"12\">\n      <h1 class=\"alura\">Enter Code</h1>\n      <p class=\"alura m_0\"> Enter the 4 digit code that you received on your mobile number</p>\n    </ion-col>\n  </ion-row>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-item >\n          <ion-input type=\"tel\" placeholder=\"0\"  [(ngModel)]=\"a1\" maxlength=\"1\" tabindex=\"1\" (keyup)=\"moveFocus(b)\"  ></ion-input>\n        </ion-item>\n      </ion-col>\n      <ion-col >\n        <ion-item>\n          <ion-input type=\"tel\" placeholder=\"0\" [(ngModel)]=\"b1\" maxlength=\"1\"  tabindex=\"2\" #b (keyup)=\"moveFocus(c)\"  ></ion-input>\n        </ion-item>\n      </ion-col>\n      <ion-col >\n        <ion-item>\n          <ion-input type=\"tel\" placeholder=\"0\" [(ngModel)]=\"c1\" maxlength=\"1\"  tabindex=\"3\" #c (keyup)=\"moveFocus(d)\"  ></ion-input>\n        </ion-item>\n      </ion-col>\n      <ion-col >\n        <ion-item>\n          <ion-input type=\"tel\" placeholder=\"0\" [(ngModel)]=\"d1\" maxlength=\"1\"  tabindex=\"4\" #d  ></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n  <ion-row>\n     <ion-col  size=\"3\">\n\n     </ion-col>\n     <ion-col size=\"6\" class=\"ion-text-center\">\n        <ion-button color=\"primary\" class=\"alura\"  (click)=\"goToHome()\" shape=\"round\" expand=\"block\">Ok</ion-button>  \n        <p class=\"alura\" (click)=\"resend()\">Resend</p>\n    </ion-col>\n  </ion-row>\n  </div>\n</ion-content>\n");
 
 /***/ }),
 
@@ -2415,6 +2415,7 @@ var VerifyMobileNumberPage = /** @class */ (function () {
         this.b1 = 2;
         this.c1 = 3;
         this.d1 = 4;
+        this.ShowLoading = false;
         this.response = '';
         this.stringyOfSignup = '';
         this.loading = '';
@@ -2457,14 +2458,16 @@ var VerifyMobileNumberPage = /** @class */ (function () {
                 this.otpCodeOfthisScreen = this.a1.toString() + this.b1.toString() + this.c1.toString() + this.d1.toString();
                 console.log(this.otpCodeOfthisScreen);
                 if (this.otpCodeOfthisScreen == this.otp) {
-                    this.present();
+                    // this.present();
+                    this.ShowLoading = true;
                     console.log(this.stringyOfSignup);
                     this.restService.authenticate(this.stringyOfSignup).subscribe(function (response) {
                         _this.response = JSON.parse(response['_body']);
                         console.log(_this.response.status);
                         if (_this.response.status == 'error') {
                             _this.presentToast(_this.response.msg);
-                            _this.dismiss();
+                            _this.ShowLoading = false;
+                            // this.dismiss();
                         }
                         else if (_this.response.status == 'success') {
                             // await this.popoverController.dismiss();
@@ -2474,10 +2477,12 @@ var VerifyMobileNumberPage = /** @class */ (function () {
                             });
                             //  this.router.navigate(['/']);
                             _this.router.navigate(['/']);
-                            _this.dismiss();
+                            // this.dismiss();
+                            _this.ShowLoading = false;
                         }
                     }, function (err) {
-                        _this.dismiss();
+                        // this.dismiss();
+                        _this.ShowLoading = false;
                     });
                 }
                 else {
@@ -2546,7 +2551,8 @@ var VerifyMobileNumberPage = /** @class */ (function () {
             requestType: 'send_otp',
             phone_number: this.mobileNumber
         });
-        this.present();
+        // this.present()
+        this.ShowLoading = true;
         this.restService.auth_userAPI(ss).subscribe(function (ress) {
             console.log(ress);
             _this.responseOfOtp = JSON.parse(ress['_body']);
@@ -2564,7 +2570,8 @@ var VerifyMobileNumberPage = /** @class */ (function () {
                 _this.otpMsg = _this.responseOfOtp.msg;
                 _this.presentToast(_this.otpMsg);
             }
-            _this.dismiss();
+            // this.dismiss()
+            _this.ShowLoading = false;
         });
     };
     VerifyMobileNumberPage.ctorParameters = function () { return [
@@ -2651,7 +2658,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\ali project\TransUsLatest\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Github Projects\TransUS\src\main.ts */"./src/main.ts");
 
 
 /***/ })

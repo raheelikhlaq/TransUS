@@ -108,6 +108,12 @@
           
         </div>
       </ion-row>
+      
+  <ion-row *ngIf="ShowLoading" style="position: absolute; width: 100%; z-index: 9999;">
+    <ion-col style="text-align: center;">
+      <img style="width: 90px;" src="assets/img/Loader.gif">
+    </ion-col>
+  </ion-row>
       <div class="main_penta">
       <ion-row>
         <ion-col class="ion-text-center">
@@ -341,7 +347,7 @@
           <ion-row>
             <ion-col size="2"></ion-col>
             <ion-col size="8">
-              <ion-button color="primary" expand="block" shape="round">Invite</ion-button>
+              <ion-button (click)="inviteFrnds()" color="primary" expand="block" shape="round">Invite</ion-button>
             </ion-col>
           </ion-row>
         </ion-col>
