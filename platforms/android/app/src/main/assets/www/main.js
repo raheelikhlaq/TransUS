@@ -1363,7 +1363,7 @@ var routes = [
     },
     {
         path: 'login',
-        loadChildren: function () { return __webpack_require__.e(/*! import() | login-login-module */ "login-login-module").then(__webpack_require__.bind(null, /*! ./login/login.module */ "./src/app/login/login.module.ts")).then(function (m) { return m.LoginPageModule; }); }
+        loadChildren: function () { return Promise.all(/*! import() | login-login-module */[__webpack_require__.e("default~change-password-change-password-module~login-login-module~verify-new-code-verify-new-code-module"), __webpack_require__.e("login-login-module")]).then(__webpack_require__.bind(null, /*! ./login/login.module */ "./src/app/login/login.module.ts")).then(function (m) { return m.LoginPageModule; }); }
     },
     {
         path: 'signup',
@@ -1439,7 +1439,7 @@ var routes = [
     },
     {
         path: 'change-password',
-        loadChildren: function () { return __webpack_require__.e(/*! import() | change-password-change-password-module */ "change-password-change-password-module").then(__webpack_require__.bind(null, /*! ./change-password/change-password.module */ "./src/app/change-password/change-password.module.ts")).then(function (m) { return m.ChangePasswordPageModule; }); }
+        loadChildren: function () { return Promise.all(/*! import() | change-password-change-password-module */[__webpack_require__.e("default~change-password-change-password-module~login-login-module~verify-new-code-verify-new-code-module"), __webpack_require__.e("change-password-change-password-module")]).then(__webpack_require__.bind(null, /*! ./change-password/change-password.module */ "./src/app/change-password/change-password.module.ts")).then(function (m) { return m.ChangePasswordPageModule; }); }
     },
     {
         path: 'rating',
@@ -1512,6 +1512,10 @@ var routes = [
     {
         path: 'flutter-waves',
         loadChildren: function () { return __webpack_require__.e(/*! import() | flutter-waves-flutter-waves-module */ "flutter-waves-flutter-waves-module").then(__webpack_require__.bind(null, /*! ./flutter-waves/flutter-waves.module */ "./src/app/flutter-waves/flutter-waves.module.ts")).then(function (m) { return m.FlutterWavesPageModule; }); }
+    },
+    {
+        path: 'verify-new-code',
+        loadChildren: function () { return Promise.all(/*! import() | verify-new-code-verify-new-code-module */[__webpack_require__.e("default~change-password-change-password-module~login-login-module~verify-new-code-verify-new-code-module"), __webpack_require__.e("verify-new-code-verify-new-code-module")]).then(__webpack_require__.bind(null, /*! ./verify-new-code/verify-new-code.module */ "./src/app/verify-new-code/verify-new-code.module.ts")).then(function (m) { return m.VerifyNewCodePageModule; }); }
     }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -1699,6 +1703,7 @@ var AppComponent = /** @class */ (function () {
                     _this.storage.get('profile_img_url').then(function (profile_img_url) {
                         _this.storage.get('base_urls').then(function (base_url) {
                             _this.profile_image = base_url + '' + profile_img_url;
+                            // localStorage.setItem("email", this.userData.email);
                         });
                     });
                     var stringfy = JSON.stringify({
@@ -1819,6 +1824,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/__ivy_ngcc__/ngx/index.js");
 /* harmony import */ var flutterwave_angular_v3__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! flutterwave-angular-v3 */ "./node_modules/flutterwave-angular-v3/__ivy_ngcc__/flutterwave-angular-v3.js");
 /* harmony import */ var _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @ionic-native/unique-device-id/ngx */ "./node_modules/@ionic-native/unique-device-id/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_native_social_sharing_ngx__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @ionic-native/social-sharing/ngx */ "./node_modules/@ionic-native/social-sharing/__ivy_ngcc__/ngx/index.js");
+
 
 
 
@@ -1882,6 +1889,7 @@ var AppModule = /** @class */ (function () {
                 _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_26__["InAppBrowser"],
                 _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_25__["ImagePicker"],
                 _ionic_native_unique_device_id_ngx__WEBPACK_IMPORTED_MODULE_28__["UniqueDeviceID"],
+                _ionic_native_social_sharing_ngx__WEBPACK_IMPORTED_MODULE_29__["SocialSharing"],
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
@@ -1964,9 +1972,13 @@ var ForgotPasswordPage = /** @class */ (function () {
                     if (_this.response.status == 'error') {
                         _this.presentToast(_this.response.msg);
                     }
-                    else if (_this.response.status == 'success ') {
+                    else if (_this.response.status == 'success') {
                         _this.presentToast(_this.response.msg);
-                        _this.ok();
+                        // this.ok();
+                        localStorage.setItem("restWithEmail", _this.email);
+                        _this.popoverController.dismiss({
+                            val: _this.response.status
+                        });
                     }
                 }, function (err) {
                 });

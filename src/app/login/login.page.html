@@ -34,7 +34,7 @@
     <ion-row>
       <ion-col>
         <ion-input type="password" class="rm_auto" placeholder="password" [(ngModel)]="password"
-          (ionBlur)="validateForm()"></ion-input>
+        (ionChange)="Viewpasswod($event)" (ionBlur)="validateForm()"></ion-input>
         <span *ngIf="passwordError" class="error ion-padding">
           Password is required.
         </span>

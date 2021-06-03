@@ -332,7 +332,18 @@ var SignupPage = /** @class */ (function () {
                     else if (_this.response.status == 'success') {
                         //this.presentToast(this.response.msg);
                         //this.router.navigate(['/']);
-                        _this.verifyNumber();
+                        // this.verifyNumber();
+                        console.log("new login", _this.response.user_details);
+                        _this.presentToast('Account Created Successfully');
+                        _this.storage.set('user_details', _this.response.user_details);
+                        _this.storage.set('profile_img_url', _this.response.profile_img_url);
+                        _this.storage.set('country_name', _this.response.country_name);
+                        _this.storage.set('base_urls', _this.baseUrl);
+                        _this.storage.set('currency_symbol', _this.response.user_details.symbol);
+                        _this.subjectEvents.publishSomeData({
+                            sidebar: 'sidebar'
+                        });
+                        _this.navCtrl.navigateRoot('/');
                     }
                 });
                 //this.userData = {email: profile['email'], first_name: profile['first_name'], picture: profile['picture_large']['data']['url'], username: profile['name']}
@@ -392,7 +403,6 @@ var SignupPage = /** @class */ (function () {
                             console.log(data.data.val);
                             if (data.data.val == 'ok') {
                                 console.log("enter in condition");
-                                _this.presentToast('Account Created Successfully');
                                 if (localStorage.getItem("LoginWith") == "phone") {
                                     var stringy = JSON.stringify({
                                         "requestType": "login",
@@ -411,7 +421,8 @@ var SignupPage = /** @class */ (function () {
                                             _this.ShowLoading = false;
                                         }
                                         else if (_this.response.status == 'Found') {
-                                            _this.presentToast('Login successfully!');
+                                            // this.presentToast('Login successfully!');
+                                            _this.presentToast('Account Created Successfully');
                                             _this.storage.set('user_details', _this.response.user_details);
                                             _this.storage.set('profile_img_url', _this.response.profile_img_url);
                                             _this.storage.set('country_name', _this.response.country_name);
@@ -439,6 +450,7 @@ var SignupPage = /** @class */ (function () {
                                     _this.storage.set('currency_symbol', _this.response.user_details.symbol);
                                     _this.storage.set('profile_img_url', _this.response.profile_img_url);
                                     _this.storage.set('base_urls', _this.baseUrl);
+                                    _this.presentToast('Account Created Successfully');
                                     _this.subjectEvents.publishSomeData({
                                         sidebar: 'sidebar'
                                     });
@@ -450,6 +462,7 @@ var SignupPage = /** @class */ (function () {
                                     _this.storage.set('currency_symbol', _this.response.user_details.symbol);
                                     _this.storage.set('profile_img_url', _this.response.profile_img_url);
                                     _this.storage.set('base_urls', _this.baseUrl);
+                                    _this.presentToast('Account Created Successfully');
                                     _this.subjectEvents.publishSomeData({
                                         sidebar: 'sidebar'
                                     });

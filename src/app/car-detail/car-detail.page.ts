@@ -5,6 +5,7 @@ import { RestService } from '../rest.service';
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import { PhotoviewerPage } from '../photoviewer/photoviewer.page';
 import { IonSlides, ModalController } from '@ionic/angular';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 @Component({
   selector: 'app-car-detail',
@@ -30,8 +31,11 @@ export class CarDetailPage implements OnInit {
   redirect: any;
 
   showSlide: any = 'no'
+  total_trips:any=0;
 
-  constructor(private photoViewer: PhotoViewer, public restService: RestService, private storage: Storage, public router: Router, public activatedRoute: ActivatedRoute, public modalCtrl: ModalController) {
+  constructor(private photoViewer: PhotoViewer, public restService: RestService, private storage: Storage,
+     public router: Router, public activatedRoute: ActivatedRoute, 
+     public modalCtrl: ModalController, public socialSharing:SocialSharing) {
     this.activatedRoute.queryParams.subscribe((res) => {
       this.response = JSON.parse(res.value);
       this.storage.get('base_urls').then((base_urls) => {
@@ -47,6 +51,7 @@ export class CarDetailPage implements OnInit {
         this.owner_work = this.cars_list_result.owner_work;
         this.language_name = this.cars_list_result.language_name;
         this.ratting_stars = this.cars_list_result.ratting_stars;
+        this.total_trips = this.cars_list_result.total_trips;
         this.redirect = this.response.redirect;
         if (this.cars_list_result.favourite == 'Yes') {
           this.favouriteVehicle = true;
@@ -102,6 +107,18 @@ export class CarDetailPage implements OnInit {
         });
       });
     });
+  }
+
+  share(){
+    var text= "Owner :\t" + this.about_owner +"\n Lives : \t"+ this.country_name +"\n Image : \t"+this.base_urls+this.veh_imgs[0]+"\n"
+    var options = {
+      message: text + "\nAppstore -> https://apps.apple.com/de/app/trans-US/id1497697781\n\nPlaystore -> https://play.google.com/store/apps/details?id=com.transus.app",
+      }
+    this.socialSharing.shareWithOptions(options).then(res=>{
+      console.log(res)
+    },err =>{
+      console.log(err)
+    })
   }
   previewImage(p) {
     console.log('photo viewer')

@@ -52,8 +52,10 @@
       <b class="SFUIText-HeavyItalic">PRICE</b>
     </ion-col>
     <ion-col class="ion-text-center">
-      <ion-label class="huly">{{currencySymbol}} {{min_price}}-{{currencySymbol}} {{max_price}}/hour</ion-label>
-      <ion-range id="dual-range" min="{{min_price}}" max="{{max_price}}" [(ngModel)]="price" dual-knobs pin color="primary">
+      <!-- <ion-label class="huly">{{currencySymbol}} {{min_price}}-{{currencySymbol}} {{max_price}}/hour</ion-label> -->
+      <ion-label class="huly">{{currencySymbol}} {{lowerPrice}}-{{currencySymbol}} {{upperPrice}}/hour</ion-label>
+
+      <ion-range (ionChange)="onSliderChanged($event)" id="dual-range" min="{{min_price}}" max="{{max_price}}" [(ngModel)]="price" dual-knobs pin color="primary">
       </ion-range>
      </ion-col>
   </ion-row>

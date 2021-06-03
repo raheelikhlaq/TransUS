@@ -2,6 +2,9 @@ ion-toolbar {
     padding: 0.8em 0.1em 0 0;
     --background: #c4932f;
 }
+ion-header.md.header-md.header-collapse-none.hydrated{
+    padding-top: 0;
+}
 
 @media only screen and(min-height : 800px) {
     ion-toolbar {

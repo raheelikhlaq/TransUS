@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content  >\n  <!-- style=\"--background:url(assets/img/Background.png)  0 0/100% 100% no-repeat;\" -->\n  <ion-row>\n    <ion-col class=\"back_arrow\">\n      <img src=\"assets/img/Arrow.svg\" (click)=\"goToHome()\">\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col class=\"ion-text-center logo\">\n      <img src=\"assets/img/logo.png\">\n    </ion-col>\n  </ion-row>\n\n  <ion-row *ngIf=\"ShowLoading\" style=\"position: absolute; width: 100%; z-index: 9999;\">\n    <ion-col style=\"text-align: center;\">\n      <img style=\"width: 90px;\" src=\"assets/img/Loader.gif\">\n    </ion-col>\n  </ion-row>\n  <div class=\"bp\">\n\n  \n\n    <ion-row>\n      <ion-col>\n        <ion-input placeholder=\"Email\" class=\"rm_auto\" [(ngModel)]=\"email\" (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"emailError\" class=\"error ion-padding\">\n          Email is required.\n        </span>\n        <span *ngIf=\"invalidEmailError\" class=\"error ion-padding\">\n          Please provide valid email id.\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-input type=\"password\" class=\"rm_auto\" placeholder=\"password\" [(ngModel)]=\"password\"\n          (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"passwordError\" class=\"error ion-padding\">\n          Password is required.\n        </span>\n        <!--span class=\"error ion-padding\" >\n            Password should be min 6 chars long.\n          </span-->\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class=\"ion-text-right\">\n        <p class=\"white\" (click)=\"forgotPassword()\">Forgot your password?</p>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class=\"ion-text-center parent_btn\">\n        <ion-button color=\"primary\" shape=\"round\" expand=\"block\" (click)=\"submitForm()\">Login</ion-button>\n      </ion-col>\n    </ion-row>\n\n    <ion-row class=\"bb_top\">\n      <ion-col size=\"5\">\n        <hr class=\"bb\">\n      </ion-col>\n      <ion-col size=\"2\" class=\"white ion-text-center\">OR</ion-col>\n      <ion-col size=\"5\">\n        <hr class=\"bb\">\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col size=\"6\" class=\"ion-text-left\">\n        <ion-button class=\"fb\">\n          <img src=\"assets/img/Facebook.svg\" (click)=\"LoginWithFacebook()\">\n        </ion-button>\n      </ion-col>\n      <ion-col size=\"6\" class=\"ion-text-right\">\n        <ion-button class=\"google\">\n          <img src=\"assets/img/google.svg\" (click)=\"LoginWithGoogle()\">\n        </ion-button>\n      </ion-col>\n    </ion-row>\n  </div>\n  <ion-row>\n    <ion-col class=\"ion-text-center\" (click)=\"GotoSignup()\">\n      <p class=\"white signup_text\">Don't have an account? Sign up</p>\n    </ion-col>\n  </ion-row>\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content  >\n  <!-- style=\"--background:url(assets/img/Background.png)  0 0/100% 100% no-repeat;\" -->\n  <ion-row>\n    <ion-col class=\"back_arrow\">\n      <img src=\"assets/img/Arrow.svg\" (click)=\"goToHome()\">\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col class=\"ion-text-center logo\">\n      <img src=\"assets/img/logo.png\">\n    </ion-col>\n  </ion-row>\n\n  <ion-row *ngIf=\"ShowLoading\" style=\"position: absolute; width: 100%; z-index: 9999;\">\n    <ion-col style=\"text-align: center;\">\n      <img style=\"width: 90px;\" src=\"assets/img/Loader.gif\">\n    </ion-col>\n  </ion-row>\n  <div class=\"bp\">\n\n  \n\n    <ion-row>\n      <ion-col>\n        <ion-input placeholder=\"Email\" class=\"rm_auto\" [(ngModel)]=\"email\" (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"emailError\" class=\"error ion-padding\">\n          Email is required.\n        </span>\n        <span *ngIf=\"invalidEmailError\" class=\"error ion-padding\">\n          Please provide valid email id.\n        </span>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-input type=\"password\" class=\"rm_auto\" placeholder=\"password\" [(ngModel)]=\"password\"\n        (ionChange)=\"Viewpasswod($event)\" (ionBlur)=\"validateForm()\"></ion-input>\n        <span *ngIf=\"passwordError\" class=\"error ion-padding\">\n          Password is required.\n        </span>\n        <!--span class=\"error ion-padding\" >\n            Password should be min 6 chars long.\n          </span-->\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class=\"ion-text-right\">\n        <p class=\"white\" (click)=\"forgotPassword()\">Forgot your password?</p>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class=\"ion-text-center parent_btn\">\n        <ion-button color=\"primary\" shape=\"round\" expand=\"block\" (click)=\"submitForm()\">Login</ion-button>\n      </ion-col>\n    </ion-row>\n\n    <ion-row class=\"bb_top\">\n      <ion-col size=\"5\">\n        <hr class=\"bb\">\n      </ion-col>\n      <ion-col size=\"2\" class=\"white ion-text-center\">OR</ion-col>\n      <ion-col size=\"5\">\n        <hr class=\"bb\">\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col size=\"6\" class=\"ion-text-left\">\n        <ion-button class=\"fb\">\n          <img src=\"assets/img/Facebook.svg\" (click)=\"LoginWithFacebook()\">\n        </ion-button>\n      </ion-col>\n      <ion-col size=\"6\" class=\"ion-text-right\">\n        <ion-button class=\"google\">\n          <img src=\"assets/img/google.svg\" (click)=\"LoginWithGoogle()\">\n        </ion-button>\n      </ion-col>\n    </ion-row>\n  </div>\n  <ion-row>\n    <ion-col class=\"ion-text-center\" (click)=\"GotoSignup()\">\n      <p class=\"white signup_text\">Don't have an account? Sign up</p>\n    </ion-col>\n  </ion-row>\n</ion-content>");
 
 /***/ }),
 
@@ -131,6 +131,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
 /* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/__ivy_ngcc__/fesm2015/ionic-storage.js");
 /* harmony import */ var _subject_events_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../subject-events.service */ "./src/app/subject-events.service.ts");
+/* harmony import */ var _verify_new_code_verify_new_code_page__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../verify-new-code/verify-new-code.page */ "./src/app/verify-new-code/verify-new-code.page.ts");
+
 
 
 
@@ -187,6 +189,10 @@ var LoginPage = /** @class */ (function () {
                     _this.presentToast('Invalid email or password');
                     _this.ShowLoading = false;
                 }
+                else if (_this.response.status == "error") {
+                    _this.presentToast('Invalid email or password');
+                    _this.ShowLoading = false;
+                }
                 else if (_this.response.status == 'Found') {
                     _this.presentToast('Login successfully!');
                     _this.storage.set('user_details', _this.response.user_details);
@@ -216,7 +222,7 @@ var LoginPage = /** @class */ (function () {
             _this.facebook.api('me?fields=id,name,email,first_name,picture.width(626).height(939).as(picture_large)', []).then(function (profile) {
                 console.log(profile);
                 var stringy = JSON.stringify({
-                    requestType: 'fb_login',
+                    requestType: 'login',
                     "loginWith": "Facebook",
                     email: profile['email']
                 });
@@ -255,6 +261,7 @@ var LoginPage = /** @class */ (function () {
                 "loginWith": "Gmail",
                 email: res.email
             });
+            // AIzaSyAB8SM4pGFdI5bBjmjNUswS-yLcTpuNUSs
             _this.restService.authenticate(stringy).subscribe(function (response) {
                 _this.response = JSON.parse(response['_body']);
                 console.log(_this.response);
@@ -277,10 +284,16 @@ var LoginPage = /** @class */ (function () {
             });
         }).catch(function (err) { return console.log(err); });
     };
+    LoginPage.prototype.Viewpasswod = function (event) {
+        this.value = event.detail.value;
+        if (this.value.length > 0) {
+            this.passwordError = false;
+        }
+    };
     LoginPage.prototype.validateForm = function () {
         // if(this.validation){
         this.emailError = false;
-        this.passwordError = false;
+        // this.passwordError = false;
         this.invalidEmailError = false;
         if (this.email == '' || this.email == undefined) {
             this.emailError = true;
@@ -311,6 +324,7 @@ var LoginPage = /** @class */ (function () {
     LoginPage.prototype.forgotPassword = function () {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
             var popover;
+            var _this = this;
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.popoverController.create({
@@ -323,7 +337,34 @@ var LoginPage = /** @class */ (function () {
                     case 1:
                         popover = _a.sent();
                         popover.onWillDismiss().then(function (data) {
-                            // console.log('dismiss');
+                            console.log(data);
+                            // this.verifyCodeNewPass();
+                            if (data.data) {
+                                _this.verifyCodeNewPass();
+                            }
+                        });
+                        return [4 /*yield*/, popover.present()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    LoginPage.prototype.verifyCodeNewPass = function () {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function () {
+            var popover;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.popoverController.create({
+                            component: _verify_new_code_verify_new_code_page__WEBPACK_IMPORTED_MODULE_10__["VerifyNewCodePage"],
+                            componentProps: {
+                            //"data": extra_info
+                            },
+                            translucent: true
+                        })];
+                    case 1:
+                        popover = _a.sent();
+                        popover.onWillDismiss().then(function (data) {
+                            console.log(data);
                         });
                         return [4 /*yield*/, popover.present()];
                     case 2: return [2 /*return*/, _a.sent()];

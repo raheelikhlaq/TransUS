@@ -12,8 +12,8 @@ export class ContactSupportPage implements OnInit {
   loading: HTMLIonLoadingElement;
   validation: boolean = false;
   Email: any;
-  Subject: any;
-  Description: any;
+  Subject: any ="";
+  Description: any ="";
   DescriptionError: boolean;
   SubjectError: boolean;
   EmailError: boolean;
@@ -28,6 +28,7 @@ export class ContactSupportPage implements OnInit {
     this.storage.get('user_details').then((user_details) => {
       console.log(user_details);
       this.userID = user_details.users_id;
+      this.Email = user_details.email
       if (this.userID) {
 
       } else {
@@ -68,14 +69,16 @@ export class ContactSupportPage implements OnInit {
       }
 
     } else {
-      this.presentToast('Invalid Email')
+      this.presentToast('Invalid Subject or Description')
     }
   }
+  ShowLoading:boolean = false;
   submitForm() {
     this.validation = true;
 
     // console.log(this.document_four);
-    if (this.validateForm() == true) {
+    // if (this.validateForm() == true) {
+      if (this.Email != "" && this.Subject != "" && this.Description != "") {
       //alert('true');
 
       var stringy = JSON.stringify({
@@ -87,7 +90,8 @@ export class ContactSupportPage implements OnInit {
       });
 
       console.log(stringy);
-      this.present();
+      // this.present();
+      this.ShowLoading = true
       this.restService.customer_support(stringy).subscribe(response => {
         this.response = JSON.parse(response['_body']);
         console.log(this.response.status);
@@ -100,10 +104,23 @@ export class ContactSupportPage implements OnInit {
 
 
         }
-        this.dismiss();
+        // this.dismiss();
+        this.ShowLoading = false;
       }, err => {
-        this.dismiss();
+        // this.dismiss();
+        this.ShowLoading = false
       });
+    }
+    else{
+      if(this.Email == ""){
+        this.presentToast("Email is missing.")
+      }
+      else if(this.Subject == ""){
+        this.presentToast("subject is missing.")
+      }
+      else if(this.Description == ""){
+        this.presentToast("Description is missing.")
+      }
     }
   }
 

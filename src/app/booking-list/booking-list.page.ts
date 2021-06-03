@@ -42,7 +42,7 @@ export class BookingListPage implements OnInit {
         this.currency_symbol = currency_symbol;
       });
     });
-    this.pet = 'previous';
+    this.pet = 'request';
   }
  getCarList(){
   var stringy = JSON.stringify({

@@ -38,8 +38,8 @@
         <ion-row>
           <ion-col size="12">
             <ion-slides [options]="option1" pager="true" >
-              <ion-slide *ngFor="let p of notifications; let i = index" (click)="accptOffer(p)">
-                <ion-row>
+              <ion-slide *ngFor="let p of notifications; let i = index" >
+                <ion-row (click)="accptOffer(p)">
                     <ion-col size="2" class="notify_image_main">
                       <img src="{{base_urls}}{{p.sender_img_url}}">
                     </ion-col>
@@ -132,7 +132,7 @@
                     <span class="penta_1">{{currency_symbol}}</span>
                     <span class="penta_2">{{p.charge_per_day}}</span>
                     <span class="penta_3">per day</span>
-                    <p class="penta_4" *ngIf="p.ratting_stars === '5'"> 
+                    <!-- <p class="penta_4" *ngIf="p.ratting_stars === '5'"> 
                       <img src="assets/img/yellow_star.svg">
                       <img src="assets/img/yellow_star.svg">
                       <img src="assets/img/yellow_star.svg">
@@ -166,14 +166,15 @@
                       <img src="assets/img/grey_star.svg">
                       <img src="assets/img/grey_star.svg">
                       <img src="assets/img/grey_star.svg">
-                    </p>
-                    <p class="penta_5">269 trips</p>
+                    </p> -->
+                    <p class="penta_5">{{p.total_trips}} trips</p>
                   </div>
                   <p class="penta_6">{{p.model_name}}</p>
                   <p  class="penta_7">{{p.make_name}}</p>
                 </div>
             </ion-col>
-            <ion-col size="4" >
+
+            <!-- <ion-col size="4" >
               <div class="ion-text-center" (click)="gotoDetail(p)">
                 
                 <div class="pentagon" style="background: url({{base_urls}}{{p.veh_imgs[0]}});"></div>
@@ -322,8 +323,13 @@
             <p class="penta_6">{{p.model_name}}</p>
             <p  class="penta_7">{{p.make_name}}</p>
           </div>
-      </ion-col>
-          </ng-container>
+    
+    
+        </ion-col>
+        
+       -->
+      
+      </ng-container>
         
       </div>
       </ion-row>

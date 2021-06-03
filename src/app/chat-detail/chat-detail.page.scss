@@ -5,16 +5,20 @@ ion-header .ios {
 ion-toolbar .ios {
   height: 65px;
 }
+ion-header.md.header-md.header-collapse-none.hydrated{
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
 
 .bg_header {
   --background: #c4932f;
   color: #fff;
-  --padding-top: 1.2em;
-  --padding-bottom: 2.5em;
+  // --padding-top: 1.2em;
+  // --padding-bottom: 2.5em;
 }
 ion-title {
   text-align: left;
-  font-size: 29px;
+  font-size: 20px;
   margin-right: 1em;
   height: 43px;
 }
@@ -68,7 +72,7 @@ ion-list {
   background: transparent;
   padding-top: 20px;
   margin-bottom: 0;
-  margin-top: 33%;
+  // margin-top: 33%;
 }
 .imageAvatarRight {
   display: flex;
@@ -414,11 +418,11 @@ ion-footer {
   background-color: #f7f8fa;
 }
 .img_avatar {
-  width: 50px;
+  width: 40px;
   border-radius: 50%;
-  height: 50px;
+  height: 40px;
   position: relative;
-  top: 10px;
+  top: 7px;
   border: 1px solid #fff;
   margin-right: 12px;
   margin-bottom: 2px;

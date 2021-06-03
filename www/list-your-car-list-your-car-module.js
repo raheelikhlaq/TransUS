@@ -107,7 +107,7 @@ var ListYourCarPageModule = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-toolbar {\n  padding: 0.8em 0.1em 0 0;\n  --background: #c4932f;\n}\n\n@media only screen and (min-height: 800px) {\n  ion-toolbar {\n    padding: 3em 0.1em 8px 0;\n    --background: #c4932f;\n  }\n}\n\nion-title {\n  text-align: center;\n  color: #fff;\n  font-size: 24px;\n}\n\n.error {\n  color: red;\n}\n\n.real_image {\n  padding: 0px;\n}\n\n.real_image img {\n  width: 100%;\n  height: 100px;\n}\n\n.real_image_2 {\n  padding: 0px;\n}\n\n.real_image_2 img {\n  width: 100%;\n  height: 132px;\n}\n\n.list_1 {\n  padding: 0em 1em;\n}\n\n.list_1 h3 {\n  margin: 0px;\n  margin-top: 0.5em;\n}\n\n.left_4 {\n  margin-left: 0.7em !important;\n}\n\n.input_list {\n  border: 1px solid #d4dce1;\n  background: #F7F8FA;\n  border-radius: 28px;\n  font-size: 13px;\n  color: #000;\n  --placeholder-color: #b2b2b4;\n  --padding-bottom: 1.5em;\n  --padding-start: 1.5em;\n  --padding-top: 1.5em;\n}\n\n.upload_images {\n  color: #C4932F;\n  font-size: 12px;\n  margin: 5px 0px;\n}\n\n.list_2 {\n  text-align: center;\n  background: #F7F8FA;\n  border: 1px dashed #D4DCE1;\n  border-radius: 10px;\n  padding: 2.5em 0em;\n}\n\n.list_9 {\n  text-align: center;\n  background: #F7F8FA;\n  border: 1px dashed #D4DCE1;\n  border-radius: 10px;\n  padding: 2.7em 0em 2.5em 0em;\n}\n\n.list_9 p {\n  color: #d2d6d8;\n  font-size: 12px;\n  margin: 0px;\n  margin-top: 8px;\n}\n\n.list_3 {\n  background: #F7F8FA;\n  border: 1px solid #D4DCE1;\n  border-radius: 10px;\n  color: #000;\n  --placeholder-color: #b2b2b4;\n  font-size: 13px;\n  --padding-start: 1.5em;\n  --padding-top: 1.5em;\n}\n\n.btn_footer {\n  margin: 0.7em 0em 1em 0em;\n}\n\nion-slide span {\n  border: 1px solid #000;\n  border-radius: 22px;\n  padding: 8px 14px;\n  margin-left: 1em;\n}\n\n.num {\n  padding: 9px 10px !important;\n}\n\n.calender_slider {\n  background: #F7F8FA;\n  padding: 0.6em 0em;\n}\n\n.calender_slider_text {\n  margin: 0px;\n  position: relative;\n  top: -2px;\n  font-size: 18px;\n}\n\nion-slide {\n  margin-left: 0.6em;\n}\n\nion-slide:first-child {\n  margin-left: 0em;\n}\n\nion-button {\n  --padding-bottom: 1.5em;\n  --padding-top: 1.5em;\n  --box-shadow: none;\n}\n\n.btn_footer {\n  padding: 0.5em 1em 1.2em 1em;\n}\n\n.info {\n  background: #6E6D6D;\n  padding: 0.4em 0em;\n}\n\n.info p {\n  margin: 0px;\n  color: #fff;\n  font-size: 10px;\n}\n\nion-select {\n  background: #F7F8FA;\n  border: 1px solid #D4DCE1;\n  border-radius: 30px;\n  --placeholder-color: #b2b2b4;\n  color: #000;\n  font-size: 13px;\n  --padding-start: 1.5em;\n  --padding-top: 1.5em;\n  --padding-bottom: 1.5em;\n  --padding-end: 1.5em;\n}\n\n.list_4 {\n  background: #F7F8FA;\n  border: 1px solid #D4DCE1;\n  border-radius: 12px;\n  color: #D4DCE1;\n  font-size: 13px;\n}\n\n.list_4 p {\n  margin: 0px;\n  color: #000;\n}\n\n.list_5 {\n  border-left: 1px dashed #c7c7c7;\n  height: 48px;\n  float: right;\n  margin-top: 12px;\n}\n\n.list_6 {\n  margin-bottom: 2em !important;\n}\n\n.list_7 {\n  height: 10px;\n  background: green;\n  width: 10px;\n  float: right;\n  position: relative;\n  right: 5px;\n  border-radius: 50%;\n  margin-top: 3px;\n}\n\n.list_8 {\n  height: 10px;\n  background: red;\n  width: 10px;\n  float: right;\n  position: relative;\n  right: 5px;\n  border-radius: 50%;\n}\n\n.activeState {\n  background: #c4932f;\n  border: 1px solid #c4932f !important;\n  color: #fff !important;\n}\n\n.activeEndState {\n  background: #c4932f;\n  border: 1px solid #c4932f !important;\n  color: #fff !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlzdC15b3VyLWNhci9saXN0LXlvdXItY2FyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHdCQUFBO0VBQ0EscUJBQUE7QUFDSjs7QUFFQTtFQUNJO0lBQ0ksd0JBQUE7SUFDQSxxQkFBQTtFQUNOO0FBQ0Y7O0FBRUE7RUFDSSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0FBQUo7O0FBR0E7RUFDSSxVQUFBO0FBQUo7O0FBRUE7RUFDSSxZQUFBO0FBQ0o7O0FBQ0E7RUFDSSxXQUFBO0VBQ0EsYUFBQTtBQUVKOztBQUFBO0VBQ0ksWUFBQTtBQUdKOztBQURBO0VBQ0ksV0FBQTtFQUNBLGFBQUE7QUFJSjs7QUFGQTtFQUNJLGdCQUFBO0FBS0o7O0FBSEE7RUFDSSxXQUFBO0VBQ0EsaUJBQUE7QUFNSjs7QUFKQTtFQUNJLDZCQUFBO0FBT0o7O0FBTEE7RUFDSSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0VBQ0EsV0FBQTtFQUNBLDRCQUFBO0VBQ0EsdUJBQUE7RUFDQSxzQkFBQTtFQUNBLG9CQUFBO0FBUUo7O0FBTkE7RUFDSSxjQUFBO0VBQ0EsZUFBQTtFQUNBLGVBQUE7QUFTSjs7QUFQQTtFQUNJLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSwwQkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUFVSjs7QUFSQTtFQUNJLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSwwQkFBQTtFQUNBLG1CQUFBO0VBQ0EsNEJBQUE7QUFXSjs7QUFUQTtFQUVJLGNBQUE7RUFDQSxlQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7QUFXSjs7QUFUQTtFQUNJLG1CQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLFdBQUE7RUFDQSw0QkFBQTtFQUNBLGVBQUE7RUFDQSxzQkFBQTtFQUNBLG9CQUFBO0FBWUo7O0FBVkE7RUFDSSx5QkFBQTtBQWFKOztBQVhBO0VBQ0ksc0JBQUE7RUFDQSxtQkFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUFjSjs7QUFaQTtFQUNJLDRCQUFBO0FBZUo7O0FBYkE7RUFDSSxtQkFBQTtFQUNBLGtCQUFBO0FBZ0JKOztBQWRBO0VBQ0ksV0FBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtFQUNBLGVBQUE7QUFpQko7O0FBZkE7RUFDSSxrQkFBQTtBQWtCSjs7QUFoQkE7RUFDSSxnQkFBQTtBQW1CSjs7QUFqQkE7RUFDSSx1QkFBQTtFQUNBLG9CQUFBO0VBQ0Esa0JBQUE7QUFvQko7O0FBbEJBO0VBQ0ksNEJBQUE7QUFxQko7O0FBbkJBO0VBQ0ksbUJBQUE7RUFDQSxrQkFBQTtBQXNCSjs7QUFwQkE7RUFDSSxXQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7QUF1Qko7O0FBckJBO0VBQ0ksbUJBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsNEJBQUE7RUFDQSxXQUFBO0VBQ0EsZUFBQTtFQUNBLHNCQUFBO0VBQ0Esb0JBQUE7RUFDQSx1QkFBQTtFQUNBLG9CQUFBO0FBd0JKOztBQXRCQTtFQUNJLG1CQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0FBeUJKOztBQXZCQTtFQUNJLFdBQUE7RUFDQSxXQUFBO0FBMEJKOztBQXhCQTtFQUNJLCtCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQTJCSjs7QUF6QkE7RUFDSSw2QkFBQTtBQTRCSjs7QUExQkE7RUFDSSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtBQTZCSjs7QUEzQkE7RUFDSSxZQUFBO0VBQ0EsZUFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0VBQ0Esa0JBQUE7QUE4Qko7O0FBNUJBO0VBQ0ksbUJBQUE7RUFDQSxvQ0FBQTtFQUNBLHNCQUFBO0FBK0JKOztBQTdCQTtFQUNJLG1CQUFBO0VBQ0Esb0NBQUE7RUFDQSxzQkFBQTtBQWdDSiIsImZpbGUiOiJzcmMvYXBwL2xpc3QteW91ci1jYXIvbGlzdC15b3VyLWNhci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tdG9vbGJhciB7XG4gICAgcGFkZGluZzogMC44ZW0gMC4xZW0gMCAwO1xuICAgIC0tYmFja2dyb3VuZDogI2M0OTMyZjtcbn1cblxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZChtaW4taGVpZ2h0IDogODAwcHgpIHtcbiAgICBpb24tdG9vbGJhciB7XG4gICAgICAgIHBhZGRpbmc6IDNlbSAwLjFlbSA4cHggMDtcbiAgICAgICAgLS1iYWNrZ3JvdW5kOiAjYzQ5MzJmO1xuICAgIH1cbn1cblxuaW9uLXRpdGxle1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBjb2xvcjogI2ZmZjtcbiAgICBmb250LXNpemU6IDI0cHg7XG59XG5cbi5lcnJvcntcbiAgICBjb2xvcjpyZWQ7XG59XG4ucmVhbF9pbWFnZXtcbiAgICBwYWRkaW5nOjBweDtcbn1cbi5yZWFsX2ltYWdlIGltZ3tcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMHB4O1xufVxuLnJlYWxfaW1hZ2VfMntcbiAgICBwYWRkaW5nOjBweDtcbn1cbi5yZWFsX2ltYWdlXzIgaW1ne1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMTMycHg7XG59XG4ubGlzdF8xe1xuICAgIHBhZGRpbmc6IDBlbSAxZW07XG59XG4ubGlzdF8xIGgze1xuICAgIG1hcmdpbjogMHB4O1xuICAgIG1hcmdpbi10b3A6IDAuNWVtO1xufVxuLmxlZnRfNHtcbiAgICBtYXJnaW4tbGVmdDowLjdlbSAhaW1wb3J0YW50O1xufVxuLmlucHV0X2xpc3R7XG4gICAgYm9yZGVyOiAxcHggc29saWQgI2Q0ZGNlMTtcbiAgICBiYWNrZ3JvdW5kOiAjRjdGOEZBO1xuICAgIGJvcmRlci1yYWRpdXM6IDI4cHg7XG4gICAgZm9udC1zaXplOiAxM3B4O1xuICAgIGNvbG9yOiAjMDAwO1xuICAgIC0tcGxhY2Vob2xkZXItY29sb3I6ICNiMmIyYjQ7XG4gICAgLS1wYWRkaW5nLWJvdHRvbTogMS41ZW07XG4gICAgLS1wYWRkaW5nLXN0YXJ0OiAxLjVlbTtcbiAgICAtLXBhZGRpbmctdG9wOiAxLjVlbTtcbn1cbi51cGxvYWRfaW1hZ2Vze1xuICAgIGNvbG9yOiNDNDkzMkY7XG4gICAgZm9udC1zaXplOiAxMnB4O1xuICAgIG1hcmdpbjogNXB4IDBweDtcbn1cbi5saXN0XzJ7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIGJhY2tncm91bmQ6ICNGN0Y4RkE7XG4gICAgYm9yZGVyOiAxcHggZGFzaGVkICNENERDRTE7XG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgICBwYWRkaW5nOiAyLjVlbSAwZW07XG59XG4ubGlzdF85e1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBiYWNrZ3JvdW5kOiAjRjdGOEZBO1xuICAgIGJvcmRlcjogMXB4IGRhc2hlZCAjRDREQ0UxO1xuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gICAgcGFkZGluZzoyLjdlbSAwZW0gMi41ZW0gMGVtO1xufVxuLmxpc3RfOSBwe1xuICAgIFxuICAgIGNvbG9yOiAjZDJkNmQ4O1xuICAgIGZvbnQtc2l6ZTogMTJweDtcbiAgICBtYXJnaW46IDBweDtcbiAgICBtYXJnaW4tdG9wOiA4cHg7XG59XG4ubGlzdF8ze1xuICAgIGJhY2tncm91bmQ6ICNGN0Y4RkE7XG4gICAgYm9yZGVyOiAxcHggc29saWQgI0Q0RENFMTtcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICAgIGNvbG9yOiAjMDAwO1xuICAgIC0tcGxhY2Vob2xkZXItY29sb3I6ICNiMmIyYjQ7XG4gICAgZm9udC1zaXplOiAxM3B4O1xuICAgIC0tcGFkZGluZy1zdGFydDogMS41ZW07XG4gICAgLS1wYWRkaW5nLXRvcDogMS41ZW07XG59XG4uYnRuX2Zvb3RlcntcbiAgICBtYXJnaW46IDAuN2VtIDBlbSAxZW0gMGVtO1xufVxuaW9uLXNsaWRlIHNwYW57XG4gICAgYm9yZGVyOiAxcHggc29saWQgIzAwMDtcbiAgICBib3JkZXItcmFkaXVzOiAyMnB4O1xuICAgIHBhZGRpbmc6IDhweCAxNHB4O1xuICAgIG1hcmdpbi1sZWZ0OiAxZW07XG59XG4ubnVte1xuICAgIHBhZGRpbmc6IDlweCAxMHB4ICFpbXBvcnRhbnQ7XG59XG4uY2FsZW5kZXJfc2xpZGVye1xuICAgIGJhY2tncm91bmQ6ICNGN0Y4RkE7XG4gICAgcGFkZGluZzogMC42ZW0gMGVtO1xufVxuLmNhbGVuZGVyX3NsaWRlcl90ZXh0e1xuICAgIG1hcmdpbjogMHB4O1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICB0b3A6IC0ycHg7XG4gICAgZm9udC1zaXplOiAxOHB4O1xufVxuaW9uLXNsaWRle1xuICAgIG1hcmdpbi1sZWZ0OiAwLjZlbTtcbn1cbmlvbi1zbGlkZTpmaXJzdC1jaGlsZHtcbiAgICBtYXJnaW4tbGVmdDogMGVtO1xufVxuaW9uLWJ1dHRvbntcbiAgICAtLXBhZGRpbmctYm90dG9tOiAxLjVlbTtcbiAgICAtLXBhZGRpbmctdG9wOiAxLjVlbTtcbiAgICAtLWJveC1zaGFkb3c6IG5vbmU7XG59XG4uYnRuX2Zvb3RlcntcbiAgICBwYWRkaW5nOiAwLjVlbSAxZW0gMS4yZW0gMWVtO1xufVxuLmluZm97XG4gICAgYmFja2dyb3VuZDogIzZFNkQ2RDtcbiAgICBwYWRkaW5nOiAwLjRlbSAwZW07XG59XG4uaW5mbyBwe1xuICAgIG1hcmdpbjogMHB4O1xuICAgIGNvbG9yOiAjZmZmO1xuICAgIGZvbnQtc2l6ZTogMTBweDtcbn1cbmlvbi1zZWxlY3R7XG4gICAgYmFja2dyb3VuZDogI0Y3RjhGQTtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjRDREQ0UxO1xuICAgIGJvcmRlci1yYWRpdXM6IDMwcHg7XG4gICAgLS1wbGFjZWhvbGRlci1jb2xvcjogI2IyYjJiNDtcbiAgICBjb2xvcjogIzAwMDtcbiAgICBmb250LXNpemU6IDEzcHg7XG4gICAgLS1wYWRkaW5nLXN0YXJ0OiAxLjVlbTtcbiAgICAtLXBhZGRpbmctdG9wOiAxLjVlbTtcbiAgICAtLXBhZGRpbmctYm90dG9tOiAxLjVlbTtcbiAgICAtLXBhZGRpbmctZW5kOiAxLjVlbTtcbn1cbi5saXN0XzR7XG4gICAgYmFja2dyb3VuZDogI0Y3RjhGQTtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjRDREQ0UxO1xuICAgIGJvcmRlci1yYWRpdXM6IDEycHg7XG4gICAgY29sb3I6ICNENERDRTE7XG4gICAgZm9udC1zaXplOiAxM3B4O1xufVxuLmxpc3RfNCBwe1xuICAgIG1hcmdpbjogMHB4O1xuICAgIGNvbG9yOiMwMDA7XG59XG4ubGlzdF81e1xuICAgIGJvcmRlci1sZWZ0OiAxcHggZGFzaGVkICNjN2M3Yzc7XG4gICAgaGVpZ2h0OiA0OHB4O1xuICAgIGZsb2F0OiByaWdodDtcbiAgICBtYXJnaW4tdG9wOiAxMnB4O1xufVxuLmxpc3RfNntcbiAgICBtYXJnaW4tYm90dG9tOiAyZW0gIWltcG9ydGFudDtcbn1cbi5saXN0Xzd7XG4gICAgaGVpZ2h0OiAxMHB4O1xuICAgIGJhY2tncm91bmQ6IGdyZWVuO1xuICAgIHdpZHRoOiAxMHB4O1xuICAgIGZsb2F0OiByaWdodDtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgcmlnaHQ6IDVweDtcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XG4gICAgbWFyZ2luLXRvcDogM3B4O1xufVxuLmxpc3RfOHtcbiAgICBoZWlnaHQ6IDEwcHg7XG4gICAgYmFja2dyb3VuZDogcmVkO1xuICAgIHdpZHRoOiAxMHB4O1xuICAgIGZsb2F0OiByaWdodDtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgcmlnaHQ6IDVweDtcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XG59XG4uYWN0aXZlU3RhdGV7XG4gICAgYmFja2dyb3VuZDogI2M0OTMyZjtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjYzQ5MzJmICFpbXBvcnRhbnQ7XG4gICAgY29sb3I6ICNmZmYgIWltcG9ydGFudDtcbn1cbi5hY3RpdmVFbmRTdGF0ZXtcbiAgICBiYWNrZ3JvdW5kOiAjYzQ5MzJmO1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICNjNDkzMmYgIWltcG9ydGFudDtcbiAgICBjb2xvcjogI2ZmZiAhaW1wb3J0YW50OyBcbn1cbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-toolbar {\n  padding: 0.8em 0.1em 0 0;\n  --background: #c4932f;\n}\n\n@media only screen and (min-height: 800px) {\n  ion-toolbar {\n    padding: 3em 0.1em 8px 0;\n    --background: #c4932f;\n  }\n}\n\nion-title {\n  text-align: center;\n  color: #fff;\n  font-size: 24px;\n}\n\n.error {\n  color: red;\n}\n\n.real_image {\n  padding: 0px;\n}\n\n.real_image img {\n  width: 100%;\n  height: 100px;\n}\n\n.real_image_2 {\n  padding: 0px;\n}\n\n.real_image_2 img {\n  width: 150px;\n  height: 164px;\n}\n\n.list_1 {\n  padding: 0em 1em;\n}\n\n.list_1 h3 {\n  margin: 0px;\n  margin-top: 0.5em;\n}\n\n.left_4 {\n  margin-left: 0.7em !important;\n}\n\n.input_list {\n  border: 1px solid #d4dce1;\n  background: #F7F8FA;\n  border-radius: 28px;\n  font-size: 13px;\n  color: #000;\n  --placeholder-color: #b2b2b4;\n  --padding-bottom: 1.5em;\n  --padding-start: 1.5em;\n  --padding-top: 1.5em;\n}\n\n.upload_images {\n  color: #C4932F;\n  font-size: 12px;\n  margin: 5px 0px;\n}\n\n.list_2 {\n  text-align: center;\n  background: #F7F8FA;\n  border: 1px dashed #D4DCE1;\n  border-radius: 10px;\n  padding: 2.5em 0em;\n}\n\n.list_9 {\n  text-align: center;\n  background: #F7F8FA;\n  border: 1px dashed #D4DCE1;\n  border-radius: 10px;\n  padding: 2.7em 0em 2.5em 0em;\n}\n\n.list_9 p {\n  color: #d2d6d8;\n  font-size: 12px;\n  margin: 0px;\n  margin-top: 8px;\n}\n\n.list_3 {\n  background: #F7F8FA;\n  border: 1px solid #D4DCE1;\n  border-radius: 10px;\n  color: #000;\n  --placeholder-color: #b2b2b4;\n  font-size: 13px;\n  --padding-start: 1.5em;\n  --padding-top: 1.5em;\n}\n\n.btn_footer {\n  margin: 0.7em 0em 1em 0em;\n}\n\nion-slide span {\n  border: 1px solid #000;\n  border-radius: 22px;\n  padding: 8px 14px;\n  margin-left: 1em;\n}\n\n.num {\n  padding: 9px 10px !important;\n}\n\n.calender_slider {\n  background: #F7F8FA;\n  padding: 0.6em 0em;\n}\n\n.calender_slider_text {\n  margin: 0px;\n  position: relative;\n  top: -2px;\n  font-size: 18px;\n}\n\nion-slide {\n  margin-left: 0.6em;\n}\n\nion-slide:first-child {\n  margin-left: 0em;\n}\n\nion-button {\n  --padding-bottom: 1.5em;\n  --padding-top: 1.5em;\n  --box-shadow: none;\n}\n\n.btn_footer {\n  padding: 0.5em 1em 1.2em 1em;\n}\n\n.info {\n  background: #6E6D6D;\n  padding: 0.4em 0em;\n}\n\n.info p {\n  margin: 0px;\n  color: #fff;\n  font-size: 10px;\n}\n\nion-select {\n  background: #F7F8FA;\n  border: 1px solid #D4DCE1;\n  border-radius: 30px;\n  --placeholder-color: #b2b2b4;\n  color: #000;\n  font-size: 13px;\n  --padding-start: 1.5em;\n  --padding-top: 1.5em;\n  --padding-bottom: 1.5em;\n  --padding-end: 1.5em;\n}\n\n.list_4 {\n  background: #F7F8FA;\n  border: 1px solid #D4DCE1;\n  border-radius: 12px;\n  color: #D4DCE1;\n  font-size: 13px;\n}\n\n.list_4 p {\n  margin: 0px;\n  color: #000;\n}\n\n.list_5 {\n  border-left: 1px dashed #c7c7c7;\n  height: 48px;\n  float: right;\n  margin-top: 12px;\n}\n\n.list_6 {\n  margin-bottom: 2em !important;\n}\n\n.list_7 {\n  height: 10px;\n  background: green;\n  width: 10px;\n  float: right;\n  position: relative;\n  right: 5px;\n  border-radius: 50%;\n  margin-top: 3px;\n}\n\n.list_8 {\n  height: 10px;\n  background: red;\n  width: 10px;\n  float: right;\n  position: relative;\n  right: 5px;\n  border-radius: 50%;\n}\n\n.activeState {\n  background: #c4932f;\n  border: 1px solid #c4932f !important;\n  color: #fff !important;\n}\n\n.activeEndState {\n  background: #c4932f;\n  border: 1px solid #c4932f !important;\n  color: #fff !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGlzdC15b3VyLWNhci9saXN0LXlvdXItY2FyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHdCQUFBO0VBQ0EscUJBQUE7QUFDSjs7QUFFQTtFQUNJO0lBQ0ksd0JBQUE7SUFDQSxxQkFBQTtFQUNOO0FBQ0Y7O0FBRUE7RUFDSSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0FBQUo7O0FBR0E7RUFDSSxVQUFBO0FBQUo7O0FBRUE7RUFDSSxZQUFBO0FBQ0o7O0FBQ0E7RUFDSSxXQUFBO0VBQ0EsYUFBQTtBQUVKOztBQUFBO0VBQ0ksWUFBQTtBQUdKOztBQURBO0VBQ0ksWUFBQTtFQUNBLGFBQUE7QUFJSjs7QUFGQTtFQUNJLGdCQUFBO0FBS0o7O0FBSEE7RUFDSSxXQUFBO0VBQ0EsaUJBQUE7QUFNSjs7QUFKQTtFQUNJLDZCQUFBO0FBT0o7O0FBTEE7RUFDSSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0VBQ0EsV0FBQTtFQUNBLDRCQUFBO0VBQ0EsdUJBQUE7RUFDQSxzQkFBQTtFQUNBLG9CQUFBO0FBUUo7O0FBTkE7RUFDSSxjQUFBO0VBQ0EsZUFBQTtFQUNBLGVBQUE7QUFTSjs7QUFQQTtFQUNJLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSwwQkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUFVSjs7QUFSQTtFQUNJLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSwwQkFBQTtFQUNBLG1CQUFBO0VBQ0EsNEJBQUE7QUFXSjs7QUFUQTtFQUVJLGNBQUE7RUFDQSxlQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7QUFXSjs7QUFUQTtFQUNJLG1CQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLFdBQUE7RUFDQSw0QkFBQTtFQUNBLGVBQUE7RUFDQSxzQkFBQTtFQUNBLG9CQUFBO0FBWUo7O0FBVkE7RUFDSSx5QkFBQTtBQWFKOztBQVhBO0VBQ0ksc0JBQUE7RUFDQSxtQkFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUFjSjs7QUFaQTtFQUNJLDRCQUFBO0FBZUo7O0FBYkE7RUFDSSxtQkFBQTtFQUNBLGtCQUFBO0FBZ0JKOztBQWRBO0VBQ0ksV0FBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtFQUNBLGVBQUE7QUFpQko7O0FBZkE7RUFDSSxrQkFBQTtBQWtCSjs7QUFoQkE7RUFDSSxnQkFBQTtBQW1CSjs7QUFqQkE7RUFDSSx1QkFBQTtFQUNBLG9CQUFBO0VBQ0Esa0JBQUE7QUFvQko7O0FBbEJBO0VBQ0ksNEJBQUE7QUFxQko7O0FBbkJBO0VBQ0ksbUJBQUE7RUFDQSxrQkFBQTtBQXNCSjs7QUFwQkE7RUFDSSxXQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7QUF1Qko7O0FBckJBO0VBQ0ksbUJBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsNEJBQUE7RUFDQSxXQUFBO0VBQ0EsZUFBQTtFQUNBLHNCQUFBO0VBQ0Esb0JBQUE7RUFDQSx1QkFBQTtFQUNBLG9CQUFBO0FBd0JKOztBQXRCQTtFQUNJLG1CQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0FBeUJKOztBQXZCQTtFQUNJLFdBQUE7RUFDQSxXQUFBO0FBMEJKOztBQXhCQTtFQUNJLCtCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQTJCSjs7QUF6QkE7RUFDSSw2QkFBQTtBQTRCSjs7QUExQkE7RUFDSSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtBQTZCSjs7QUEzQkE7RUFDSSxZQUFBO0VBQ0EsZUFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0VBQ0Esa0JBQUE7QUE4Qko7O0FBNUJBO0VBQ0ksbUJBQUE7RUFDQSxvQ0FBQTtFQUNBLHNCQUFBO0FBK0JKOztBQTdCQTtFQUNJLG1CQUFBO0VBQ0Esb0NBQUE7RUFDQSxzQkFBQTtBQWdDSiIsImZpbGUiOiJzcmMvYXBwL2xpc3QteW91ci1jYXIvbGlzdC15b3VyLWNhci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tdG9vbGJhciB7XG4gICAgcGFkZGluZzogMC44ZW0gMC4xZW0gMCAwO1xuICAgIC0tYmFja2dyb3VuZDogI2M0OTMyZjtcbn1cblxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZChtaW4taGVpZ2h0IDogODAwcHgpIHtcbiAgICBpb24tdG9vbGJhciB7XG4gICAgICAgIHBhZGRpbmc6IDNlbSAwLjFlbSA4cHggMDtcbiAgICAgICAgLS1iYWNrZ3JvdW5kOiAjYzQ5MzJmO1xuICAgIH1cbn1cblxuaW9uLXRpdGxle1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBjb2xvcjogI2ZmZjtcbiAgICBmb250LXNpemU6IDI0cHg7XG59XG5cbi5lcnJvcntcbiAgICBjb2xvcjpyZWQ7XG59XG4ucmVhbF9pbWFnZXtcbiAgICBwYWRkaW5nOjBweDtcbn1cbi5yZWFsX2ltYWdlIGltZ3tcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMHB4O1xufVxuLnJlYWxfaW1hZ2VfMntcbiAgICBwYWRkaW5nOjBweDtcbn1cbi5yZWFsX2ltYWdlXzIgaW1ne1xuICAgIHdpZHRoOiAxNTBweDtcbiAgICBoZWlnaHQ6IDE2NHB4O1xufVxuLmxpc3RfMXtcbiAgICBwYWRkaW5nOiAwZW0gMWVtO1xufVxuLmxpc3RfMSBoM3tcbiAgICBtYXJnaW46IDBweDtcbiAgICBtYXJnaW4tdG9wOiAwLjVlbTtcbn1cbi5sZWZ0XzR7XG4gICAgbWFyZ2luLWxlZnQ6MC43ZW0gIWltcG9ydGFudDtcbn1cbi5pbnB1dF9saXN0e1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICNkNGRjZTE7XG4gICAgYmFja2dyb3VuZDogI0Y3RjhGQTtcbiAgICBib3JkZXItcmFkaXVzOiAyOHB4O1xuICAgIGZvbnQtc2l6ZTogMTNweDtcbiAgICBjb2xvcjogIzAwMDtcbiAgICAtLXBsYWNlaG9sZGVyLWNvbG9yOiAjYjJiMmI0O1xuICAgIC0tcGFkZGluZy1ib3R0b206IDEuNWVtO1xuICAgIC0tcGFkZGluZy1zdGFydDogMS41ZW07XG4gICAgLS1wYWRkaW5nLXRvcDogMS41ZW07XG59XG4udXBsb2FkX2ltYWdlc3tcbiAgICBjb2xvcjojQzQ5MzJGO1xuICAgIGZvbnQtc2l6ZTogMTJweDtcbiAgICBtYXJnaW46IDVweCAwcHg7XG59XG4ubGlzdF8ye1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBiYWNrZ3JvdW5kOiAjRjdGOEZBO1xuICAgIGJvcmRlcjogMXB4IGRhc2hlZCAjRDREQ0UxO1xuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gICAgcGFkZGluZzogMi41ZW0gMGVtO1xufVxuLmxpc3RfOXtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgYmFja2dyb3VuZDogI0Y3RjhGQTtcbiAgICBib3JkZXI6IDFweCBkYXNoZWQgI0Q0RENFMTtcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICAgIHBhZGRpbmc6Mi43ZW0gMGVtIDIuNWVtIDBlbTtcbn1cbi5saXN0XzkgcHtcbiAgICBcbiAgICBjb2xvcjogI2QyZDZkODtcbiAgICBmb250LXNpemU6IDEycHg7XG4gICAgbWFyZ2luOiAwcHg7XG4gICAgbWFyZ2luLXRvcDogOHB4O1xufVxuLmxpc3RfM3tcbiAgICBiYWNrZ3JvdW5kOiAjRjdGOEZBO1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICNENERDRTE7XG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgICBjb2xvcjogIzAwMDtcbiAgICAtLXBsYWNlaG9sZGVyLWNvbG9yOiAjYjJiMmI0O1xuICAgIGZvbnQtc2l6ZTogMTNweDtcbiAgICAtLXBhZGRpbmctc3RhcnQ6IDEuNWVtO1xuICAgIC0tcGFkZGluZy10b3A6IDEuNWVtO1xufVxuLmJ0bl9mb290ZXJ7XG4gICAgbWFyZ2luOiAwLjdlbSAwZW0gMWVtIDBlbTtcbn1cbmlvbi1zbGlkZSBzcGFue1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICMwMDA7XG4gICAgYm9yZGVyLXJhZGl1czogMjJweDtcbiAgICBwYWRkaW5nOiA4cHggMTRweDtcbiAgICBtYXJnaW4tbGVmdDogMWVtO1xufVxuLm51bXtcbiAgICBwYWRkaW5nOiA5cHggMTBweCAhaW1wb3J0YW50O1xufVxuLmNhbGVuZGVyX3NsaWRlcntcbiAgICBiYWNrZ3JvdW5kOiAjRjdGOEZBO1xuICAgIHBhZGRpbmc6IDAuNmVtIDBlbTtcbn1cbi5jYWxlbmRlcl9zbGlkZXJfdGV4dHtcbiAgICBtYXJnaW46IDBweDtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgdG9wOiAtMnB4O1xuICAgIGZvbnQtc2l6ZTogMThweDtcbn1cbmlvbi1zbGlkZXtcbiAgICBtYXJnaW4tbGVmdDogMC42ZW07XG59XG5pb24tc2xpZGU6Zmlyc3QtY2hpbGR7XG4gICAgbWFyZ2luLWxlZnQ6IDBlbTtcbn1cbmlvbi1idXR0b257XG4gICAgLS1wYWRkaW5nLWJvdHRvbTogMS41ZW07XG4gICAgLS1wYWRkaW5nLXRvcDogMS41ZW07XG4gICAgLS1ib3gtc2hhZG93OiBub25lO1xufVxuLmJ0bl9mb290ZXJ7XG4gICAgcGFkZGluZzogMC41ZW0gMWVtIDEuMmVtIDFlbTtcbn1cbi5pbmZve1xuICAgIGJhY2tncm91bmQ6ICM2RTZENkQ7XG4gICAgcGFkZGluZzogMC40ZW0gMGVtO1xufVxuLmluZm8gcHtcbiAgICBtYXJnaW46IDBweDtcbiAgICBjb2xvcjogI2ZmZjtcbiAgICBmb250LXNpemU6IDEwcHg7XG59XG5pb24tc2VsZWN0e1xuICAgIGJhY2tncm91bmQ6ICNGN0Y4RkE7XG4gICAgYm9yZGVyOiAxcHggc29saWQgI0Q0RENFMTtcbiAgICBib3JkZXItcmFkaXVzOiAzMHB4O1xuICAgIC0tcGxhY2Vob2xkZXItY29sb3I6ICNiMmIyYjQ7XG4gICAgY29sb3I6ICMwMDA7XG4gICAgZm9udC1zaXplOiAxM3B4O1xuICAgIC0tcGFkZGluZy1zdGFydDogMS41ZW07XG4gICAgLS1wYWRkaW5nLXRvcDogMS41ZW07XG4gICAgLS1wYWRkaW5nLWJvdHRvbTogMS41ZW07XG4gICAgLS1wYWRkaW5nLWVuZDogMS41ZW07XG59XG4ubGlzdF80e1xuICAgIGJhY2tncm91bmQ6ICNGN0Y4RkE7XG4gICAgYm9yZGVyOiAxcHggc29saWQgI0Q0RENFMTtcbiAgICBib3JkZXItcmFkaXVzOiAxMnB4O1xuICAgIGNvbG9yOiAjRDREQ0UxO1xuICAgIGZvbnQtc2l6ZTogMTNweDtcbn1cbi5saXN0XzQgcHtcbiAgICBtYXJnaW46IDBweDtcbiAgICBjb2xvcjojMDAwO1xufVxuLmxpc3RfNXtcbiAgICBib3JkZXItbGVmdDogMXB4IGRhc2hlZCAjYzdjN2M3O1xuICAgIGhlaWdodDogNDhweDtcbiAgICBmbG9hdDogcmlnaHQ7XG4gICAgbWFyZ2luLXRvcDogMTJweDtcbn1cbi5saXN0XzZ7XG4gICAgbWFyZ2luLWJvdHRvbTogMmVtICFpbXBvcnRhbnQ7XG59XG4ubGlzdF83e1xuICAgIGhlaWdodDogMTBweDtcbiAgICBiYWNrZ3JvdW5kOiBncmVlbjtcbiAgICB3aWR0aDogMTBweDtcbiAgICBmbG9hdDogcmlnaHQ7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIHJpZ2h0OiA1cHg7XG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xuICAgIG1hcmdpbi10b3A6IDNweDtcbn1cbi5saXN0Xzh7XG4gICAgaGVpZ2h0OiAxMHB4O1xuICAgIGJhY2tncm91bmQ6IHJlZDtcbiAgICB3aWR0aDogMTBweDtcbiAgICBmbG9hdDogcmlnaHQ7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIHJpZ2h0OiA1cHg7XG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xufVxuLmFjdGl2ZVN0YXRle1xuICAgIGJhY2tncm91bmQ6ICNjNDkzMmY7XG4gICAgYm9yZGVyOiAxcHggc29saWQgI2M0OTMyZiAhaW1wb3J0YW50O1xuICAgIGNvbG9yOiAjZmZmICFpbXBvcnRhbnQ7XG59XG4uYWN0aXZlRW5kU3RhdGV7XG4gICAgYmFja2dyb3VuZDogI2M0OTMyZjtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjYzQ5MzJmICFpbXBvcnRhbnQ7XG4gICAgY29sb3I6ICNmZmYgIWltcG9ydGFudDsgXG59XG4iXX0= */");
 
 /***/ }),
 
@@ -159,6 +159,11 @@ var ListYourCarPage = /** @class */ (function () {
             loop: true,
             slidesPerView: 8
         };
+        this.document_one = '';
+        this.document_two = '';
+        this.document_three = '';
+        this.document_four = '';
+        this.document_five = '';
         this.start_date_month = '';
         this.end_date_month = '';
         this.start_month_index = 1;
@@ -166,6 +171,8 @@ var ListYourCarPage = /** @class */ (function () {
         this.documentBase64 = [];
         this.days = [];
         this.monthCounter = 1;
+        this.document_six = '';
+        this.document_seven = '';
         this.validation = false;
         this.fieldMissing = false;
         this.endmonthCounter = 1;
@@ -199,6 +206,7 @@ var ListYourCarPage = /** @class */ (function () {
          });  */
         this.days = Array.from({ length: 30 }, function (v, k) { return k + 1; });
     }
+    ;
     ListYourCarPage.prototype.ngOnInit = function () {
         var _this = this;
         this.getDropDownData();
@@ -715,8 +723,50 @@ var ListYourCarPage = /** @class */ (function () {
         });
     };
     ListYourCarPage.prototype.uploadDocumentsPhotos = function (params) {
-        var _this = this;
         console.log("params", params);
+        if (params == '1' && this.document_one == '') {
+            // choose 5 image
+            this.pick5image();
+        }
+        else if (params == '1' && this.document_one != '') {
+            // choose 1 image
+            this.pickCustome1image(params);
+        }
+        else if (params == '2' && this.document_two == '') {
+            // choose 4 image
+            this.pick4image();
+        }
+        else if (params == '2' && this.document_two != '') {
+            // choose 1 image
+            this.pickCustome1image(params);
+        }
+        else if (params == '3' && this.document_three == '') {
+            // choose 3 image
+            this.pick3image();
+        }
+        else if (params == '3' && this.document_three != '') {
+            // choose 1 image
+            this.pickCustome1image(params);
+        }
+        else if (params == '6' && this.document_six == '') {
+            // choose 2 image
+            this.pick2image();
+        }
+        else if (params == '6' && this.document_six != '') {
+            // choose 1 image
+            this.pickCustome1image(params);
+        }
+        else if (params == '7' && this.document_seven == '') {
+            // choose 1 image
+            this.pick1image();
+        }
+        else if (params == '7' && this.document_seven != '') {
+            // choose 1 image
+            this.pickCustome1image(params);
+        }
+    };
+    ListYourCarPage.prototype.pick5image = function () {
+        var _this = this;
         var options = {
             maximumImagesCount: 5,
             outputType: 1
@@ -748,6 +798,153 @@ var ListYourCarPage = /** @class */ (function () {
                     var base644 = "data:image/png;base64," + results[4];
                     _this.image7 = results[4];
                     _this.document_seven = base644;
+                }
+            }
+        }, function (err) {
+            console.log(err, "error in images??");
+        });
+    };
+    ListYourCarPage.prototype.pick4image = function () {
+        var _this = this;
+        var options = {
+            maximumImagesCount: 4,
+            outputType: 1
+        };
+        this.imagePicker.getPictures(options).then(function (results) {
+            for (var i = 0; i < results.length; i++) {
+                console.log('Image URI: sucessed' + results[i]);
+                if (i == 0) {
+                    var base641 = "data:image/png;base64," + results[1];
+                    _this.image2 = results[1];
+                    _this.document_two = base641;
+                }
+                if (i == 1) {
+                    var base642 = "data:image/png;base64," + results[2];
+                    _this.image3 = results[2];
+                    _this.document_three = base642;
+                }
+                if (i == 2) {
+                    var base643 = "data:image/png;base64," + results[3];
+                    _this.image6 = results[3];
+                    _this.document_six = base643;
+                }
+                if (i == 3) {
+                    var base644 = "data:image/png;base64," + results[4];
+                    _this.image7 = results[4];
+                    _this.document_seven = base644;
+                }
+            }
+        }, function (err) {
+            console.log(err, "error in images??");
+        });
+    };
+    ListYourCarPage.prototype.pick3image = function () {
+        var _this = this;
+        var options = {
+            maximumImagesCount: 3,
+            outputType: 1
+        };
+        this.imagePicker.getPictures(options).then(function (results) {
+            for (var i = 0; i < results.length; i++) {
+                console.log('Image URI: sucessed' + results[i]);
+                if (i == 0) {
+                    var base642 = "data:image/png;base64," + results[2];
+                    _this.image3 = results[2];
+                    _this.document_three = base642;
+                }
+                if (i == 1) {
+                    var base643 = "data:image/png;base64," + results[3];
+                    _this.image6 = results[3];
+                    _this.document_six = base643;
+                }
+                if (i == 2) {
+                    var base644 = "data:image/png;base64," + results[4];
+                    _this.image7 = results[4];
+                    _this.document_seven = base644;
+                }
+            }
+        }, function (err) {
+            console.log(err, "error in images??");
+        });
+    };
+    ListYourCarPage.prototype.pick2image = function () {
+        var _this = this;
+        var options = {
+            maximumImagesCount: 2,
+            outputType: 1
+        };
+        this.imagePicker.getPictures(options).then(function (results) {
+            for (var i = 0; i < results.length; i++) {
+                console.log('Image URI: sucessed' + results[i]);
+                if (i == 0) {
+                    var base643 = "data:image/png;base64," + results[3];
+                    _this.image6 = results[3];
+                    _this.document_six = base643;
+                }
+                if (i == 1) {
+                    var base644 = "data:image/png;base64," + results[4];
+                    _this.image7 = results[4];
+                    _this.document_seven = base644;
+                }
+            }
+        }, function (err) {
+            console.log(err, "error in images??");
+        });
+    };
+    ListYourCarPage.prototype.pick1image = function () {
+        var _this = this;
+        var options = {
+            maximumImagesCount: 1,
+            outputType: 1
+        };
+        this.imagePicker.getPictures(options).then(function (results) {
+            for (var i = 0; i < results.length; i++) {
+                console.log('Image URI: sucessed' + results[i]);
+                if (i == 0) {
+                    var base644 = "data:image/png;base64," + results[4];
+                    _this.image7 = results[4];
+                    _this.document_seven = base644;
+                }
+            }
+        }, function (err) {
+            console.log(err, "error in images??");
+        });
+    };
+    ListYourCarPage.prototype.pickCustome1image = function (custNum) {
+        var _this = this;
+        var options = {
+            maximumImagesCount: 1,
+            outputType: 1
+        };
+        this.imagePicker.getPictures(options).then(function (results) {
+            for (var i = 0; i < results.length; i++) {
+                console.log('Image URI: sucessed' + results[i]);
+                if (i == 0) {
+                    if (custNum == '1') {
+                        var base640 = "data:image/png;base64," + results[0];
+                        _this.image1 = results[0];
+                        _this.document_one = base640;
+                    }
+                    if (custNum == '2') {
+                        var base640 = "data:image/png;base64," + results[0];
+                        _this.image2 = results[0];
+                        _this.document_two = base640;
+                    }
+                    if (custNum == '3') {
+                        var base640 = "data:image/png;base64," + results[0];
+                        _this.image3 = results[0];
+                        _this.document_three = base640;
+                    }
+                    if (custNum == '6') {
+                        var base640 = "data:image/png;base64," + results[0];
+                        _this.image6 = results[0];
+                        _this.document_six = base640;
+                    }
+                    if (custNum == '7') {
+                        var base640 = "data:image/png;base64," + results[0];
+                        _this.image7 = results[0];
+                        _this.document_seven = base640;
+                    }
                 }
             }
         }, function (err) {

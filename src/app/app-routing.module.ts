@@ -166,7 +166,11 @@ const routes: Routes = [
   {
     path: 'flutter-waves',
     loadChildren: () => import('./flutter-waves/flutter-waves.module').then( m => m.FlutterWavesPageModule)
+  },  {
+    path: 'verify-new-code',
+    loadChildren: () => import('./verify-new-code/verify-new-code.module').then( m => m.VerifyNewCodePageModule)
   }
+
 ];
 
 @NgModule({

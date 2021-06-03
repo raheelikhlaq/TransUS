@@ -30,9 +30,14 @@ export class ForgotPasswordPage implements OnInit {
       console.log(this.response.status);
       if(this.response.status == 'error'){
           this.presentToast(this.response.msg);
-      }else if(this.response.status == 'success '){
+      }else if(this.response.status == 'success'){
         this.presentToast(this.response.msg);
-        this.ok();
+        // this.ok();
+          localStorage.setItem("restWithEmail",this.email);
+          this.popoverController.dismiss({
+            val: this.response.status
+          });
+         
       }
      
     },err => {

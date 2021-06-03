@@ -244,13 +244,17 @@ ion-toggle.toggle-icon {
 ion-header.md.header-md.header-collapse-none.hydrated {
     padding-right: 8px;
     padding-left: 8px;
-    padding-top: 1em;
+    // padding-top: 1em;
+    padding-top: 10px;
     padding-bottom: 5px;
     background: #c4932f;
 }
 
 .header-ios ion-toolbar:last-of-type {
     --border-width: 0 0 0px;
+}
+ion-content{
+    --background: #ffffff;
 }
 
 /* iphone 3 */

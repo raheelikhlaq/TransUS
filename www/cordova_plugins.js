@@ -157,6 +157,20 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "CameraPopoverHandle"
       ]
+    },
+    {
+      "id": "es6-promise-plugin.Promise",
+      "file": "plugins/es6-promise-plugin/www/promise.js",
+      "pluginId": "es6-promise-plugin",
+      "runs": true
+    },
+    {
+      "id": "cordova-plugin-x-socialsharing.SocialSharing",
+      "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+      "pluginId": "cordova-plugin-x-socialsharing",
+      "clobbers": [
+        "window.plugins.socialsharing"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -178,6 +192,8 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-sqlite-storage": "5.1.0",
     "onesignal-cordova-plugin": "2.11.3",
-    "cordova-plugin-camera": "5.0.2"
+    "cordova-plugin-camera": "5.0.2",
+    "es6-promise-plugin": "4.2.2",
+    "cordova-plugin-x-socialsharing": "6.0.3"
   };
 });

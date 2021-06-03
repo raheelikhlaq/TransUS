@@ -48,11 +48,11 @@ export class ListYourCarPage implements OnInit {
   end_date: string;
   dropoff: any;
   pickup: any;
-  document_one: any;
-  document_two: any;
-  document_three: any;
-  document_four: any;
-  document_five: any;
+  document_one: any = '';
+  document_two: any = '';
+  document_three: any = '';
+  document_four: any= '';
+  document_five: any= '';
   ModelError: boolean;
   MakeError: boolean;
   LicensePlateError: boolean;
@@ -94,8 +94,8 @@ export class ListYourCarPage implements OnInit {
   sliderEndBoolean: any;
   document_sixError: boolean;
   document_sevenError: boolean;
-  document_six: string;
-  document_seven: string;
+  document_six:any = '';
+  document_seven: any = '';;
   validation: boolean = false;
   loading: HTMLIonLoadingElement;
   max_price: any;
@@ -682,6 +682,54 @@ export class ListYourCarPage implements OnInit {
 
     uploadDocumentsPhotos(params){
       console.log("params", params)
+      if(params == '1' && this.document_one == '' ){
+        // choose 5 image
+        this.pick5image();
+     
+      }
+      else if(params == '1' && this.document_one != ''){
+        // choose 1 image
+        this.pickCustome1image(params);
+      }
+      else if(params == '2' && this.document_two == ''){
+        // choose 4 image
+        this.pick4image();
+      }
+      else if(params == '2' && this.document_two != ''){
+        // choose 1 image
+        this.pickCustome1image(params);
+      }
+      else if(params == '3' && this.document_three == ''){
+        // choose 3 image
+        this.pick3image();
+      }
+      else if(params == '3' && this.document_three != ''){
+        // choose 1 image
+        this.pickCustome1image(params);
+      }
+      else if(params == '6' && this.document_six == ''){
+        // choose 2 image
+        this.pick2image();
+      }
+      else if(params == '6' && this.document_six != ''){
+        // choose 1 image
+        this.pickCustome1image(params);
+      }
+      else if(params == '7' && this.document_seven == ''){
+        // choose 1 image
+        this.pick1image();
+      }
+      else if(params == '7' && this.document_seven != ''){
+        // choose 1 image
+        this.pickCustome1image(params);
+      }
+
+     
+   
+  
+    }
+
+    pick5image(){
       var options = {
         maximumImagesCount: 5,
         outputType: 1
@@ -719,9 +767,163 @@ export class ListYourCarPage implements OnInit {
       }, (err) => { 
         console.log(err, "error in images??")
       });
-  
     }
 
+    pick4image(){
+      var options = {
+        maximumImagesCount: 4,
+        outputType: 1
+      };
+  
+      this.imagePicker.getPictures(options).then((results) => {
+        for (var i = 0; i < results.length; i++) {
+            console.log('Image URI: sucessed' + results[i]);
+         
+            if(i==0){
+              var base641 = `data:image/png;base64,${results[1]}`;  
+              this.image2 = results[1] 
+              this.document_two = base641;
+            }
+            if(i==1){
+              var base642 = `data:image/png;base64,${results[2]}`;  
+              this.image3 = results[2]
+              this.document_three = base642;
+            }
+            if(i==2){
+              var base643 = `data:image/png;base64,${results[3]}`;  
+              this.image6 = results[3]
+              this.document_six = base643;
+            }
+            if(i==3){
+              var base644 = `data:image/png;base64,${results[4]}`;  
+              this.image7 = results[4]
+              this.document_seven =base644;
+            }
+        }
+      }, (err) => { 
+        console.log(err, "error in images??")
+      });
+    }
+
+    pick3image(){
+      var options = {
+        maximumImagesCount: 3,
+        outputType: 1
+      };
+  
+      this.imagePicker.getPictures(options).then((results) => {
+        for (var i = 0; i < results.length; i++) {
+            console.log('Image URI: sucessed' + results[i]);
+            if(i==0){
+              var base642 = `data:image/png;base64,${results[2]}`;  
+              this.image3 = results[2]
+              this.document_three = base642;
+            }
+            if(i==1){
+              var base643 = `data:image/png;base64,${results[3]}`;  
+              this.image6 = results[3]
+              this.document_six = base643;
+            }
+            if(i==2){
+              var base644 = `data:image/png;base64,${results[4]}`;  
+              this.image7 = results[4]
+              this.document_seven =base644;
+            }
+        }
+      }, (err) => { 
+        console.log(err, "error in images??")
+      });
+    }
+
+    pick2image(){
+      var options = {
+        maximumImagesCount: 2,
+        outputType: 1
+      };
+  
+      this.imagePicker.getPictures(options).then((results) => {
+        for (var i = 0; i < results.length; i++) {
+            console.log('Image URI: sucessed' + results[i]);
+            if(i==0){
+              var base643 = `data:image/png;base64,${results[3]}`;  
+              this.image6 = results[3]
+              this.document_six = base643;
+            }
+            if(i==1){
+              var base644 = `data:image/png;base64,${results[4]}`;  
+              this.image7 = results[4]
+              this.document_seven =base644;
+            }
+        }
+      }, (err) => { 
+        console.log(err, "error in images??")
+      });
+    }
+
+    pick1image(){
+      var options = {
+        maximumImagesCount: 1,
+        outputType: 1
+      };
+  
+      this.imagePicker.getPictures(options).then((results) => {
+        for (var i = 0; i < results.length; i++) {
+            console.log('Image URI: sucessed' + results[i]);
+            if(i==0){
+              var base644 = `data:image/png;base64,${results[4]}`;  
+              this.image7 = results[4]
+              this.document_seven =base644;
+            }
+        }
+      }, (err) => { 
+        console.log(err, "error in images??")
+      });
+    }
+
+    pickCustome1image(custNum){
+      
+      var options = {
+        maximumImagesCount: 1,
+        outputType: 1
+      };
+  
+      this.imagePicker.getPictures(options).then((results) => {
+        for (var i = 0; i < results.length; i++) {
+            console.log('Image URI: sucessed' + results[i]);
+            if(i==0){  
+              if(custNum == '1'){
+                var base640 = `data:image/png;base64,${results[0]}`;  
+                this.image1 = results[0]
+                this.document_one = base640;
+              }
+              if(custNum == '2'){
+                var base640 = `data:image/png;base64,${results[0]}`;  
+                this.image2 = results[0]
+                this.document_two = base640;
+              }
+              if(custNum == '3'){
+                var base640 = `data:image/png;base64,${results[0]}`;  
+                this.image3 = results[0]
+                this.document_three = base640;
+              }
+              if(custNum == '6'){
+                var base640 = `data:image/png;base64,${results[0]}`;  
+                this.image6 = results[0]
+                this.document_six = base640;
+              }
+              if(custNum == '7'){
+                var base640 = `data:image/png;base64,${results[0]}`;  
+                this.image7 = results[0]
+                this.document_seven = base640;
+              }
+             
+            }
+           
+        }
+      }, (err) => { 
+        console.log(err, "error in images??")
+      });
+    }
   // hasReadPermission() {
   //   window.imagePicker.hasReadPermission(
   //     function (result) {

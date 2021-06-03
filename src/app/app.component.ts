@@ -148,6 +148,7 @@ export class AppComponent implements OnInit {
           this.storage.get('profile_img_url').then((profile_img_url) => {
             this.storage.get('base_urls').then((base_url) => {
               this.profile_image = base_url + '' + profile_img_url;
+              // localStorage.setItem("email", this.userData.email);
             });
           });
           var stringfy = JSON.stringify({

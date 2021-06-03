@@ -76,7 +76,7 @@ export class FiltersPage implements OnInit {
   userID: any;
   currencyID: any='';
   currencySymbol: any;
-  i:any;
+ 
   constructor(private storage: Storage,public zone: NgZone,public router:Router,public toastController:ToastController,public restService:RestService,public menuCtrl:MenuController) {
     this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
     this.autocomplete = { input: '' };
@@ -88,7 +88,7 @@ export class FiltersPage implements OnInit {
     var dDate = date.getDate();
     console.log(dDate)
     // this.getStartIndex(dDate);
-    this.i = dDate 
+   
     console.log(date);
     console.log(month)
     console.log(fMonth)
@@ -155,6 +155,8 @@ export class FiltersPage implements OnInit {
      this.vehicle_types = this.response.vehicle_types;
      this.max_price  = this.response.max_price;
      this.min_price  = this.response.min_price;
+     this.upperPrice = this.response.max_price;
+     this.lowerPrice = this.response.min_price;
      console.log(this.response);
      
     },err => {
@@ -171,6 +173,18 @@ export class FiltersPage implements OnInit {
   } */
   getStartIndex(i){
     this.sliderStartBoolean = i;
+  }
+
+  onSliderChanged(event){
+   
+    console.log(this.price)
+    console.log(this.price.lower)
+    console.log(this.price.upper);
+    this.lowerPrice = this.price.lower;
+    this.upperPrice = this.price.upper;
+    // this.max_price = this.price.upper;
+    // this.min_price = this.price.lower
+
   }
 
   getVehicleVal(){

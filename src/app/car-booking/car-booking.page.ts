@@ -213,6 +213,7 @@ export class CarBookingPage implements OnInit {
 
 
   }
+  ShowLoading:boolean=false;
   submitForm() {
 
 
@@ -263,13 +264,14 @@ export class CarBookingPage implements OnInit {
           "licenseImg": licenseImg,
           "currencyID": this.currencyID
         });
-        this.present();
+        // this.present();
+        this.ShowLoading= true;
         console.log(stringy);
         this.restService.bookings(stringy).subscribe(response => {
           this.response = JSON.parse(response['_body']);
           console.log(this.response);
           if (this.response.status == 'error') {
-            this.presentToast('Oops!something went wrong!');
+            this.presentToast(this.response.message);
           } else if (this.response.status == 'success') {
             this.presentToast(this.response.msg);
             this.document_one = '';
@@ -284,9 +286,11 @@ export class CarBookingPage implements OnInit {
               },
             });
           }
-          this.dismiss();
+          // this.dismiss();
+          this.ShowLoading = false;
         }, err => {
-          this.dismiss();
+          // this.dismiss();
+          this.ShowLoading = false;
         });
       }
     } else {

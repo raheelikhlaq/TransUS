@@ -23,13 +23,14 @@ export class OtherBookingListPage implements OnInit {
   pending_bookings:any;
   currencyID: any;
   currency_symbol: any;
-
+  // baseURL:any;
   constructor(public toastController:ToastController,
     public popoverController:PopoverController,public restService:RestService,
     private storage: Storage,public router:Router,public menuCtrl: MenuController,
     public activatedRoute:ActivatedRoute, public alertController:AlertController) { }
     valres:any;
   ionViewWillEnter() {
+    
     this.activatedRoute.queryParams.subscribe((res)=>{
       this.valres =  res.value;
       console.log(res);
@@ -44,9 +45,9 @@ export class OtherBookingListPage implements OnInit {
        
        
       }
-      else{
-        this.pet = 'previous';
-        console.log('previous')
+      else  {
+        this.pet = 'pending';
+        console.log('pending')
       }
       
     })
@@ -125,6 +126,9 @@ async giveRating(bookingId){
 data:any;
 async cancelBooking(booking){
   this.data = booking;
+  console.log(booking,"booking from html")
+  console.log(this.data,"get from booking ")
+
   const popover = await this.popoverController.create({
     component: ActionBookingPage,
     translucent: true,

@@ -36,7 +36,16 @@
         <ion-row class="pd_bs" *ngIf="i % 2 === 0">
           <ion-col size="4" class="lambo">
               <h4>Car Name</h4>
-              <img src="assets/img/Lambo.svg">
+              <!-- <img src="assets/img/Lambo.svg"> -->
+              <ng-container *ngIf="p.veh_imgs?.length > 0">
+                <ng-container *ngFor="let img of p.veh_imgs; let j = index">
+                  <img style="border-radius: 11px;" *ngIf="j == 0" src="{{base_url}}{{img}}">
+                </ng-container>
+              </ng-container>
+              <ng-container *ngIf="p.veh_imgs?.length < 0">
+                <img src="assets/img/Lambo.svg">
+              </ng-container>
+   
           </ion-col>
           <ion-col class="trip_dates" size="4">
               <p class="blue">Trip Dates</p>
@@ -91,7 +100,16 @@
         <ion-row class="pd_bs bg_grey" *ngIf="i % 2 != 0">
           <ion-col size="4" class="lambo">
               <h4>Car Name</h4>
-              <img src="assets/img/Lambo.svg">
+              <!-- <img src="assets/img/Lambo.svg"> -->
+              <ng-container *ngIf="p.veh_imgs?.length > 0">
+                <ng-container *ngFor="let img of p.veh_imgs; let j = index">
+                  <img style="border-radius: 11px;" *ngIf="j == 0" src="{{base_url}}{{img}}">
+                </ng-container>
+              </ng-container>
+              <ng-container *ngIf="p.veh_imgs?.length < 0">
+                <img src="assets/img/Lambo.svg">
+              </ng-container>
+      
           </ion-col>
           <ion-col class="trip_dates" size="4">
               <p class="blue">Trip Dates</p>
@@ -159,7 +177,16 @@
       <ion-row class="pd_bs" *ngIf="i % 2 === 0">
         <ion-col size="4" class="lambo">
             <h4>Car Name</h4>
-            <img src="assets/img/Lambo.svg">
+            <!-- <img src="assets/img/Lambo.svg"> -->
+            <ng-container *ngIf="p.veh_imgs?.length > 0">
+              <ng-container *ngFor="let img of p.veh_imgs; let j = index">
+                <img style="border-radius: 11px;" *ngIf="j == 0" src="{{base_url}}{{img}}">
+              </ng-container>
+            </ng-container>
+            <ng-container *ngIf="p.veh_imgs?.length < 0">
+              <img src="assets/img/Lambo.svg">
+            </ng-container>
+   
         </ion-col>
         <ion-col class="trip_dates" size="4">
             <p class="blue">Trip Dates</p>
@@ -178,7 +205,16 @@
       <ion-row class="pd_bs bg_grey" *ngIf="i % 2 != 0">
         <ion-col size="4" class="lambo">
             <h4>Car Name</h4>
-            <img src="assets/img/Lambo.svg">
+            <!-- <img src="assets/img/Lambo.svg"> -->
+            <ng-container *ngIf="p.veh_imgs?.length > 0">
+              <ng-container *ngFor="let img of p.veh_imgs; let j = index">
+                <img style="border-radius: 11px;" *ngIf="j == 0" src="{{base_url}}{{img}}">
+              </ng-container>
+            </ng-container>
+            <ng-container *ngIf="p.veh_imgs?.length < 0">
+              <img src="assets/img/Lambo.svg">
+            </ng-container>
+     
         </ion-col>
         <ion-col class="trip_dates" size="4">
             <p class="blue">Trip Dates</p>
@@ -186,7 +222,7 @@
             <p>{{p.start_date}}</p>
             <p class="primary">Total Cost</p>
             <p>{{currency_symbol}}{{p.trip_cost}}</p>
-            <p class="danger" (click)="cancelBooking(p.bookings_id)">Cancel</p>
+            <p class="danger" (click)="cancelBooking(p)">Cancel</p>
         </ion-col>
         <ion-col class="trip_end_date" size="4">
           <p class="primary"> End Date</p>
@@ -208,7 +244,19 @@
       <ion-row class="pd_bs" *ngIf="i % 2 === 0">
         <ion-col size="4" class="lambo">
             <h4>Car Name</h4>
-            <img src="assets/img/Lambo.svg">
+            
+        
+            
+              <!-- <img src="assets/img/Lambo.svg"> -->
+              <ng-container *ngIf="p.veh_imgs?.length > 0">
+                <ng-container *ngFor="let img of p.veh_imgs; let j = index">
+                  <img style="border-radius: 11px;" *ngIf="j == 0" src="{{base_url}}{{img}}">
+                </ng-container>
+              </ng-container>
+              <ng-container *ngIf="p.veh_imgs?.length < 0">
+                <img src="assets/img/Lambo.svg">
+              </ng-container>
+    
         </ion-col>
         <ion-col class="trip_dates" size="4">
             <p class="blue">Trip Dates</p>
@@ -216,7 +264,7 @@
             <p>{{p.start_date}}</p>
             <p class="primary">Total Cost</p>
             <p>{{currency_symbol}}{{p.trip_cost}}</p>
-            <p class="danger" (click)="cancelBooking(p.bookings_id)">Cancel</p>
+            <p class="danger" (click)="cancelBooking(p)">Cancel</p>
             
         </ion-col>
         <ion-col class="trip_end_date" size="4">
@@ -231,7 +279,16 @@
       <ion-row class="pd_bs bg_grey" *ngIf="i % 2 != 0">
         <ion-col size="4" class="lambo">
             <h4>Car Name</h4>
-            <img src="assets/img/Lambo.svg">
+            <!-- <img src="assets/img/Lambo.svg"> -->
+            <ng-container *ngIf="p.veh_imgs?.length > 0">
+              <ng-container *ngFor="let img of p.veh_imgs; let j = index">
+                <img style="border-radius: 11px;" *ngIf="j == 0" src="{{base_url}}{{img}}">
+              </ng-container>
+            </ng-container>
+            <ng-container *ngIf="p.veh_imgs?.length < 0">
+              <img src="assets/img/Lambo.svg">
+            </ng-container>
+  
         </ion-col>
         <ion-col class="trip_dates" size="4">
             <p class="blue">Trip Dates</p>
@@ -239,7 +296,7 @@
             <p>{{p.start_date}}</p>
             <p class="primary">Total Cost</p>
             <p>{{currency_symbol}}{{p.trip_cost}}</p>
-            <p class="danger" (click)="cancelBooking(p.bookings_id)">Cancel</p>
+            <p class="danger" (click)="cancelBooking(p)">Cancel</p>
          
         </ion-col>
         <ion-col class="trip_end_date" size="4">

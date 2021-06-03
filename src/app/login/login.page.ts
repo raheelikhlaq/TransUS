@@ -9,6 +9,7 @@ import { ForgotPasswordPage } from '../forgot-password/forgot-password.page';
 import { LoadingController, NavController, PopoverController, ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { SubjectEventsService } from '../subject-events.service';
+import { VerifyNewCodePage } from '../verify-new-code/verify-new-code.page';
 
 //167698651548-6fcki9irrlk2p6mmjaqnee4iq0tr10sr.apps.googleusercontent.com
 //ionic cordova plugin add cordova-plugin-facebook4 --variable APP_ID="2427294527578148" --variable APP_NAME="myApplication"
@@ -60,6 +61,10 @@ export class LoginPage implements OnInit {
         if (this.response.status == 'NotFound') {
           this.presentToast('Invalid email or password');
           this.ShowLoading = false;
+        }
+        else if (this.response.status == "error") {
+          this.presentToast('Invalid email or password');
+          this.ShowLoading = false;
         } else if (this.response.status == 'Found') {
           this.presentToast('Login successfully!');
           this.storage.set('user_details', this.response.user_details);
@@ -89,7 +94,7 @@ export class LoginPage implements OnInit {
       this.facebook.api('me?fields=id,name,email,first_name,picture.width(626).height(939).as(picture_large)', []).then(profile => {
         console.log(profile);
         var stringy = JSON.stringify({
-          requestType: 'fb_login',
+          requestType: 'login',
           "loginWith": "Facebook",
           email: profile['email']
         });
@@ -127,6 +132,7 @@ export class LoginPage implements OnInit {
           "loginWith": "Gmail",
           email: res.email
         });
+        // AIzaSyAB8SM4pGFdI5bBjmjNUswS-yLcTpuNUSs
         this.restService.authenticate(stringy).subscribe(response => {
           this.response = JSON.parse(response['_body']);
           console.log(this.response);
@@ -149,10 +155,20 @@ export class LoginPage implements OnInit {
         });
       }).catch(err => console.log(err));
   }
+  value:any;
+  Viewpasswod(event){
+ 
+    this.value = event.detail.value;
+ 
+    if(this.value.length > 0){
+      this.passwordError = false
+    }
+  }
+
   validateForm() {
     // if(this.validation){
     this.emailError = false;
-    this.passwordError = false;
+    // this.passwordError = false;
     this.invalidEmailError = false;
     if (this.email == '' || this.email == undefined) {
       this.emailError = true;
@@ -188,11 +204,35 @@ export class LoginPage implements OnInit {
     });
     popover.onWillDismiss().then(data => {
 
-      // console.log('dismiss');
+      console.log(data);
+      // this.verifyCodeNewPass();
+      if(data.data){
+        this.verifyCodeNewPass();
+      }
 
     })
     return await popover.present();
   }
+
+
+  async verifyCodeNewPass() {
+    const popover = await this.popoverController.create({
+      component: VerifyNewCodePage,
+      componentProps: {
+        //"data": extra_info
+      },
+      translucent: true
+    });
+    popover.onWillDismiss().then(data => {
+
+      console.log(data);
+
+    })
+    return await popover.present();
+  }
+
+
+
   async presentToast(msg) {
     const toast = await this.toastController.create({
       message: msg,

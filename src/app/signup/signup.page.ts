@@ -225,7 +225,18 @@ export class SignupPage implements OnInit {
           } else if (this.response.status == 'success') {
             //this.presentToast(this.response.msg);
             //this.router.navigate(['/']);
-            this.verifyNumber();
+            // this.verifyNumber();
+            console.log("new login",this.response.user_details);
+            this.presentToast('Account Created Successfully');
+            this.storage.set('user_details', this.response.user_details);
+            this.storage.set('profile_img_url', this.response.profile_img_url);
+            this.storage.set('country_name', this.response.country_name);
+            this.storage.set('base_urls', this.baseUrl);
+            this.storage.set('currency_symbol', this.response.user_details.symbol);
+            this.subjectEvents.publishSomeData({
+              sidebar: 'sidebar'
+            });
+            this.navCtrl.navigateRoot('/');
 
           }
         });

@@ -4,7 +4,7 @@
     <img src="assets/img/Arrow.svg" class="img_title" slot="start" (click)="back()">
       <ion-title class="alura">
         <img src="{{profileImg}}" class="img_avatar">
-        <span class="imgtitle">{{sender_name}}</span> 
+        <span style="font-size: 17px;" class="imgtitle">{{sender_name}}</span> 
       </ion-title>
       <ion-button color="secondary" shape="round"  slot="end" class="send_price" (click)="sendOffer()" *ngIf="btnSendPrice">Send Price</ion-button>
   </ion-toolbar>
@@ -40,14 +40,14 @@
                 </p>
               </div>
             </ion-label>
-            <span class="lefttime">{{chat.time}}</span>
+            <span class="lefttime">{{chat.time }} </span>
           </div>
         </ion-col>
       </ion-row>
       <ion-row *ngIf="chat.userId == toUser">
         <ion-col class="left" no-padding [ngClass]="{'clubbed':((msgList[i+1] && msgList[i+1].userId != chat.userId)|| !msgList[i+1])}">
           <div class="imageAvatarLeft">
-            <span class="righttime">{{chat.time}}</span>
+            <span class="righttime">{{chat.time }} </span>
             <ion-label color="light">
               <div class="chatDiv" [ngClass]="{'sharper':((msgList[i+1] && msgList[i+1].userId == chat.userId) && 
               (msgList[i-1] && msgList[i-1].userId == chat.userId)),

@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <img src=\"assets/img/Menu.svg\" (click)=\"toggleMenu()\">\n    </ion-buttons>\n    <ion-title>Customer Support</ion-title>\n   </ion-toolbar>\n</ion-header>\n<ion-content>\n  <ion-row>\n    <ion-col class=\"ion-text-center\">\n      <img src=\"assets/img/Vector.svg\">\n    </ion-col>\n  </ion-row>\n  <div class=\"b_m\">\n  <ion-row>\n    <ion-col>\n      <ion-input placeholder=\"Email\" class=\"input_list ot_auto\" [(ngModel)]=\"Email\" (ionBlur)=\"validateForm()\"></ion-input>\n      <span *ngIf=\"EmailError\" class=\"error ion-padding\">\n        Email is required.\n      </span>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <ion-input placeholder=\"Subject\" class=\"input_list ot_auto\" [(ngModel)]=\"Subject\" (ionBlur)=\"validateForm()\"></ion-input>\n      <span *ngIf=\"SubjectError\" class=\"error ion-padding\">\n        Subject is required.\n      </span>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <ion-textarea rows=\"6\" placeholder=\"Description\" class=\"list_3\" [(ngModel)]=\"Description\" (ionBlur)=\"validateForm()\"></ion-textarea>\n      <span *ngIf=\"DescriptionError\" class=\"error ion-padding\">\n        Description is required.\n      </span>\n    </ion-col>\n  </ion-row>\n  </div>  \n  <ion-row class=\"btn_footer\">\n    <ion-col size=\"2\"></ion-col>\n    <ion-col size=\"8\">\n      <ion-button color=\"primary\" expand=\"block\" shape=\"round\" (click)=\"submitForm()\">Send</ion-button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <img src=\"assets/img/Menu.svg\" (click)=\"toggleMenu()\">\n    </ion-buttons>\n    <ion-title>Customer Support</ion-title>\n   </ion-toolbar>\n</ion-header>\n<ion-content>\n  <ion-row>\n    <ion-col class=\"ion-text-center\">\n      <img src=\"assets/img/Vector.svg\">\n    </ion-col>\n  </ion-row>\n  <ion-row *ngIf=\"ShowLoading\" style=\"position: absolute; width: 100%; z-index: 9999;\">\n    <ion-col style=\"text-align: center;\">\n      <img style=\"width: 90px;\" src=\"assets/img/Loader.gif\">\n    </ion-col>\n  </ion-row>\n  <div class=\"b_m\">\n  <ion-row>\n    <ion-col>\n      <ion-input placeholder=\"Email\" class=\"input_list ot_auto\" [(ngModel)]=\"Email\"  ></ion-input>\n      <span *ngIf=\"EmailError\" class=\"error ion-padding\">\n        Email is required.\n      </span>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <ion-input placeholder=\"Subject\" class=\"input_list ot_auto\" [(ngModel)]=\"Subject\"  ></ion-input>\n      <span *ngIf=\"SubjectError\" class=\"error ion-padding\">\n        Subject is required.\n      </span>\n    </ion-col>\n  </ion-row>\n  <ion-row>\n    <ion-col>\n      <ion-textarea rows=\"6\" placeholder=\"Description\" class=\"list_3\" [(ngModel)]=\"Description\"  ></ion-textarea>\n      <span *ngIf=\"DescriptionError\" class=\"error ion-padding\">\n        Description is required.\n      </span>\n    </ion-col>\n  </ion-row>\n  </div>  \n  <ion-row class=\"btn_footer\">\n    <ion-col size=\"2\"></ion-col>\n    <ion-col size=\"8\">\n      <ion-button color=\"primary\" expand=\"block\" shape=\"round\" (click)=\"submitForm()\">Send</ion-button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n");
 
 /***/ }),
 
@@ -144,13 +144,17 @@ var ContactSupportPage = /** @class */ (function () {
         this.alertCtrl = alertCtrl;
         this.menuCtrl = menuCtrl;
         this.validation = false;
+        this.Subject = "";
+        this.Description = "";
         this.userID = '';
+        this.ShowLoading = false;
     }
     ContactSupportPage.prototype.ngOnInit = function () {
         var _this = this;
         this.storage.get('user_details').then(function (user_details) {
             console.log(user_details);
             _this.userID = user_details.users_id;
+            _this.Email = user_details.email;
             if (_this.userID) {
             }
             else {
@@ -186,14 +190,15 @@ var ContactSupportPage = /** @class */ (function () {
             }
         }
         else {
-            this.presentToast('Invalid Email');
+            this.presentToast('Invalid Subject or Description');
         }
     };
     ContactSupportPage.prototype.submitForm = function () {
         var _this = this;
         this.validation = true;
         // console.log(this.document_four);
-        if (this.validateForm() == true) {
+        // if (this.validateForm() == true) {
+        if (this.Email != "" && this.Subject != "" && this.Description != "") {
             //alert('true');
             var stringy = JSON.stringify({
                 "requestType": 'send_request',
@@ -203,7 +208,8 @@ var ContactSupportPage = /** @class */ (function () {
                 "description": this.Description
             });
             console.log(stringy);
-            this.present();
+            // this.present();
+            this.ShowLoading = true;
             this.restService.customer_support(stringy).subscribe(function (response) {
                 _this.response = JSON.parse(response['_body']);
                 console.log(_this.response.status);
@@ -214,10 +220,23 @@ var ContactSupportPage = /** @class */ (function () {
                     _this.presentToast('We received your query. We will try to get back to you as soon as possible. Thanks');
                     _this.router.navigate(['/']);
                 }
-                _this.dismiss();
+                // this.dismiss();
+                _this.ShowLoading = false;
             }, function (err) {
-                _this.dismiss();
+                // this.dismiss();
+                _this.ShowLoading = false;
             });
+        }
+        else {
+            if (this.Email == "") {
+                this.presentToast("Email is missing.");
+            }
+            else if (this.Subject == "") {
+                this.presentToast("subject is missing.");
+            }
+            else if (this.Description == "") {
+                this.presentToast("Description is missing.");
+            }
         }
     };
     ContactSupportPage.prototype.toggleMenu = function () {

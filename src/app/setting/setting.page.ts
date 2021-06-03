@@ -21,13 +21,22 @@ export class SettingPage implements OnInit {
       console.log(user_details);
       this.userID = user_details.users_id;
      });
+     var notification = localStorage.getItem("enableNotification");
+     if(notification == "true"){
+       this.Notifications = true
+     }
+     else{
+      this.Notifications = false
+     }
   }
   notifie(){
     console.log(this.Notifications);
     if(this.Notifications){
       this.notify = 'Yes';
+      localStorage.setItem("enableNotification", "true");
     }else{
       this.notify = 'No';
+      localStorage.setItem("enableNotification", "false");
     }
     var stringy = JSON.stringify({
       "requestType" : "notifications_status",

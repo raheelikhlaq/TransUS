@@ -143,14 +143,19 @@ var CarListPage = /** @class */ (function () {
             _this.response = JSON.parse(res.value);
             console.log(_this.response);
             console.log(_this.response.cars_list_result, "fom my searching");
-            _this.storage.get('base_urls').then(function (base_urls) {
-                _this.base_urls = base_urls;
-                _this.storage.get('currency_symbol').then(function (currency_symbol) {
-                    console.log('currency_symbol', currency_symbol);
-                    _this.currency_symbol = currency_symbol;
-                    _this.cars_list_result = _this.response.cars_list_result;
+            if (_this.response.cars_list_result != []) {
+                _this.storage.get('base_urls').then(function (base_urls) {
+                    _this.base_urls = base_urls;
+                    _this.storage.get('currency_symbol').then(function (currency_symbol) {
+                        console.log('currency_symbol', currency_symbol);
+                        _this.currency_symbol = currency_symbol;
+                        _this.cars_list_result = _this.response.cars_list_result;
+                    });
                 });
-            });
+            }
+            else {
+                console.log(_this.response.cars_list_result, "from else");
+            }
         });
     }
     CarListPage.prototype.gotoDetail = function (data) {

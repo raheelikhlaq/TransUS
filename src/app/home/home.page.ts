@@ -197,6 +197,7 @@ export class HomePage implements OnInit {
     console.log(stringy);
     this.restService.getDdlData(stringy).subscribe(response => {
       this.response = JSON.parse(response['_body']);
+      console.log("get currency", this.response)
       this.storage.set('currency_symbol', this.response.default_currency.symbol);
       this.currencyID = this.response.default_currency.currencies_id
       console.log(this.response,"currency id");
@@ -208,7 +209,7 @@ export class HomePage implements OnInit {
   }
   New_car_types=[];
   homeData() {
-   
+    this.top_rated_cars=[]
     var stringy = JSON.stringify({
       "requestType": 'home_page',
       "usersID": this.userID,
@@ -252,15 +253,29 @@ export class HomePage implements OnInit {
       console.log(stringy);
       this.restService.notifications(stringfy).subscribe(response => {
         this.response = JSON.parse(response['_body']);
-        if (this.sliderStartBoolean) {
-          this.getStartIndex(this.sliderStartBoolean);
-        } else {
-          this.getStartIndex(0);
-        }
+        // if (this.sliderStartBoolean) {
+        //   this.getStartIndex(this.sliderStartBoolean);
+        // } else {
+        //   this.getStartIndex(0);
+        // }
 
         // this.dismiss();
         this.ShowLoading = false;
         this.notifications = this.response.notifications;
+        if(this.notifications.length == 1){
+          this.option1 = {
+            loop: true,
+            direction: 'vertical',
+            slidesPerView: 1
+          };
+        }
+        else{
+          this.option1 = {
+            loop: true,
+            direction: 'vertical',
+            slidesPerView: 2
+          };
+        }
         // this.sliderStartBoolean = 0;
 
         // this.getStartIndex(0);
@@ -277,7 +292,8 @@ export class HomePage implements OnInit {
 
     var SearchingData = JSON.stringify({
       "currencyID": this.currencyID,
-      "requestType":"all_veh"
+      "requestType":"all_veh",
+      "userID":this.userID
     })
     this.restService.allVehicles(SearchingData).subscribe(resSearching =>{
       console.log(JSON.parse(resSearching['_body']),"searching DAta")
@@ -458,6 +474,9 @@ export class HomePage implements OnInit {
       });
 
     }
+   else if (p.type_id == '2'){
+     this.router.navigate(['/bookings'])
+    } 
   }
 
 

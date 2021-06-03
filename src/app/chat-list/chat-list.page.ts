@@ -32,11 +32,11 @@ export class ChatListPage implements OnInit {
       this.storage.get('user_details').then((user_details) => {
         this.userId = user_details.users_id;
         this.getChatList();
-        this.callInterval = setInterval(() => {
-          this.callApi();
+        // this.callInterval = setInterval(() => {
+        //   this.callApi();
 
-        }, 2000
-        );
+        // }, 2000
+        // );
       });
     });
   }

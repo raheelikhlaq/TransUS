@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <img src=\"assets/img/Menu.svg\" (click)=\"toggleMenu()\">\n    </ion-buttons>\n    <ion-title>Settings</ion-title>\n   </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-row class=\"notify bg_grey\">\n    <ion-col size=\"6\">\n        <h4>Notifications</h4>\n        <p>Enable your notifications</p>\n    </ion-col>\n    <ion-col class=\"ion-text-right arrow_right\">\n      <ion-item  lines=\"none\" >\n        <ion-toggle slot=\"start\"  color=\"tertiary\" (ionChange)=\"notifie()\" [(ngModel)]=\"Notifications\"  ></ion-toggle>\n      </ion-item>\n    </ion-col>\n  </ion-row>\n  <!--ion-row class=\"notify\">\n    <ion-col size=\"6\">\n        <h4>Payment Details</h4>\n        <p>Lorem Ipsum Dolar sit</p>\n    </ion-col>\n    <ion-col class=\"ion-text-right arrow_right\">\n      <img src=\"assets/img/Arrow_right.svg\" (click)=\"goToPayment()\">\n    </ion-col>\n  </ion-row-->\n  <ion-row class=\"notify bg_grey\" (click)=\"goToChangePassword()\">\n    <ion-col size=\"6\">\n        <h4>Change Password</h4>\n        <p>Lorem Ipsum Dolar sit</p>\n    </ion-col>\n    <ion-col class=\"ion-text-right arrow_right\">\n      <img src=\"assets/img/Arrow_right.svg\" >\n    </ion-col>\n  </ion-row>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <img src=\"assets/img/Menu.svg\" (click)=\"toggleMenu()\">\n    </ion-buttons>\n    <ion-title>Settings</ion-title>\n   </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-row class=\"notify bg_grey\">\n    <ion-col size=\"6\">\n        <h4>Notifications</h4>\n        <p>Enable your notifications</p>\n    </ion-col>\n    <ion-col class=\"ion-text-right arrow_right\">\n      <ion-item  lines=\"none\" >\n        <ion-toggle slot=\"start\"  color=\"tertiary\" (ionChange)=\"notifie()\" [(ngModel)]=\"Notifications\"  ></ion-toggle>\n      </ion-item>\n    </ion-col>\n  </ion-row>\n  <!--ion-row class=\"notify\">\n    <ion-col size=\"6\">\n        <h4>Payment Details</h4>\n        <p>Lorem Ipsum Dolar sit</p>\n    </ion-col>\n    <ion-col class=\"ion-text-right arrow_right\">\n      <img src=\"assets/img/Arrow_right.svg\" (click)=\"goToPayment()\">\n    </ion-col>\n  </ion-row-->\n  <ion-row class=\"notify bg_grey\" (click)=\"goToChangePassword()\">\n    <ion-col size=\"9\">\n        <h4>Change Password</h4>\n        <!-- <p>Lorem Ipsum Dolar sit</p> -->\n        <p>click here to change your password</p>\n        \n    </ion-col>\n    <ion-col class=\"ion-text-right arrow_right\">\n      <img src=\"assets/img/Arrow_right.svg\" >\n    </ion-col>\n  </ion-row>\n</ion-content>\n");
 
 /***/ }),
 
@@ -147,15 +147,24 @@ var SettingPage = /** @class */ (function () {
             console.log(user_details);
             _this.userID = user_details.users_id;
         });
+        var notification = localStorage.getItem("enableNotification");
+        if (notification == "true") {
+            this.Notifications = true;
+        }
+        else {
+            this.Notifications = false;
+        }
     };
     SettingPage.prototype.notifie = function () {
         var _this = this;
         console.log(this.Notifications);
         if (this.Notifications) {
             this.notify = 'Yes';
+            localStorage.setItem("enableNotification", "true");
         }
         else {
             this.notify = 'No';
+            localStorage.setItem("enableNotification", "false");
         }
         var stringy = JSON.stringify({
             "requestType": "notifications_status",

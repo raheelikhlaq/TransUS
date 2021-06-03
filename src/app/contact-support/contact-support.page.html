@@ -12,10 +12,15 @@
       <img src="assets/img/Vector.svg">
     </ion-col>
   </ion-row>
+  <ion-row *ngIf="ShowLoading" style="position: absolute; width: 100%; z-index: 9999;">
+    <ion-col style="text-align: center;">
+      <img style="width: 90px;" src="assets/img/Loader.gif">
+    </ion-col>
+  </ion-row>
   <div class="b_m">
   <ion-row>
     <ion-col>
-      <ion-input placeholder="Email" class="input_list ot_auto" [(ngModel)]="Email" (ionBlur)="validateForm()"></ion-input>
+      <ion-input placeholder="Email" class="input_list ot_auto" [(ngModel)]="Email"  ></ion-input>
       <span *ngIf="EmailError" class="error ion-padding">
         Email is required.
       </span>
@@ -23,7 +28,7 @@
   </ion-row>
   <ion-row>
     <ion-col>
-      <ion-input placeholder="Subject" class="input_list ot_auto" [(ngModel)]="Subject" (ionBlur)="validateForm()"></ion-input>
+      <ion-input placeholder="Subject" class="input_list ot_auto" [(ngModel)]="Subject"  ></ion-input>
       <span *ngIf="SubjectError" class="error ion-padding">
         Subject is required.
       </span>
@@ -31,7 +36,7 @@
   </ion-row>
   <ion-row>
     <ion-col>
-      <ion-textarea rows="6" placeholder="Description" class="list_3" [(ngModel)]="Description" (ionBlur)="validateForm()"></ion-textarea>
+      <ion-textarea rows="6" placeholder="Description" class="list_3" [(ngModel)]="Description"  ></ion-textarea>
       <span *ngIf="DescriptionError" class="error ion-padding">
         Description is required.
       </span>

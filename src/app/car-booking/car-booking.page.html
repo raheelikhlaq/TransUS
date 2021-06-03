@@ -8,7 +8,11 @@
    </ion-toolbar>
 </ion-header>
 <ion-content>
- 
+  <ion-row *ngIf="ShowLoading" style="position: absolute; width: 100%; z-index: 9999;">
+    <ion-col style="text-align: center;">
+      <img style="width: 90px;" src="assets/img/Loader.gif">
+    </ion-col>
+  </ion-row>
   <div class="list_1">
     <ion-row>
       <ion-col>
